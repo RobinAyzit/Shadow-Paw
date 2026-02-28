@@ -18,9 +18,9 @@ const defaultProgress: PlayerProgress = {
   },
   achievements: [],
   dailyQuests: [
-    { id: '1', description: 'Samla 50 fiskar', target: 50, current: 0, reward: 100, completed: false },
-    { id: '2', description: 'Nivå 5', target: 5, current: 0, reward: 200, completed: false },
-    { id: '3', description: 'Besegra 20 fiender', target: 20, current: 0, reward: 150, completed: false },
+    { id: '1', description: 'Samla 50 fiskar', target: 50, current: 0, reward: 100, completed: false, claimed: false },
+    { id: '2', description: 'Nivå 5', target: 5, current: 0, reward: 200, completed: false, claimed: false },
+    { id: '3', description: 'Besegra 20 fiender', target: 20, current: 0, reward: 150, completed: false, claimed: false },
   ],
 };
 
@@ -33,6 +33,7 @@ interface ProgressContextType {
   buyUpgrade: (type: 'maxAmmo' | 'jumpPower' | 'speed', cost: number) => boolean;
   equipSkin: (skinId: string) => void;
   resetDailyQuests: () => void;
+  claimQuestReward: (questId: string) => void;
 }
 
 const ProgressContext = createContext<ProgressContextType | undefined>(undefined);
@@ -126,6 +127,21 @@ export const ProgressProvider: React.FC<{ children: ReactNode }> = ({ children }
     }));
   };
 
+  const claimQuestReward = (questId: string) => {
+    setProgress(p => {
+      const quest = p.dailyQuests.find(q => q.id === questId);
+      if (!quest || !quest.completed || quest.claimed) return p;
+      return {
+        ...p,
+        coins: p.coins + quest.reward,
+        totalCoinsEarned: p.totalCoinsEarned + quest.reward,
+        dailyQuests: p.dailyQuests.map(q =>
+          q.id === questId ? { ...q, claimed: true } : q
+        ),
+      };
+    });
+  };
+
   return (
     <ProgressContext.Provider value={{
       progress,
@@ -136,6 +152,7 @@ export const ProgressProvider: React.FC<{ children: ReactNode }> = ({ children }
       buyUpgrade,
       equipSkin,
       resetDailyQuests,
+      claimQuestReward,
     }}>
       {children}
     </ProgressContext.Provider>

@@ -47,5 +47,6 @@ export interface PlayerProgress {
     current: number;
     reward: number;
     completed: boolean;
+    claimed: boolean;
   }[];
 }

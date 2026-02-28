@@ -7,7 +7,7 @@ const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 export const getGameTip = async (): Promise<string> => {
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-3-flash-preview',
+      model: 'gemini-2.0-flash',
       contents: "Ge ett kort, roligt och engagerande speltips för plattformsspelet 'Shadow Paw: Neon Mission'. Fokusera på att katten försöker fånga bytet. Max 15 ord. Svara på svenska.",
       config: {
         systemInstruction: "Du är en spelguide för barn i en neon-värld där en katt är hjälten.",
@@ -23,7 +23,7 @@ export const getGameTip = async (): Promise<string> => {
 export const getJerryTaunt = async (score: number): Promise<string> => {
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-3-flash-preview',
+      model: 'gemini-2.0-flash',
       contents: `Katten förlorade i 'Shadow Paw' med poängen ${score}. Skriv ett kort hån från bytet till katten. Var lekfull men snäll. Max 15 ord. Svara på svenska.`,
     });
     return response.text.trim() || "Bättre lycka nästa gång, katten!";
