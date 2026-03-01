@@ -38,6 +38,16 @@ Shadow Paw: Neon Mission is an exciting neon-themed platformer game where you co
 
 ---
 
+## 📸 Screenshots
+
+<div align="center">
+  <img src="Screenshot/main-menu.png" alt="Main Menu" width="45%" />
+  <img src="Screenshot/gameplay.png" alt="Gameplay" width="45%" />
+  <img src="Screenshot/Gameover.png" alt="Game Over" width="45%" />
+</div>
+
+---
+
 ## 🤝 Contributing
 
 We love contributions! Whether it's fixing a bug, adding a feature, or improving documentation:
