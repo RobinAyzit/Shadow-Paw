@@ -721,10 +721,18 @@ export const GameOverView: React.FC<{ score: number, fishesCollected?: number, o
 };
 
 // AUDIO MANAGER FOR BACKGROUND MUSIC
-const useBackgroundMusic = (level: number) => {
+const useBackgroundMusic = (level: number, isMuted: boolean = false) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const fadeIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Handle mute state changes
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = isMuted ? 0 : 0.3;
+    }
+  }, [isMuted]);
+
+  // Handle level changes
   useEffect(() => {
     // Only play music for levels 1-10
     if (level >= 1 && level <= 10) {
@@ -939,7 +947,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
   const gameRef = useRef<any>(null);
 
   // Use background music for levels 1-10
-  useBackgroundMusic(currentLevel);
+  useBackgroundMusic(currentLevel, isMuted);
 
   // Handle mute/unmute
   useEffect(() => {
