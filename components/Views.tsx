@@ -1323,12 +1323,17 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Fixed smaller canvas size for better fullscreen experience
+    // Canvas size based on fullscreen state
     const resizeCanvas = () => {
       const container = canvas.parentElement;
       if (container) {
-        canvas.width = 640;
-        canvas.height = 360;
+        const isFullscreen = !!document.fullscreenElement;
+        // Normal mode: 800x450, Fullscreen: 640x360
+        const width = isFullscreen ? 640 : 800;
+        const height = isFullscreen ? 360 : 450;
+        
+        canvas.width = width;
+        canvas.height = height;
         canvas.style.width = '100%';
         canvas.style.height = 'auto';
       }
@@ -1336,6 +1341,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
 
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
+    document.addEventListener('fullscreenchange', resizeCanvas);
 
     const game = setupLevel(currentLevel, totalScore, lives);
     if (!game) return;
@@ -3166,7 +3172,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
       )}
 
       {/* GAME AREA */}
-      <div ref={gameContainerRef} className="relative w-full max-w-3xl glass-card rounded-2xl md:rounded-[2.5rem] border-2 border-primary/20 overflow-hidden shadow-[0_0_100px_rgba(43,238,121,0.15)] transition-all duration-500">
+      <div ref={gameContainerRef} className="relative w-full max-w-6xl glass-card rounded-2xl md:rounded-[2.5rem] border-2 border-primary/20 overflow-hidden shadow-[0_0_100px_rgba(43,238,121,0.15)] transition-all duration-500">
         <canvas
           ref={canvasRef}
           className="w-full h-auto cursor-crosshair bg-[#102217]"
