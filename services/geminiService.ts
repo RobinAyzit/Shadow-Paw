@@ -1,10 +1,21 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-// Initialize the GoogleGenAI client with the API key from environment variables.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+let ai: GoogleGenAI | null = null;
+
+try {
+  const apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY;
+  if (apiKey && apiKey !== 'PLACEHOLDER_API_KEY') {
+    ai = new GoogleGenAI({ apiKey });
+  }
+} catch (e) {
+  console.warn("Gemini AI initialization failed, using fallback mode");
+}
 
 export const getGameTip = async (): Promise<string> => {
+  if (!ai) {
+    return "Använd neon-hoppet för att nå högre!";
+  }
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-2.0-flash',
@@ -21,6 +32,9 @@ export const getGameTip = async (): Promise<string> => {
 };
 
 export const getJerryTaunt = async (score: number): Promise<string> => {
+  if (!ai) {
+    return score > 100 ? "Bra kämpat, men bytet var snabbare!" : "Du hann inte ifatt mig!";
+  }
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-2.0-flash',
