@@ -1323,17 +1323,17 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Responsive canvas sizing - fill available space
+    // Responsive canvas sizing - smaller size for zoomed out view
     const resizeCanvas = () => {
       const container = canvas.parentElement;
       if (container) {
         const containerWidth = container.clientWidth;
         const containerHeight = container.clientHeight;
 
-        canvas.width = Math.min(containerWidth, 1200);
-        canvas.height = Math.min(containerHeight, 675);
+        canvas.width = Math.min(containerWidth, 800);
+        canvas.height = Math.min(containerHeight, 450);
         canvas.style.width = '100%';
-        canvas.style.height = '100%';
+        canvas.style.height = 'auto';
       }
     };
 
@@ -3169,10 +3169,10 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
       )}
 
       {/* GAME AREA */}
-      <div ref={gameContainerRef} className="relative w-full h-full max-h-[80vh] glass-card rounded-2xl md:rounded-[2.5rem] border-2 border-primary/20 overflow-hidden shadow-[0_0_100px_rgba(43,238,121,0.15)] transition-all duration-500">
+      <div ref={gameContainerRef} className="relative w-full max-w-6xl glass-card rounded-2xl md:rounded-[2.5rem] border-2 border-primary/20 overflow-hidden shadow-[0_0_100px_rgba(43,238,121,0.15)] transition-all duration-500">
         <canvas
           ref={canvasRef}
-          className="w-full h-full object-contain cursor-crosshair bg-[#102217]"
+          className="w-full h-auto cursor-crosshair bg-[#102217]"
         />
 
         {showLevelComplete && (
