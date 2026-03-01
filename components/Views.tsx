@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { AppView, ScoreEntry } from '../types';
-import { getGameTip, getJerryTaunt } from '../services/geminiService';
+import { getJerryTaunt } from '../services/geminiService';
 import { useProgress } from '../context/ProgressContext';
 import { AudioEngine } from '../services/AudioEngine';
 
@@ -155,11 +155,30 @@ const InjuredCatVisual: React.FC = () => {
 
 /** START MENU **/
 export const StartMenuView: React.FC<{ onNavigate: (v: AppView) => void }> = ({ onNavigate }) => {
-  const [tip, setTip] = useState<string>("Hämtar dagens tips...");
+  const [tip, setTip] = useState<string>("");
   const { progress } = useProgress();
 
+  const gameTips = [
+    "Använd dubbelhopp för att nå högre plattformar!",
+    "Samla fiskar för att få mer ammunition!",
+    "Hoppa på fiender för att besegra dom!",
+    "Håll utkik efter dolda plattformar!",
+    "Använd ammunition klokt - samla fiskar för mer!",
+    "Katten är snabbare än du tror!",
+    "Öva dig på timing för perfekta hopp!",
+    "Navigera genom neon-staden utan att fastna!",
+    "Byt inte bana för ofta - behåll momentum!",
+    "Fiender kommer i olika mönster - lär dom!",
+    "Samla mynt i butiken för bättre uppgraderingar!",
+    "Hoppa över hål med perfekt timing!",
+    "Använd din ammunition strategiskt!",
+    "Ju högre nivå, desto svårare blir det!",
+    "Glöm inte att pausa om du behöver en break!"
+  ];
+
   useEffect(() => {
-    getGameTip().then(setTip);
+    const randomTip = gameTips[Math.floor(Math.random() * gameTips.length)];
+    setTip(randomTip);
   }, []);
 
   return (
@@ -241,7 +260,7 @@ export const StartMenuView: React.FC<{ onNavigate: (v: AppView) => void }> = ({ 
         </div>
 
         <div className="mt-6 glass-card rounded-2xl border border-white/10 p-5 text-left">
-          <p className="text-white/70 text-[10px] font-bold uppercase tracking-widest">Dagens AI Tips</p>
+          <p className="text-white/70 text-[10px] font-bold uppercase tracking-widest">Dagens Tips</p>
           <p className="mt-2 text-white/95 text-sm leading-relaxed italic">"{tip}"</p>
         </div>
 
