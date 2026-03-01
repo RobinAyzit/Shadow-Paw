@@ -25,8 +25,7 @@ const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
               <span className="material-symbols-outlined text-primary text-lg">pets</span>
             </div>
             <div className="hidden sm:block text-left">
-              <h1 className="text-white font-black text-xs uppercase tracking-wider">Shadow Paw</h1>
-              <p className="text-white/40 text-[10px] font-medium uppercase tracking-widest">Neon Mission</p>
+              <h1 className="text-white font-black text-xs uppercase tracking-wider">Created 2026 by © nRn World</h1>
             </div>
           </button>
 
