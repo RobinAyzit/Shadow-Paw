@@ -1323,19 +1323,38 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Canvas size based on fullscreen state
+    // Keep original game resolution, scale via CSS while maintaining aspect ratio
+    const GAME_WIDTH = 800;
+    const GAME_HEIGHT = 450;
+    const ASPECT_RATIO = GAME_WIDTH / GAME_HEIGHT;
+
     const resizeCanvas = () => {
       const container = canvas.parentElement;
       if (container) {
-        const isFullscreen = !!document.fullscreenElement;
-        // Normal mode: 800x450, Fullscreen: 640x360
-        const width = isFullscreen ? 640 : 800;
-        const height = isFullscreen ? 360 : 450;
+        const containerWidth = container.clientWidth;
+        const containerHeight = container.clientHeight;
+        const containerAspect = containerWidth / containerHeight;
         
-        canvas.width = width;
-        canvas.height = height;
-        canvas.style.width = '100%';
-        canvas.style.height = 'auto';
+        let width, height;
+        
+        // Maintain 16:9 aspect ratio
+        if (containerAspect > ASPECT_RATIO) {
+          // Container is wider - fit to height (letterbox on sides)
+          height = containerHeight;
+          width = height * ASPECT_RATIO;
+        } else {
+          // Container is taller - fit to width (letterbox on top/bottom)
+          width = containerWidth;
+          height = width / ASPECT_RATIO;
+        }
+        
+        // Keep original internal resolution for game logic
+        canvas.width = GAME_WIDTH;
+        canvas.height = GAME_HEIGHT;
+        
+        // CSS scaling
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
       }
     };
 
@@ -3172,10 +3191,10 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
       )}
 
       {/* GAME AREA */}
-      <div ref={gameContainerRef} className="relative w-full max-w-6xl glass-card rounded-2xl md:rounded-[2.5rem] border-2 border-primary/20 overflow-hidden shadow-[0_0_100px_rgba(43,238,121,0.15)] transition-all duration-500">
+      <div ref={gameContainerRef} className="relative w-full max-w-6xl flex items-center justify-center glass-card rounded-2xl md:rounded-[2.5rem] border-2 border-primary/20 overflow-hidden shadow-[0_0_100px_rgba(43,238,121,0.15)] transition-all duration-500 bg-black">
         <canvas
           ref={canvasRef}
-          className="w-full h-auto cursor-crosshair bg-[#102217]"
+          className="cursor-crosshair bg-[#102217]"
         />
 
         {showLevelComplete && (
