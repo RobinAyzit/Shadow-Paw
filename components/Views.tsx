@@ -1323,44 +1323,16 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Keep original game resolution, scale via CSS while maintaining aspect ratio
-    const GAME_WIDTH = 800;
-    const GAME_HEIGHT = 450;
-    const ASPECT_RATIO = GAME_WIDTH / GAME_HEIGHT;
-
-    const resizeCanvas = () => {
-      const container = canvas.parentElement;
-      if (container) {
-        const containerWidth = container.clientWidth;
-        const containerHeight = container.clientHeight;
-        const containerAspect = containerWidth / containerHeight;
-        
-        let width, height;
-        
-        // Maintain 16:9 aspect ratio
-        if (containerAspect > ASPECT_RATIO) {
-          // Container is wider - fit to height (letterbox on sides)
-          height = containerHeight;
-          width = height * ASPECT_RATIO;
-        } else {
-          // Container is taller - fit to width (letterbox on top/bottom)
-          width = containerWidth;
-          height = width / ASPECT_RATIO;
-        }
-        
-        // Keep original internal resolution for game logic
-        canvas.width = GAME_WIDTH;
-        canvas.height = GAME_HEIGHT;
-        
-        // CSS scaling
-        canvas.style.width = `${width}px`;
-        canvas.style.height = `${height}px`;
-      }
-    };
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-    document.addEventListener('fullscreenchange', resizeCanvas);
+    // Fixed internal resolution 1280x720
+    canvas.width = 1280;
+    canvas.height = 720;
+    
+    // CSS handles all scaling - object-fit keeps aspect ratio with letterboxing
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.maxWidth = '100vw';
+    canvas.style.maxHeight = '100vh';
+    canvas.style.objectFit = 'contain';
 
     const game = setupLevel(currentLevel, totalScore, lives);
     if (!game) return;
@@ -3109,7 +3081,6 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keyup', handleKeyUp);
       canvas.removeEventListener('mousedown', handleMouseDown);
-      window.removeEventListener('resize', resizeCanvas);
 
       if (isTouchDevice) {
         canvas.removeEventListener('touchstart', handleTouchStart);
@@ -3191,10 +3162,10 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
       )}
 
       {/* GAME AREA */}
-      <div ref={gameContainerRef} className="relative w-full max-w-6xl flex items-center justify-center glass-card rounded-2xl md:rounded-[2.5rem] border-2 border-primary/20 overflow-hidden shadow-[0_0_100px_rgba(43,238,121,0.15)] transition-all duration-500 bg-black">
+      <div ref={gameContainerRef} className="relative w-full h-full flex items-center justify-center glass-card rounded-2xl md:rounded-[2.5rem] border-2 border-primary/20 overflow-hidden shadow-[0_0_100px_rgba(43,238,121,0.15)] transition-all duration-500 bg-black">
         <canvas
           ref={canvasRef}
-          className="cursor-crosshair bg-[#102217]"
+          className="w-full h-full max-w-full max-h-full object-contain cursor-crosshair bg-[#102217]"
         />
 
         {showLevelComplete && (
