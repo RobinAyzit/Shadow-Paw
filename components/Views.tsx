@@ -945,6 +945,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
   const { progress, addCoins } = useProgress();
 
   const gameRef = useRef<any>(null);
+  const gameContainerRef = useRef<HTMLDivElement>(null);
 
   // Use background music for levels 1-10
   useBackgroundMusic(currentLevel, isMuted);
@@ -954,12 +955,41 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
     AudioEngine.setVolume(isMuted ? 0 : 0.5);
   }, [isMuted]);
 
+  // Handle fullscreen and ESC key
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && document.fullscreenElement) {
+        document.exitFullscreen();
+      }
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement && gameContainerRef.current) {
+      gameContainerRef.current.requestFullscreen();
+    } else if (document.fullscreenElement) {
+      document.exitFullscreen();
+    }
+  };
+
+  useEffect(() => {
+    AudioEngine.setVolume(isMuted ? 0 : 0.5);
+  }, [isMuted]);
+
   useEffect(() => {
     setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
     setIsMobile(window.innerWidth < 768);
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
   }, []);
 
   const setupLevel = (level: number, existingScore: number, existingLives: number) => {
@@ -3124,6 +3154,14 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
             {isMuted ? 'volume_off' : 'volume_up'}
           </span>
         </button>
+        <button
+          onClick={toggleFullscreen}
+          className="flex items-center gap-1.5 md:gap-2 pl-2 md:pr-4 hover:scale-110 transition-transform"
+        >
+          <span className="material-symbols-outlined text-lg md:text-3xl text-white/70">
+            {isFullscreen ? 'fullscreen_exit' : 'fullscreen'}
+          </span>
+        </button>
       </div>
 
       {/* Mobile Touch Controls Overlay */}
@@ -3140,7 +3178,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
       )}
 
       {/* GAME AREA */}
-      <div className={`relative w-full max-w-7xl aspect-[16/10] glass-card rounded-2xl md:rounded-[2.5rem] border-2 border-primary/20 overflow-hidden shadow-[0_0_100px_rgba(43,238,121,0.15)] transition-all duration-500`}>
+      <div ref={gameContainerRef} className="relative w-full max-w-7xl aspect-video glass-card rounded-2xl md:rounded-[2.5rem] border-2 border-primary/20 overflow-hidden shadow-[0_0_100px_rgba(43,238,121,0.15)] transition-all duration-500">
         <canvas
           ref={canvasRef}
           className="w-full h-full object-contain cursor-crosshair bg-[#102217]"
