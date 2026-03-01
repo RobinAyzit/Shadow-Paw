@@ -65,3 +65,7 @@ Created 2026 by **© nRn World**
 ## 🙏 Support
 
 If you like this project, consider to:
+
+*   ⭐ Star the project on GitHub
+*   ☕ [Buy me a coffee](https://buymeacoffee.com/nrnworld)
+*   📢 Share with your friends
