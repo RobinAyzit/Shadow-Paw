@@ -577,7 +577,7 @@ export const GameOverView: React.FC<{ score: number, fishesCollected?: number, o
   const [name, setName] = useState("");
   const [isSaved, setIsSaved] = useState(false);
   const { progress, addCoins, addXP, updateQuestProgress } = useProgress();
-  
+
   // Get coins: every 10 fish = 5 coins. So fish / 2
   const coinsEarned = Math.floor(fishesCollected / 2);
   const totalCoins = progress.coins;
@@ -881,23 +881,23 @@ const getLevelDesign = (level: number) => {
 
 // BACKGROUND ELEMENTS GENERATOR
 const THEME_CONFIGS: Record<string, { buildings: string[], animals: string[], buildingColors: string[] }> = {
-  park:         { buildings: ['house','windmill','fountain'],       animals: ['bird','rabbit','squirrel'], buildingColors: ['#a0c878','#8fbc8f','#7da87d'] },
-  suburban:     { buildings: ['house','fence','mailbox'],           animals: ['cat','dog','bird'],         buildingColors: ['#c8a46e','#d4956a','#b8935a'] },
-  city:         { buildings: ['skyscraper','apartment','billboard'],animals: ['pigeon','rat','stray_cat'], buildingColors: ['#3a5f8a','#4a7aaa','#2d4f7a'] },
-  downtown:     { buildings: ['skyscraper','office','neon_sign'],   animals: ['pigeon','stray_cat','bat'], buildingColors: ['#2d3f6a','#1e2f5a','#3d4f7a'] },
-  industrial:   { buildings: ['factory','chimney','warehouse'],     animals: ['rat','crow','fox'],         buildingColors: ['#5a4a3a','#6a5a4a','#4a3a2a'] },
-  construction: { buildings: ['crane','scaffold','barrel'],         animals: ['crow','rat','pigeon'],      buildingColors: ['#8a7a3a','#7a6a2a','#9a8a4a'] },
-  beach:        { buildings: ['lighthouse','beach_hut','palm'],     animals: ['seagull','crab','pelican'], buildingColors: ['#f0e0a0','#e8c870','#f8f0b0'] },
-  mountain:     { buildings: ['cabin','peak','ski_lift'],           animals: ['eagle','goat','bear'],      buildingColors: ['#8a7060','#9a8070','#7a6050'] },
-  forest:       { buildings: ['cabin','treehouse','well'],          animals: ['deer','owl','squirrel'],    buildingColors: ['#4a7a3a','#3a6a2a','#5a8a4a'] },
-  harbor:       { buildings: ['lighthouse','dock','ship'],          animals: ['seagull','pelican','seal'], buildingColors: ['#3a5a7a','#2a4a6a','#4a6a8a'] },
-  sewers:       { buildings: ['pipe','grate','ladder'],             animals: ['rat','bat','cockroach'],    buildingColors: ['#4a5a3a','#3a4a2a','#5a6a4a'] },
-  alpine:       { buildings: ['cabin','snow_peak','chapel'],        animals: ['goat','eagle','fox'],       buildingColors: ['#9090a8','#a0a0b8','#8080a0'] },
-  rooftops:     { buildings: ['water_tower','chimney','antenna'],   animals: ['pigeon','bat','crow'],      buildingColors: ['#4a5a6a','#3a4a5a','#5a6a7a'] },
-  countryside:  { buildings: ['barn','windmill','silo'],            animals: ['cow','horse','rooster'],    buildingColors: ['#c8a060','#b89050','#d8b070'] },
-  space_station:{ buildings: ['module','antenna','solar_panel'],    animals: ['alien_creature','space_cat','robot_bird'], buildingColors: ['#3a4a6a','#2a3a5a','#4a5a7a'] },
-  volcano:      { buildings: ['lava_rock','ruins','smoke_tower'],   animals: ['snake','lizard','crow'],    buildingColors: ['#8a3a1a','#7a2a0a','#9a4a2a'] },
-  default:      { buildings: ['house','tree','fence'],              animals: ['bird','rabbit','cat'],      buildingColors: ['#607080','#506070','#708090'] },
+  park: { buildings: ['house', 'windmill', 'fountain'], animals: ['bird', 'rabbit', 'squirrel'], buildingColors: ['#a0c878', '#8fbc8f', '#7da87d'] },
+  suburban: { buildings: ['house', 'fence', 'mailbox'], animals: ['cat', 'dog', 'bird'], buildingColors: ['#c8a46e', '#d4956a', '#b8935a'] },
+  city: { buildings: ['skyscraper', 'apartment', 'billboard'], animals: ['pigeon', 'rat', 'stray_cat'], buildingColors: ['#3a5f8a', '#4a7aaa', '#2d4f7a'] },
+  downtown: { buildings: ['skyscraper', 'office', 'neon_sign'], animals: ['pigeon', 'stray_cat', 'bat'], buildingColors: ['#2d3f6a', '#1e2f5a', '#3d4f7a'] },
+  industrial: { buildings: ['factory', 'chimney', 'warehouse'], animals: ['rat', 'crow', 'fox'], buildingColors: ['#5a4a3a', '#6a5a4a', '#4a3a2a'] },
+  construction: { buildings: ['crane', 'scaffold', 'barrel'], animals: ['crow', 'rat', 'pigeon'], buildingColors: ['#8a7a3a', '#7a6a2a', '#9a8a4a'] },
+  beach: { buildings: ['lighthouse', 'beach_hut', 'palm'], animals: ['seagull', 'crab', 'pelican'], buildingColors: ['#f0e0a0', '#e8c870', '#f8f0b0'] },
+  mountain: { buildings: ['cabin', 'peak', 'ski_lift'], animals: ['eagle', 'goat', 'bear'], buildingColors: ['#8a7060', '#9a8070', '#7a6050'] },
+  forest: { buildings: ['cabin', 'treehouse', 'well'], animals: ['deer', 'owl', 'squirrel'], buildingColors: ['#4a7a3a', '#3a6a2a', '#5a8a4a'] },
+  harbor: { buildings: ['lighthouse', 'dock', 'ship'], animals: ['seagull', 'pelican', 'seal'], buildingColors: ['#3a5a7a', '#2a4a6a', '#4a6a8a'] },
+  sewers: { buildings: ['pipe', 'grate', 'ladder'], animals: ['rat', 'bat', 'cockroach'], buildingColors: ['#4a5a3a', '#3a4a2a', '#5a6a4a'] },
+  alpine: { buildings: ['cabin', 'snow_peak', 'chapel'], animals: ['goat', 'eagle', 'fox'], buildingColors: ['#9090a8', '#a0a0b8', '#8080a0'] },
+  rooftops: { buildings: ['water_tower', 'chimney', 'antenna'], animals: ['pigeon', 'bat', 'crow'], buildingColors: ['#4a5a6a', '#3a4a5a', '#5a6a7a'] },
+  countryside: { buildings: ['barn', 'windmill', 'silo'], animals: ['cow', 'horse', 'rooster'], buildingColors: ['#c8a060', '#b89050', '#d8b070'] },
+  space_station: { buildings: ['module', 'antenna', 'solar_panel'], animals: ['alien_creature', 'space_cat', 'robot_bird'], buildingColors: ['#3a4a6a', '#2a3a5a', '#4a5a7a'] },
+  volcano: { buildings: ['lava_rock', 'ruins', 'smoke_tower'], animals: ['snake', 'lizard', 'crow'], buildingColors: ['#8a3a1a', '#7a2a0a', '#9a4a2a'] },
+  default: { buildings: ['house', 'tree', 'fence'], animals: ['bird', 'rabbit', 'cat'], buildingColors: ['#607080', '#506070', '#708090'] },
 };
 
 const getThemeConfig = (theme: string) => {
@@ -931,7 +931,7 @@ const generateBackgroundElements = (level: number, levelLength: number, theme: s
       });
     } else {
       const aType = config.animals[Math.floor(Math.random() * config.animals.length)];
-      const isSkyAnimal = ['bird','pigeon','crow','seagull','eagle','bat','pelican','robot_bird'].includes(aType);
+      const isSkyAnimal = ['bird', 'pigeon', 'crow', 'seagull', 'eagle', 'bat', 'pelican', 'robot_bird'].includes(aType);
       elements.push({
         kind: 'animal',
         subtype: aType,
@@ -939,7 +939,7 @@ const generateBackgroundElements = (level: number, levelLength: number, theme: s
         scale: 1.4 + Math.random() * 0.6,
         parallax: isSkyAnimal ? 0.1 + Math.random() * 0.08 : 0.25 + Math.random() * 0.1,
         phase: Math.random() * Math.PI * 2,
-        waves: ['cat','stray_cat','dog','rabbit','bear','alien_creature','cow','horse','deer'].includes(aType),
+        waves: ['cat', 'stray_cat', 'dog', 'rabbit', 'bear', 'alien_creature', 'cow', 'horse', 'deer'].includes(aType),
         isSkyAnimal,
         skyY: isSkyAnimal ? -(120 + Math.random() * 160) : 0, // pixels above ground
       });
@@ -979,7 +979,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
     const handleFullscreenChange = () => {
       setIsFullscreen(!!document.fullscreenElement);
     };
-    
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && document.fullscreenElement) {
         document.exitFullscreen();
@@ -1103,22 +1103,22 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
     for (let i = 0; i < segments; i++) {
       // Progressive difficulty for holes - size increases with level
       // Level 1: ~20% hole, Level 50: ~70% hole
-      const baseHoleSize = 0.2 + (Math.min(level, 50) * 0.01); 
+      const baseHoleSize = 0.2 + (Math.min(level, 50) * 0.01);
       const holeChance = Math.min(0.25, 0.015 + (levelDesign.difficulty * 0.01));
       if (i > 3 && i < segments - 3 && Math.random() < holeChance) {
         // Hole size based on level
         const holeWidth = segmentWidth * baseHoleSize;
         const holeOffset = (segmentWidth - holeWidth) / 2;
-        
+
         // Add hole to holes array - this is what kills the player!
         game.holes.push({ x: i * segmentWidth + holeOffset, width: holeWidth, y: canvas.height - 40 });
-        
+
         // Add platform to the LEFT of the hole (before hole)
         game.platforms.push({ x: i * segmentWidth, y: canvas.height - 40, width: holeOffset, height: 40, color: '#1c3a2a', isGround: true });
-        
+
         // Add platform to the RIGHT of the hole (after hole)
         game.platforms.push({ x: i * segmentWidth + holeOffset + holeWidth, y: canvas.height - 40, width: segmentWidth - holeOffset - holeWidth, height: 40, color: '#1c3a2a', isGround: true });
-        
+
         // DON'T add the full segment - that's the hole!
         continue;
       }
@@ -1147,16 +1147,17 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
         attempts++;
         // Spread platforms throughout the ENTIRE level
         px = 300 + Math.random() * (levelLength - 600);
-        
+
         // ALL platforms must be reachable - not too high!
-        // Keep platforms in the lower 2/3 of screen so double jump can reach
-        py = 150 + Math.random() * (canvas.height - 200);
+        // Keep platforms in the lower section of screen so double jump can reach
+        const minPy = Math.max(50, canvas.height - 280);
+        py = minPy + Math.random() * (canvas.height - 100 - minPy);
 
         // Ensure vertical variation - but always reachable!
         if (i > 0 && Math.random() < 0.4) {
           // Only go up by max jump height
           const prevY = game.platforms[game.platforms.length - 1].y;
-          py = Math.max(150, Math.min(prevY - 50 - Math.random() * 100, canvas.height - 100));
+          py = Math.max(minPy, Math.min(prevY - 50 - Math.random() * 100, canvas.height - 100));
         }
 
         const bufferX = minGap;
@@ -1177,13 +1178,13 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
     let enemiesPlaced = 0;
     let spawnAttempts = 0;
     const minEnemyDistance = 250; // Enemies closer together for more action
-    
+
     while (enemiesPlaced < enemyCount && spawnAttempts < 300) {
       spawnAttempts++;
       // Spread enemies throughout the ENTIRE level, not just the end
       const randomSegment = Math.floor(Math.random() * (game.platforms.length - 5)) + 3;
       const plat = game.platforms[randomSegment];
-      
+
       // Skip some ground platforms but not all
       if (plat.isGround && Math.random() > 0.5) continue;
 
@@ -1195,7 +1196,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
         return Math.abs(other.x - ex) < minEnemyDistance && Math.abs(other.y - (plat.y - 40)) < 80;
       });
       if (tooClose) continue;
-      
+
       // Random enemy type
       const enemyType = Math.floor(Math.random() * 3);
       game.enemies.push({
@@ -1217,10 +1218,10 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
     while (placedFish < fishCount) {
       const randomPlatIndex = Math.floor(Math.random() * game.platforms.length);
       const plat = game.platforms[randomPlatIndex];
-      
+
       // 30% flying coins, 70% on/near platforms
       const isFlying = flyingItems && Math.random() > 0.7;
-      
+
       let fx, fy;
       if (isFlying) {
         // Flying coins - but reachable with double jump!
@@ -1234,18 +1235,18 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
         // Just above the platform - always reachable
         fy = plat.y - 30 - Math.random() * 30;
       }
-      
+
       // Keep everything reachable
       fy = Math.max(canvas.height - 300, Math.min(fy, canvas.height - 60));
       const clampedFx = Math.max(50, Math.min(fx, levelLength - 50));
 
       let fishCollision = false;
       const fishBounds = { x: clampedFx, y: fy, width: 24, height: 14 };
-      
+
       // Check if fish would spawn inside a platform
       for (const p of game.platforms) {
-        if (fishBounds.x < p.x + p.width && fishBounds.x + fishBounds.width > p.x && 
-            fishBounds.y < p.y + p.height && fishBounds.y + fishBounds.height > p.y) {
+        if (fishBounds.x < p.x + p.width && fishBounds.x + fishBounds.width > p.x &&
+          fishBounds.y < p.y + p.height && fishBounds.y + fishBounds.height > p.y) {
           fishCollision = true;
           break;
         }
@@ -1254,7 +1255,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
         game.fishes.push({
           x: clampedFx,
           y: fy,
-          width: 24, 
+          width: 24,
           height: 14,
           collected: false,
           isFlying: isFlying,
@@ -1345,7 +1346,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
     // Fixed internal resolution 1280x720
     canvas.width = 1280;
     canvas.height = 720;
-    
+
     // CSS handles all scaling - object-fit keeps aspect ratio with letterboxing
     canvas.style.width = '100%';
     canvas.style.height = '100%';
@@ -1530,11 +1531,11 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
       let isOverHole = false;
       const playerFeetX = game.player.x + game.player.width / 2;
       const playerFeetY = game.player.y + game.player.height;
-      
+
       game.holes.forEach(hole => {
         // Player center is within hole horizontal bounds AND at ground level
         if (playerFeetX > hole.x && playerFeetX < hole.x + hole.width &&
-            playerFeetY >= hole.y - 5 && playerFeetY <= hole.y + 50) {
+          playerFeetY >= hole.y - 5 && playerFeetY <= hole.y + 50) {
           isOverHole = true;
         }
       });
@@ -1546,10 +1547,10 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
           const playerBottom = game.player.y + game.player.height;
           const playerRight = game.player.x + game.player.width;
           const playerLeft = game.player.x;
-          
+
           // More lenient check - player must be horizontally overlapping AND vertically close to platform top
           if (playerRight > p.x + 5 && playerLeft < p.x + p.width - 5 &&
-              playerBottom >= p.y - 5 && playerBottom <= p.y + 25) {
+            playerBottom >= p.y - 5 && playerBottom <= p.y + 25) {
             game.player.y = p.y - game.player.height;
             game.player.velocityY = 0;
             game.player.isJumping = false;
@@ -1562,7 +1563,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
       // Enemies - with better null safety
       game.enemies.forEach(e => {
         if (e.x < -500 || !game.platforms[e.platform]) return;
-        
+
         // Only move enemy if platform exists
         const p = game.platforms[e.platform];
         if (p) {
@@ -1575,17 +1576,17 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
           // More strict collision check - must have CLEAR overlap
           const overlapX = game.player.x + game.player.width > e.x + 5 && game.player.x < e.x + e.width - 5;
           const overlapY = game.player.y + game.player.height > e.y + 5 && game.player.y < e.y + e.height - 5;
-          
+
           if (overlapX && overlapY) {
             const playerBottom = game.player.y + game.player.height;
             const enemyTop = e.y;
             const enemyCenterY = e.y + e.height / 2;
-            
+
             // Check if player is falling AND above enemy's center - then defeat enemy
             // Otherwise, player takes damage
             const isAboveEnemy = playerBottom < enemyCenterY;
             const isFalling = game.player.velocityY > 0;
-            
+
             if (isFalling && isAboveEnemy && playerBottom < enemyTop + 20) {
               // Player jumps on enemy - defeat enemy!
               const enemyCenterXBeforeRemove = e.x + e.width / 2;
@@ -1605,7 +1606,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
             } else {
               // Player touched enemy from side or below - die
               game.lives--;
-              game.player.invincible = true; 
+              game.player.invincible = true;
               game.player.invincibleTimer = 90;
               game.player.x = Math.max(100, game.player.x - 150);
               game.player.y = Math.max(50, game.player.y - 50);
@@ -1649,14 +1650,14 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
             f.hoverOffset = (f.hoverOffset || 0) + 0.03;
             f.y = f.baseY + Math.sin(f.hoverOffset) * 5;
           }
-          
+
           // Check collision with player - collect coin
           if (game.player.x < f.x + f.width && game.player.x + game.player.width > f.x &&
-              game.player.y < f.y + f.height && game.player.y + game.player.height > f.y) {
+            game.player.y < f.y + f.height && game.player.y + game.player.height > f.y) {
             f.collected = true;
             game.score += 50;
             game.totalCollectedInLevel++;
-            
+
             // Every 10 fish = 5 coins + 1 ammo!
             if (game.totalCollectedInLevel % 10 === 0) {
               game.ammo += 1;
@@ -1665,7 +1666,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
               // Show message
               game.floatingTexts.push({ x: f.x, y: f.y - 30, text: '+5 MYNT! +1 SKOTT!', life: 60, color: '#ffd700' });
             }
-            
+
             // Floating score text
             game.floatingTexts.push({ x: f.x, y: f.y, text: '+50', life: 40, color: '#ffd700' });
           }
@@ -1681,20 +1682,20 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
       gradient.addColorStop(1, '#E0F7FF');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
+
       // Draw clouds
       ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
       for (let i = 0; i < 5; i++) {
         const x = (i * 200 + game.scrollX / 3) % (canvas.width + 300) - 100;
         const y = 50 + (i * 30) % 100;
-        
+
         ctx.beginPath();
         ctx.arc(x, y, 20, 0, Math.PI * 2);
         ctx.arc(x + 25, y - 10, 25, 0, Math.PI * 2);
         ctx.arc(x + 50, y, 20, 0, Math.PI * 2);
         ctx.fill();
       }
-      
+
       // Draw background elements (buildings & animals) with parallax
       const now = Date.now();
       ctx.save();
@@ -1715,11 +1716,11 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
             case 'skyscraper': {
               const w = 60 * s, h = 220 * s;
               ctx.fillStyle = c;
-              ctx.fillRect(-w/2, -h, w, h);
+              ctx.fillRect(-w / 2, -h, w, h);
               ctx.fillStyle = 'rgba(255,255,180,0.5)';
-              for (let wy = -h + 10*s; wy < -10*s; wy += 22*s) {
-                for (let wx = -w/2 + 6*s; wx < w/2 - 6*s; wx += 16*s) {
-                  ctx.fillRect(wx, wy, 8*s, 12*s);
+              for (let wy = -h + 10 * s; wy < -10 * s; wy += 22 * s) {
+                for (let wx = -w / 2 + 6 * s; wx < w / 2 - 6 * s; wx += 16 * s) {
+                  ctx.fillRect(wx, wy, 8 * s, 12 * s);
                 }
               }
               break;
@@ -1727,11 +1728,11 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
             case 'apartment': {
               const w = 80 * s, h = 120 * s;
               ctx.fillStyle = c;
-              ctx.fillRect(-w/2, -h, w, h);
+              ctx.fillRect(-w / 2, -h, w, h);
               ctx.fillStyle = 'rgba(255,255,150,0.45)';
               for (let row = 0; row < 4; row++) {
                 for (let col = 0; col < 3; col++) {
-                  ctx.fillRect(-w/2 + 10*s + col*22*s, -h + 15*s + row*26*s, 12*s, 16*s);
+                  ctx.fillRect(-w / 2 + 10 * s + col * 22 * s, -h + 15 * s + row * 26 * s, 12 * s, 16 * s);
                 }
               }
               break;
@@ -1739,128 +1740,128 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
             case 'house': {
               const w = 70 * s, h = 60 * s;
               ctx.fillStyle = c;
-              ctx.fillRect(-w/2, -h, w, h);
+              ctx.fillRect(-w / 2, -h, w, h);
               ctx.fillStyle = '#8B3A3A';
               ctx.beginPath();
-              ctx.moveTo(-w/2 - 5*s, -h);
-              ctx.lineTo(0, -h - 35*s);
-              ctx.lineTo(w/2 + 5*s, -h);
+              ctx.moveTo(-w / 2 - 5 * s, -h);
+              ctx.lineTo(0, -h - 35 * s);
+              ctx.lineTo(w / 2 + 5 * s, -h);
               ctx.closePath(); ctx.fill();
               ctx.fillStyle = 'rgba(255,255,150,0.6)';
-              ctx.fillRect(-w/2 + 10*s, -h + 12*s, 18*s, 20*s);
-              ctx.fillRect(w/2 - 28*s, -h + 12*s, 18*s, 20*s);
+              ctx.fillRect(-w / 2 + 10 * s, -h + 12 * s, 18 * s, 20 * s);
+              ctx.fillRect(w / 2 - 28 * s, -h + 12 * s, 18 * s, 20 * s);
               ctx.fillStyle = '#5a3a1a';
-              ctx.fillRect(-8*s, -h + h - 26*s, 16*s, 26*s);
+              ctx.fillRect(-8 * s, -h + h - 26 * s, 16 * s, 26 * s);
               break;
             }
             case 'barn': {
               const w = 90 * s, h = 80 * s;
               ctx.fillStyle = '#a03020';
-              ctx.fillRect(-w/2, -h, w, h);
+              ctx.fillRect(-w / 2, -h, w, h);
               ctx.fillStyle = '#802010';
               ctx.beginPath();
-              ctx.moveTo(-w/2, -h);
-              ctx.lineTo(0, -h - 40*s);
-              ctx.lineTo(w/2, -h);
+              ctx.moveTo(-w / 2, -h);
+              ctx.lineTo(0, -h - 40 * s);
+              ctx.lineTo(w / 2, -h);
               ctx.closePath(); ctx.fill();
               ctx.fillStyle = 'rgba(0,0,0,0.3)';
-              ctx.fillRect(-15*s, -55*s, 30*s, 55*s);
+              ctx.fillRect(-15 * s, -55 * s, 30 * s, 55 * s);
               break;
             }
             case 'windmill': {
               const h = 100 * s;
               ctx.fillStyle = c;
               ctx.beginPath();
-              ctx.moveTo(-12*s, 0); ctx.lineTo(-18*s, -h); ctx.lineTo(18*s, -h); ctx.lineTo(12*s, 0);
+              ctx.moveTo(-12 * s, 0); ctx.lineTo(-18 * s, -h); ctx.lineTo(18 * s, -h); ctx.lineTo(12 * s, 0);
               ctx.closePath(); ctx.fill();
               ctx.fillStyle = '#c8b060';
               for (let a = 0; a < 4; a++) {
                 ctx.save();
                 ctx.translate(0, -h);
                 ctx.rotate(a * Math.PI / 2 + now / 2000);
-                ctx.fillRect(-4*s, -35*s, 8*s, 35*s);
+                ctx.fillRect(-4 * s, -35 * s, 8 * s, 35 * s);
                 ctx.restore();
               }
               break;
             }
             case 'lighthouse': {
-              const w = 28*s, h = 130*s;
+              const w = 28 * s, h = 130 * s;
               ctx.fillStyle = '#f0f0f0';
-              ctx.fillRect(-w/2, -h, w, h);
+              ctx.fillRect(-w / 2, -h, w, h);
               for (let i = 0; i < 5; i++) {
-                ctx.fillStyle = i%2===0 ? '#cc3333' : '#f0f0f0';
-                ctx.fillRect(-w/2, -h + i*26*s, w, 13*s);
+                ctx.fillStyle = i % 2 === 0 ? '#cc3333' : '#f0f0f0';
+                ctx.fillRect(-w / 2, -h + i * 26 * s, w, 13 * s);
               }
               ctx.fillStyle = '#ffff88';
               ctx.beginPath();
-              ctx.arc(0, -h - 10*s, 14*s, 0, Math.PI*2);
+              ctx.arc(0, -h - 10 * s, 14 * s, 0, Math.PI * 2);
               ctx.fill();
               break;
             }
             case 'factory': {
-              const w = 100*s, h = 70*s;
+              const w = 100 * s, h = 70 * s;
               ctx.fillStyle = c;
-              ctx.fillRect(-w/2, -h, w, h);
+              ctx.fillRect(-w / 2, -h, w, h);
               ctx.fillStyle = '#888';
-              ctx.fillRect(-w/2+10*s, -h-60*s, 18*s, 60*s);
-              ctx.fillRect(w/2-28*s, -h-45*s, 18*s, 45*s);
+              ctx.fillRect(-w / 2 + 10 * s, -h - 60 * s, 18 * s, 60 * s);
+              ctx.fillRect(w / 2 - 28 * s, -h - 45 * s, 18 * s, 45 * s);
               ctx.fillStyle = 'rgba(200,200,200,0.4)';
               ctx.beginPath();
-              ctx.ellipse(-w/2+19*s, -h-60*s, 14*s, 20*s, 0, 0, Math.PI*2);
+              ctx.ellipse(-w / 2 + 19 * s, -h - 60 * s, 14 * s, 20 * s, 0, 0, Math.PI * 2);
               ctx.fill();
               break;
             }
             case 'crane': {
               ctx.fillStyle = '#e8b830';
-              ctx.fillRect(-6*s, -200*s, 12*s, 200*s);
-              ctx.fillRect(-6*s, -200*s, 90*s, 10*s);
-              ctx.fillRect(60*s, -200*s, 8*s, 60*s);
+              ctx.fillRect(-6 * s, -200 * s, 12 * s, 200 * s);
+              ctx.fillRect(-6 * s, -200 * s, 90 * s, 10 * s);
+              ctx.fillRect(60 * s, -200 * s, 8 * s, 60 * s);
               ctx.strokeStyle = '#c8a020';
-              ctx.lineWidth = 2*s;
+              ctx.lineWidth = 2 * s;
               ctx.beginPath();
-              ctx.moveTo(0, -195*s); ctx.lineTo(65*s, -143*s);
+              ctx.moveTo(0, -195 * s); ctx.lineTo(65 * s, -143 * s);
               ctx.stroke();
               break;
             }
             case 'water_tower': {
               ctx.fillStyle = c;
               ctx.beginPath();
-              ctx.ellipse(0, -90*s, 30*s, 35*s, 0, 0, Math.PI*2);
+              ctx.ellipse(0, -90 * s, 30 * s, 35 * s, 0, 0, Math.PI * 2);
               ctx.fill();
               ctx.fillStyle = '#5a4a3a';
               for (let i = -2; i <= 2; i++) {
-                ctx.fillRect(i*12*s-3*s, -55*s, 6*s, 55*s);
+                ctx.fillRect(i * 12 * s - 3 * s, -55 * s, 6 * s, 55 * s);
               }
               break;
             }
             case 'cabin': {
-              const w = 65*s, h = 55*s;
+              const w = 65 * s, h = 55 * s;
               ctx.fillStyle = '#8B6340';
-              ctx.fillRect(-w/2, -h, w, h);
+              ctx.fillRect(-w / 2, -h, w, h);
               ctx.fillStyle = '#5a3010';
               for (let i = 0; i < 5; i++) {
-                ctx.fillRect(-w/2, -h + i*11*s, w, 5*s);
+                ctx.fillRect(-w / 2, -h + i * 11 * s, w, 5 * s);
               }
               ctx.fillStyle = '#5a3a1a';
               ctx.beginPath();
-              ctx.moveTo(-w/2-5*s,-h); ctx.lineTo(0,-h-28*s); ctx.lineTo(w/2+5*s,-h);
+              ctx.moveTo(-w / 2 - 5 * s, -h); ctx.lineTo(0, -h - 28 * s); ctx.lineTo(w / 2 + 5 * s, -h);
               ctx.closePath(); ctx.fill();
               break;
             }
             case 'billboard': {
               ctx.fillStyle = '#444';
-              ctx.fillRect(-4*s, -120*s, 8*s, 120*s);
+              ctx.fillRect(-4 * s, -120 * s, 8 * s, 120 * s);
               ctx.fillStyle = '#fff';
-              ctx.fillRect(-45*s, -120*s, 90*s, 55*s);
-              ctx.fillStyle = ['#ff4444','#4444ff','#44aa44','#ffaa00'][Math.floor(el.x/100)%4];
-              ctx.fillRect(-40*s, -115*s, 80*s, 45*s);
+              ctx.fillRect(-45 * s, -120 * s, 90 * s, 55 * s);
+              ctx.fillStyle = ['#ff4444', '#4444ff', '#44aa44', '#ffaa00'][Math.floor(el.x / 100) % 4];
+              ctx.fillRect(-40 * s, -115 * s, 80 * s, 45 * s);
               break;
             }
             default: {
               // Generic box building
-              const w = 50*s, h = 80*s;
+              const w = 50 * s, h = 80 * s;
               ctx.fillStyle = c;
-              ctx.fillRect(-w/2, -h, w, h);
+              ctx.fillRect(-w / 2, -h, w, h);
               break;
             }
           }
@@ -1879,632 +1880,632 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
             case 'cat': case 'stray_cat': case 'space_cat': {
               const bc = el.subtype === 'space_cat' ? '#b0b8cc' : el.subtype === 'stray_cat' ? '#aa8866' : '#778899';
               // Body
-              ctx.beginPath(); ctx.ellipse(0, -28*s, 16*s, 20*s, 0, 0, Math.PI*2); outlineFill(bc);
+              ctx.beginPath(); ctx.ellipse(0, -28 * s, 16 * s, 20 * s, 0, 0, Math.PI * 2); outlineFill(bc);
               // Head
-              ctx.beginPath(); ctx.ellipse(0, -54*s, 14*s, 13*s, 0, 0, Math.PI*2); outlineFill(bc);
+              ctx.beginPath(); ctx.ellipse(0, -54 * s, 14 * s, 13 * s, 0, 0, Math.PI * 2); outlineFill(bc);
               // Ears
-              ctx.beginPath(); ctx.moveTo(-12*s,-64*s); ctx.lineTo(-16*s,-78*s); ctx.lineTo(-4*s,-64*s); outlineFill('#cc9966');
-              ctx.beginPath(); ctx.moveTo(12*s,-64*s); ctx.lineTo(16*s,-78*s); ctx.lineTo(4*s,-64*s); outlineFill('#cc9966');
+              ctx.beginPath(); ctx.moveTo(-12 * s, -64 * s); ctx.lineTo(-16 * s, -78 * s); ctx.lineTo(-4 * s, -64 * s); outlineFill('#cc9966');
+              ctx.beginPath(); ctx.moveTo(12 * s, -64 * s); ctx.lineTo(16 * s, -78 * s); ctx.lineTo(4 * s, -64 * s); outlineFill('#cc9966');
               // Eyes
-              ctx.beginPath(); ctx.arc(-5*s,-55*s,4*s,0,Math.PI*2); outlineFill('white');
-              ctx.beginPath(); ctx.arc(5*s,-55*s,4*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='#33cc33'; ctx.beginPath(); ctx.arc(-5*s,-55*s,2.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#33cc33'; ctx.beginPath(); ctx.arc(5*s,-55*s,2.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(-5*s,-55*s,1.2*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(5*s,-55*s,1.2*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(-5 * s, -55 * s, 4 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.beginPath(); ctx.arc(5 * s, -55 * s, 4 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = '#33cc33'; ctx.beginPath(); ctx.arc(-5 * s, -55 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#33cc33'; ctx.beginPath(); ctx.arc(5 * s, -55 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(-5 * s, -55 * s, 1.2 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(5 * s, -55 * s, 1.2 * s, 0, Math.PI * 2); ctx.fill();
               // Nose + smile
-              ctx.fillStyle='#ff88aa'; ctx.beginPath(); ctx.arc(0,-51*s,2.5*s,0,Math.PI*2); ctx.fill();
-              ctx.strokeStyle='rgba(0,0,0,0.5)'; ctx.lineWidth=1.5*s; ctx.beginPath(); ctx.arc(-3*s,-49*s,3*s,0,Math.PI); ctx.stroke();
-              ctx.beginPath(); ctx.arc(3*s,-49*s,3*s,0,Math.PI); ctx.stroke();
+              ctx.fillStyle = '#ff88aa'; ctx.beginPath(); ctx.arc(0, -51 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.strokeStyle = 'rgba(0,0,0,0.5)'; ctx.lineWidth = 1.5 * s; ctx.beginPath(); ctx.arc(-3 * s, -49 * s, 3 * s, 0, Math.PI); ctx.stroke();
+              ctx.beginPath(); ctx.arc(3 * s, -49 * s, 3 * s, 0, Math.PI); ctx.stroke();
               // Whiskers
-              ctx.strokeStyle='rgba(0,0,0,0.4)'; ctx.lineWidth=1.2*s;
-              ctx.beginPath(); ctx.moveTo(-3*s,-51*s); ctx.lineTo(-18*s,-50*s); ctx.stroke();
-              ctx.beginPath(); ctx.moveTo(-3*s,-51*s); ctx.lineTo(-18*s,-53*s); ctx.stroke();
-              ctx.beginPath(); ctx.moveTo(3*s,-51*s); ctx.lineTo(18*s,-50*s); ctx.stroke();
-              ctx.beginPath(); ctx.moveTo(3*s,-51*s); ctx.lineTo(18*s,-53*s); ctx.stroke();
+              ctx.strokeStyle = 'rgba(0,0,0,0.4)'; ctx.lineWidth = 1.2 * s;
+              ctx.beginPath(); ctx.moveTo(-3 * s, -51 * s); ctx.lineTo(-18 * s, -50 * s); ctx.stroke();
+              ctx.beginPath(); ctx.moveTo(-3 * s, -51 * s); ctx.lineTo(-18 * s, -53 * s); ctx.stroke();
+              ctx.beginPath(); ctx.moveTo(3 * s, -51 * s); ctx.lineTo(18 * s, -50 * s); ctx.stroke();
+              ctx.beginPath(); ctx.moveTo(3 * s, -51 * s); ctx.lineTo(18 * s, -53 * s); ctx.stroke();
               // Left arm (static)
-              ctx.beginPath(); ctx.moveTo(-14*s,-36*s); ctx.lineTo(-22*s,-22*s); ctx.lineTo(-14*s,-18*s); outlineFill(bc);
+              ctx.beginPath(); ctx.moveTo(-14 * s, -36 * s); ctx.lineTo(-22 * s, -22 * s); ctx.lineTo(-14 * s, -18 * s); outlineFill(bc);
               // Right arm WAVING
-              ctx.save(); ctx.translate(14*s,-36*s); ctx.rotate(waveArm);
-              ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(16*s,-14*s); ctx.lineTo(10*s,-8*s); outlineFill(bc);
+              ctx.save(); ctx.translate(14 * s, -36 * s); ctx.rotate(waveArm);
+              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(16 * s, -14 * s); ctx.lineTo(10 * s, -8 * s); outlineFill(bc);
               ctx.restore();
               // Tail
-              ctx.strokeStyle=bc; ctx.lineWidth=5*s; ctx.lineCap='round';
-              ctx.beginPath(); ctx.moveTo(-14*s,-14*s); ctx.quadraticCurveTo(-32*s,0*s,-26*s,16*s); ctx.stroke();
-              ctx.strokeStyle='rgba(0,0,0,0.3)'; ctx.lineWidth=1.5*s;
-              ctx.beginPath(); ctx.moveTo(-14*s,-14*s); ctx.quadraticCurveTo(-32*s,0*s,-26*s,16*s); ctx.stroke();
+              ctx.strokeStyle = bc; ctx.lineWidth = 5 * s; ctx.lineCap = 'round';
+              ctx.beginPath(); ctx.moveTo(-14 * s, -14 * s); ctx.quadraticCurveTo(-32 * s, 0 * s, -26 * s, 16 * s); ctx.stroke();
+              ctx.strokeStyle = 'rgba(0,0,0,0.3)'; ctx.lineWidth = 1.5 * s;
+              ctx.beginPath(); ctx.moveTo(-14 * s, -14 * s); ctx.quadraticCurveTo(-32 * s, 0 * s, -26 * s, 16 * s); ctx.stroke();
               break;
             }
 
             case 'dog': {
               // Body
-              ctx.beginPath(); ctx.ellipse(0,-26*s,18*s,18*s,0,0,Math.PI*2); outlineFill('#c8943a');
+              ctx.beginPath(); ctx.ellipse(0, -26 * s, 18 * s, 18 * s, 0, 0, Math.PI * 2); outlineFill('#c8943a');
               // Head
-              ctx.beginPath(); ctx.ellipse(0,-52*s,15*s,14*s,0,0,Math.PI*2); outlineFill('#c8943a');
+              ctx.beginPath(); ctx.ellipse(0, -52 * s, 15 * s, 14 * s, 0, 0, Math.PI * 2); outlineFill('#c8943a');
               // Floppy ears
-              ctx.beginPath(); ctx.ellipse(-17*s,-52*s,6*s,12*s,-.4,0,Math.PI*2); outlineFill('#a07028');
-              ctx.beginPath(); ctx.ellipse(17*s,-52*s,6*s,12*s,.4,0,Math.PI*2); outlineFill('#a07028');
+              ctx.beginPath(); ctx.ellipse(-17 * s, -52 * s, 6 * s, 12 * s, -.4, 0, Math.PI * 2); outlineFill('#a07028');
+              ctx.beginPath(); ctx.ellipse(17 * s, -52 * s, 6 * s, 12 * s, .4, 0, Math.PI * 2); outlineFill('#a07028');
               // Snout
-              ctx.beginPath(); ctx.ellipse(0,-47*s,8*s,6*s,0,0,Math.PI*2); outlineFill('#e8b060');
+              ctx.beginPath(); ctx.ellipse(0, -47 * s, 8 * s, 6 * s, 0, 0, Math.PI * 2); outlineFill('#e8b060');
               // Nose
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.ellipse(0,-50*s,4*s,3*s,0,0,Math.PI*2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.ellipse(0, -50 * s, 4 * s, 3 * s, 0, 0, Math.PI * 2); ctx.fill();
               // Eyes
-              ctx.beginPath(); ctx.arc(-6*s,-56*s,4.5*s,0,Math.PI*2); outlineFill('white');
-              ctx.beginPath(); ctx.arc(6*s,-56*s,4.5*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='#5533aa'; ctx.beginPath(); ctx.arc(-6*s,-56*s,2.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#5533aa'; ctx.beginPath(); ctx.arc(6*s,-56*s,2.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(-6*s,-56*s,1.2*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(6*s,-56*s,1.2*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(-6 * s, -56 * s, 4.5 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.beginPath(); ctx.arc(6 * s, -56 * s, 4.5 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = '#5533aa'; ctx.beginPath(); ctx.arc(-6 * s, -56 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#5533aa'; ctx.beginPath(); ctx.arc(6 * s, -56 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(-6 * s, -56 * s, 1.2 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(6 * s, -56 * s, 1.2 * s, 0, Math.PI * 2); ctx.fill();
               // Tongue
-              ctx.fillStyle='#ff6688'; ctx.beginPath(); ctx.ellipse(0,-43*s,4*s,5*s,0,0,Math.PI*2); ctx.fill();
+              ctx.fillStyle = '#ff6688'; ctx.beginPath(); ctx.ellipse(0, -43 * s, 4 * s, 5 * s, 0, 0, Math.PI * 2); ctx.fill();
               // Arms
-              ctx.beginPath(); ctx.moveTo(-16*s,-34*s); ctx.lineTo(-26*s,-18*s); ctx.lineTo(-18*s,-14*s); outlineFill('#c8943a');
+              ctx.beginPath(); ctx.moveTo(-16 * s, -34 * s); ctx.lineTo(-26 * s, -18 * s); ctx.lineTo(-18 * s, -14 * s); outlineFill('#c8943a');
               // Waving arm
-              ctx.save(); ctx.translate(16*s,-34*s); ctx.rotate(waveArm);
-              ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(22*s,-16*s); ctx.lineTo(14*s,-10*s); outlineFill('#c8943a');
+              ctx.save(); ctx.translate(16 * s, -34 * s); ctx.rotate(waveArm);
+              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(22 * s, -16 * s); ctx.lineTo(14 * s, -10 * s); outlineFill('#c8943a');
               ctx.restore();
               // Tail wagging
-              const dogTailWag = Math.sin(now/150 + el.phase)*0.7;
-              ctx.strokeStyle='#a07028'; ctx.lineWidth=6*s; ctx.lineCap='round';
-              ctx.save(); ctx.translate(-16*s,-20*s); ctx.rotate(dogTailWag);
-              ctx.beginPath(); ctx.moveTo(0,0); ctx.quadraticCurveTo(-18*s,-10*s,-14*s,8*s); ctx.stroke();
+              const dogTailWag = Math.sin(now / 150 + el.phase) * 0.7;
+              ctx.strokeStyle = '#a07028'; ctx.lineWidth = 6 * s; ctx.lineCap = 'round';
+              ctx.save(); ctx.translate(-16 * s, -20 * s); ctx.rotate(dogTailWag);
+              ctx.beginPath(); ctx.moveTo(0, 0); ctx.quadraticCurveTo(-18 * s, -10 * s, -14 * s, 8 * s); ctx.stroke();
               ctx.restore();
               break;
             }
 
             case 'rabbit': {
               // Body
-              ctx.beginPath(); ctx.ellipse(0,-26*s,16*s,20*s,0,0,Math.PI*2); outlineFill('#e8ddd0');
+              ctx.beginPath(); ctx.ellipse(0, -26 * s, 16 * s, 20 * s, 0, 0, Math.PI * 2); outlineFill('#e8ddd0');
               // Head
-              ctx.beginPath(); ctx.ellipse(0,-52*s,13*s,13*s,0,0,Math.PI*2); outlineFill('#e8ddd0');
+              ctx.beginPath(); ctx.ellipse(0, -52 * s, 13 * s, 13 * s, 0, 0, Math.PI * 2); outlineFill('#e8ddd0');
               // Long ears
-              ctx.beginPath(); ctx.ellipse(-7*s,-72*s,5*s,20*s,-.15,0,Math.PI*2); outlineFill('#e8ddd0');
-              ctx.beginPath(); ctx.ellipse(7*s,-72*s,5*s,20*s,.15,0,Math.PI*2); outlineFill('#e8ddd0');
-              ctx.fillStyle='#ffb0c0'; ctx.beginPath(); ctx.ellipse(-7*s,-72*s,2.5*s,16*s,-.15,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#ffb0c0'; ctx.beginPath(); ctx.ellipse(7*s,-72*s,2.5*s,16*s,.15,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.ellipse(-7 * s, -72 * s, 5 * s, 20 * s, -.15, 0, Math.PI * 2); outlineFill('#e8ddd0');
+              ctx.beginPath(); ctx.ellipse(7 * s, -72 * s, 5 * s, 20 * s, .15, 0, Math.PI * 2); outlineFill('#e8ddd0');
+              ctx.fillStyle = '#ffb0c0'; ctx.beginPath(); ctx.ellipse(-7 * s, -72 * s, 2.5 * s, 16 * s, -.15, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#ffb0c0'; ctx.beginPath(); ctx.ellipse(7 * s, -72 * s, 2.5 * s, 16 * s, .15, 0, Math.PI * 2); ctx.fill();
               // Eyes
-              ctx.beginPath(); ctx.arc(-5*s,-53*s,4*s,0,Math.PI*2); outlineFill('white');
-              ctx.beginPath(); ctx.arc(5*s,-53*s,4*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='#ff3366'; ctx.beginPath(); ctx.arc(-5*s,-53*s,2.3*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#ff3366'; ctx.beginPath(); ctx.arc(5*s,-53*s,2.3*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(-5*s,-53*s,1.2*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(5*s,-53*s,1.2*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(-5 * s, -53 * s, 4 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.beginPath(); ctx.arc(5 * s, -53 * s, 4 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = '#ff3366'; ctx.beginPath(); ctx.arc(-5 * s, -53 * s, 2.3 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#ff3366'; ctx.beginPath(); ctx.arc(5 * s, -53 * s, 2.3 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(-5 * s, -53 * s, 1.2 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(5 * s, -53 * s, 1.2 * s, 0, Math.PI * 2); ctx.fill();
               // Nose
-              ctx.fillStyle='#ff7799'; ctx.beginPath(); ctx.arc(0,-49*s,2.5*s,0,Math.PI*2); ctx.fill();
+              ctx.fillStyle = '#ff7799'; ctx.beginPath(); ctx.arc(0, -49 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
               // Smile
-              ctx.strokeStyle='rgba(0,0,0,0.4)'; ctx.lineWidth=1.5*s;
-              ctx.beginPath(); ctx.arc(-2.5*s,-47*s,2.5*s,0,Math.PI); ctx.stroke();
-              ctx.beginPath(); ctx.arc(2.5*s,-47*s,2.5*s,0,Math.PI); ctx.stroke();
+              ctx.strokeStyle = 'rgba(0,0,0,0.4)'; ctx.lineWidth = 1.5 * s;
+              ctx.beginPath(); ctx.arc(-2.5 * s, -47 * s, 2.5 * s, 0, Math.PI); ctx.stroke();
+              ctx.beginPath(); ctx.arc(2.5 * s, -47 * s, 2.5 * s, 0, Math.PI); ctx.stroke();
               // Left arm
-              ctx.beginPath(); ctx.moveTo(-14*s,-34*s); ctx.lineTo(-22*s,-20*s); ctx.lineTo(-14*s,-16*s); outlineFill('#e8ddd0');
+              ctx.beginPath(); ctx.moveTo(-14 * s, -34 * s); ctx.lineTo(-22 * s, -20 * s); ctx.lineTo(-14 * s, -16 * s); outlineFill('#e8ddd0');
               // Waving arm
-              ctx.save(); ctx.translate(14*s,-34*s); ctx.rotate(waveArm);
-              ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(20*s,-16*s); ctx.lineTo(12*s,-8*s); outlineFill('#e8ddd0');
+              ctx.save(); ctx.translate(14 * s, -34 * s); ctx.rotate(waveArm);
+              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(20 * s, -16 * s); ctx.lineTo(12 * s, -8 * s); outlineFill('#e8ddd0');
               ctx.restore();
               // Fluffy tail
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(-2*s,-8*s,8*s,0,Math.PI*2); ctx.fill();
-              ctx.strokeStyle='rgba(0,0,0,0.2)'; ctx.lineWidth=1.5*s; ctx.stroke();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(-2 * s, -8 * s, 8 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.strokeStyle = 'rgba(0,0,0,0.2)'; ctx.lineWidth = 1.5 * s; ctx.stroke();
               break;
             }
 
             case 'bear': {
               // Body
-              ctx.beginPath(); ctx.ellipse(0,-28*s,22*s,24*s,0,0,Math.PI*2); outlineFill('#6a4020');
+              ctx.beginPath(); ctx.ellipse(0, -28 * s, 22 * s, 24 * s, 0, 0, Math.PI * 2); outlineFill('#6a4020');
               // Head
-              ctx.beginPath(); ctx.ellipse(0,-58*s,18*s,17*s,0,0,Math.PI*2); outlineFill('#6a4020');
+              ctx.beginPath(); ctx.ellipse(0, -58 * s, 18 * s, 17 * s, 0, 0, Math.PI * 2); outlineFill('#6a4020');
               // Round ears
-              ctx.beginPath(); ctx.arc(-14*s,-73*s,8*s,0,Math.PI*2); outlineFill('#6a4020');
-              ctx.beginPath(); ctx.arc(14*s,-73*s,8*s,0,Math.PI*2); outlineFill('#6a4020');
-              ctx.fillStyle='#c8a080'; ctx.beginPath(); ctx.arc(-14*s,-73*s,4.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#c8a080'; ctx.beginPath(); ctx.arc(14*s,-73*s,4.5*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(-14 * s, -73 * s, 8 * s, 0, Math.PI * 2); outlineFill('#6a4020');
+              ctx.beginPath(); ctx.arc(14 * s, -73 * s, 8 * s, 0, Math.PI * 2); outlineFill('#6a4020');
+              ctx.fillStyle = '#c8a080'; ctx.beginPath(); ctx.arc(-14 * s, -73 * s, 4.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#c8a080'; ctx.beginPath(); ctx.arc(14 * s, -73 * s, 4.5 * s, 0, Math.PI * 2); ctx.fill();
               // Snout
-              ctx.beginPath(); ctx.ellipse(0,-53*s,9*s,7*s,0,0,Math.PI*2); outlineFill('#c8a080');
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.ellipse(0,-57*s,5*s,3.5*s,0,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.ellipse(0, -53 * s, 9 * s, 7 * s, 0, 0, Math.PI * 2); outlineFill('#c8a080');
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.ellipse(0, -57 * s, 5 * s, 3.5 * s, 0, 0, Math.PI * 2); ctx.fill();
               // Eyes
-              ctx.beginPath(); ctx.arc(-7*s,-61*s,5*s,0,Math.PI*2); outlineFill('white');
-              ctx.beginPath(); ctx.arc(7*s,-61*s,5*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='#333'; ctx.beginPath(); ctx.arc(-7*s,-61*s,3*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#333'; ctx.beginPath(); ctx.arc(7*s,-61*s,3*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(-5.5*s,-62.5*s,1.2*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(8.5*s,-62.5*s,1.2*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(-7 * s, -61 * s, 5 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.beginPath(); ctx.arc(7 * s, -61 * s, 5 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = '#333'; ctx.beginPath(); ctx.arc(-7 * s, -61 * s, 3 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#333'; ctx.beginPath(); ctx.arc(7 * s, -61 * s, 3 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(-5.5 * s, -62.5 * s, 1.2 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(8.5 * s, -62.5 * s, 1.2 * s, 0, Math.PI * 2); ctx.fill();
               // Friendly smile
-              ctx.strokeStyle='rgba(0,0,0,0.4)'; ctx.lineWidth=2*s; ctx.lineCap='round';
-              ctx.beginPath(); ctx.arc(0,-50*s,5*s,0,Math.PI); ctx.stroke();
+              ctx.strokeStyle = 'rgba(0,0,0,0.4)'; ctx.lineWidth = 2 * s; ctx.lineCap = 'round';
+              ctx.beginPath(); ctx.arc(0, -50 * s, 5 * s, 0, Math.PI); ctx.stroke();
               // Left arm
-              ctx.beginPath(); ctx.moveTo(-20*s,-36*s); ctx.lineTo(-30*s,-18*s); ctx.lineTo(-20*s,-14*s); outlineFill('#6a4020');
+              ctx.beginPath(); ctx.moveTo(-20 * s, -36 * s); ctx.lineTo(-30 * s, -18 * s); ctx.lineTo(-20 * s, -14 * s); outlineFill('#6a4020');
               // WAVING arm
-              ctx.save(); ctx.translate(20*s,-36*s); ctx.rotate(waveArm);
-              ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(26*s,-18*s); ctx.lineTo(18*s,-10*s); outlineFill('#6a4020');
+              ctx.save(); ctx.translate(20 * s, -36 * s); ctx.rotate(waveArm);
+              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(26 * s, -18 * s); ctx.lineTo(18 * s, -10 * s); outlineFill('#6a4020');
               ctx.restore();
               break;
             }
 
             case 'deer': {
-              ctx.beginPath(); ctx.ellipse(0,-26*s,14*s,18*s,0,0,Math.PI*2); outlineFill('#c87840');
-              ctx.beginPath(); ctx.ellipse(0,-50*s,11*s,12*s,0,0,Math.PI*2); outlineFill('#c87840');
+              ctx.beginPath(); ctx.ellipse(0, -26 * s, 14 * s, 18 * s, 0, 0, Math.PI * 2); outlineFill('#c87840');
+              ctx.beginPath(); ctx.ellipse(0, -50 * s, 11 * s, 12 * s, 0, 0, Math.PI * 2); outlineFill('#c87840');
               // Antlers
-              ctx.strokeStyle='#7B3A10'; ctx.lineWidth=3.5*s; ctx.lineCap='round';
-              ctx.beginPath(); ctx.moveTo(-6*s,-60*s); ctx.lineTo(-10*s,-78*s); ctx.stroke();
-              ctx.beginPath(); ctx.moveTo(-10*s,-78*s); ctx.lineTo(-16*s,-70*s); ctx.stroke();
-              ctx.beginPath(); ctx.moveTo(-10*s,-78*s); ctx.lineTo(-5*s,-70*s); ctx.stroke();
-              ctx.beginPath(); ctx.moveTo(6*s,-60*s); ctx.lineTo(10*s,-78*s); ctx.stroke();
-              ctx.beginPath(); ctx.moveTo(10*s,-78*s); ctx.lineTo(16*s,-70*s); ctx.stroke();
-              ctx.beginPath(); ctx.moveTo(10*s,-78*s); ctx.lineTo(5*s,-70*s); ctx.stroke();
+              ctx.strokeStyle = '#7B3A10'; ctx.lineWidth = 3.5 * s; ctx.lineCap = 'round';
+              ctx.beginPath(); ctx.moveTo(-6 * s, -60 * s); ctx.lineTo(-10 * s, -78 * s); ctx.stroke();
+              ctx.beginPath(); ctx.moveTo(-10 * s, -78 * s); ctx.lineTo(-16 * s, -70 * s); ctx.stroke();
+              ctx.beginPath(); ctx.moveTo(-10 * s, -78 * s); ctx.lineTo(-5 * s, -70 * s); ctx.stroke();
+              ctx.beginPath(); ctx.moveTo(6 * s, -60 * s); ctx.lineTo(10 * s, -78 * s); ctx.stroke();
+              ctx.beginPath(); ctx.moveTo(10 * s, -78 * s); ctx.lineTo(16 * s, -70 * s); ctx.stroke();
+              ctx.beginPath(); ctx.moveTo(10 * s, -78 * s); ctx.lineTo(5 * s, -70 * s); ctx.stroke();
               // White belly
-              ctx.beginPath(); ctx.ellipse(0,-28*s,8*s,12*s,0,0,Math.PI*2); outlineFill('#f0e0c8');
+              ctx.beginPath(); ctx.ellipse(0, -28 * s, 8 * s, 12 * s, 0, 0, Math.PI * 2); outlineFill('#f0e0c8');
               // Eyes
-              ctx.beginPath(); ctx.arc(-5*s,-51*s,4*s,0,Math.PI*2); outlineFill('white');
-              ctx.beginPath(); ctx.arc(5*s,-51*s,4*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='#4a2800'; ctx.beginPath(); ctx.arc(-5*s,-51*s,2.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#4a2800'; ctx.beginPath(); ctx.arc(5*s,-51*s,2.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(-4*s,-52*s,1*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(6*s,-52*s,1*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(-5 * s, -51 * s, 4 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.beginPath(); ctx.arc(5 * s, -51 * s, 4 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = '#4a2800'; ctx.beginPath(); ctx.arc(-5 * s, -51 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#4a2800'; ctx.beginPath(); ctx.arc(5 * s, -51 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(-4 * s, -52 * s, 1 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(6 * s, -52 * s, 1 * s, 0, Math.PI * 2); ctx.fill();
               // Nose
-              ctx.fillStyle='#cc5533'; ctx.beginPath(); ctx.arc(0,-46*s,3*s,0,Math.PI*2); ctx.fill();
+              ctx.fillStyle = '#cc5533'; ctx.beginPath(); ctx.arc(0, -46 * s, 3 * s, 0, Math.PI * 2); ctx.fill();
               // WAVING arm/leg
-              ctx.save(); ctx.translate(12*s,-30*s); ctx.rotate(waveArm);
-              ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(18*s,-14*s); ctx.lineTo(12*s,-6*s); outlineFill('#c87840');
+              ctx.save(); ctx.translate(12 * s, -30 * s); ctx.rotate(waveArm);
+              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(18 * s, -14 * s); ctx.lineTo(12 * s, -6 * s); outlineFill('#c87840');
               ctx.restore();
               break;
             }
 
             case 'cow': {
-              ctx.beginPath(); ctx.ellipse(0,-24*s,22*s,20*s,0,0,Math.PI*2); outlineFill('#f5f5f0');
+              ctx.beginPath(); ctx.ellipse(0, -24 * s, 22 * s, 20 * s, 0, 0, Math.PI * 2); outlineFill('#f5f5f0');
               // Black patches
-              ctx.fillStyle='#222'; ctx.beginPath(); ctx.ellipse(-8*s,-30*s,8*s,7*s,-.3,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#222'; ctx.beginPath(); ctx.ellipse(10*s,-18*s,7*s,6*s,.2,0,Math.PI*2); ctx.fill();
+              ctx.fillStyle = '#222'; ctx.beginPath(); ctx.ellipse(-8 * s, -30 * s, 8 * s, 7 * s, -.3, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#222'; ctx.beginPath(); ctx.ellipse(10 * s, -18 * s, 7 * s, 6 * s, .2, 0, Math.PI * 2); ctx.fill();
               // Head
-              ctx.beginPath(); ctx.ellipse(0,-50*s,14*s,13*s,0,0,Math.PI*2); outlineFill('#f5f5f0');
+              ctx.beginPath(); ctx.ellipse(0, -50 * s, 14 * s, 13 * s, 0, 0, Math.PI * 2); outlineFill('#f5f5f0');
               // Ears
-              ctx.beginPath(); ctx.ellipse(-16*s,-50*s,5*s,8*s,0,0,Math.PI*2); outlineFill('#f5f5f0');
-              ctx.beginPath(); ctx.ellipse(16*s,-50*s,5*s,8*s,0,0,Math.PI*2); outlineFill('#f5f5f0');
-              ctx.fillStyle='#ffaabb'; ctx.beginPath(); ctx.ellipse(-16*s,-50*s,3*s,5*s,0,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#ffaabb'; ctx.beginPath(); ctx.ellipse(16*s,-50*s,3*s,5*s,0,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.ellipse(-16 * s, -50 * s, 5 * s, 8 * s, 0, 0, Math.PI * 2); outlineFill('#f5f5f0');
+              ctx.beginPath(); ctx.ellipse(16 * s, -50 * s, 5 * s, 8 * s, 0, 0, Math.PI * 2); outlineFill('#f5f5f0');
+              ctx.fillStyle = '#ffaabb'; ctx.beginPath(); ctx.ellipse(-16 * s, -50 * s, 3 * s, 5 * s, 0, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#ffaabb'; ctx.beginPath(); ctx.ellipse(16 * s, -50 * s, 3 * s, 5 * s, 0, 0, Math.PI * 2); ctx.fill();
               // Snout
-              ctx.beginPath(); ctx.ellipse(0,-45*s,8*s,6*s,0,0,Math.PI*2); outlineFill('#ffccaa');
-              ctx.fillStyle='#885533'; ctx.beginPath(); ctx.arc(-3*s,-46*s,2*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#885533'; ctx.beginPath(); ctx.arc(3*s,-46*s,2*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.ellipse(0, -45 * s, 8 * s, 6 * s, 0, 0, Math.PI * 2); outlineFill('#ffccaa');
+              ctx.fillStyle = '#885533'; ctx.beginPath(); ctx.arc(-3 * s, -46 * s, 2 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#885533'; ctx.beginPath(); ctx.arc(3 * s, -46 * s, 2 * s, 0, Math.PI * 2); ctx.fill();
               // Eyes
-              ctx.beginPath(); ctx.arc(-6*s,-54*s,4.5*s,0,Math.PI*2); outlineFill('white');
-              ctx.beginPath(); ctx.arc(6*s,-54*s,4.5*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='#553300'; ctx.beginPath(); ctx.arc(-6*s,-54*s,2.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#553300'; ctx.beginPath(); ctx.arc(6*s,-54*s,2.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(-5*s,-55*s,1*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(7*s,-55*s,1*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(-6 * s, -54 * s, 4.5 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.beginPath(); ctx.arc(6 * s, -54 * s, 4.5 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = '#553300'; ctx.beginPath(); ctx.arc(-6 * s, -54 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#553300'; ctx.beginPath(); ctx.arc(6 * s, -54 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(-5 * s, -55 * s, 1 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(7 * s, -55 * s, 1 * s, 0, Math.PI * 2); ctx.fill();
               // WAVING arm
-              ctx.save(); ctx.translate(18*s,-30*s); ctx.rotate(waveArm);
-              ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(20*s,-14*s); ctx.lineTo(12*s,-8*s); outlineFill('#f5f5f0');
+              ctx.save(); ctx.translate(18 * s, -30 * s); ctx.rotate(waveArm);
+              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(20 * s, -14 * s); ctx.lineTo(12 * s, -8 * s); outlineFill('#f5f5f0');
               ctx.restore();
               break;
             }
 
             case 'horse': {
-              ctx.beginPath(); ctx.ellipse(0,-26*s,22*s,18*s,0,0,Math.PI*2); outlineFill('#9B5c30');
-              ctx.beginPath(); ctx.ellipse(18*s,-44*s,10*s,18*s,.2,0,Math.PI*2); outlineFill('#9B5c30');
+              ctx.beginPath(); ctx.ellipse(0, -26 * s, 22 * s, 18 * s, 0, 0, Math.PI * 2); outlineFill('#9B5c30');
+              ctx.beginPath(); ctx.ellipse(18 * s, -44 * s, 10 * s, 18 * s, .2, 0, Math.PI * 2); outlineFill('#9B5c30');
               // Mane
-              ctx.fillStyle='#6a3010'; ctx.beginPath(); ctx.moveTo(10*s,-55*s); ctx.quadraticCurveTo(20*s,-65*s,22*s,-55*s); ctx.quadraticCurveTo(18*s,-52*s,14*s,-55*s); ctx.fill();
+              ctx.fillStyle = '#6a3010'; ctx.beginPath(); ctx.moveTo(10 * s, -55 * s); ctx.quadraticCurveTo(20 * s, -65 * s, 22 * s, -55 * s); ctx.quadraticCurveTo(18 * s, -52 * s, 14 * s, -55 * s); ctx.fill();
               // Eye
-              ctx.beginPath(); ctx.arc(22*s,-46*s,5*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='#332200'; ctx.beginPath(); ctx.arc(22*s,-46*s,3*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(23*s,-47*s,1.2*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(22 * s, -46 * s, 5 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = '#332200'; ctx.beginPath(); ctx.arc(22 * s, -46 * s, 3 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(23 * s, -47 * s, 1.2 * s, 0, Math.PI * 2); ctx.fill();
               // Nostril
-              ctx.fillStyle='#7a3010'; ctx.beginPath(); ctx.ellipse(26*s,-40*s,3*s,2*s,.3,0,Math.PI*2); ctx.fill();
+              ctx.fillStyle = '#7a3010'; ctx.beginPath(); ctx.ellipse(26 * s, -40 * s, 3 * s, 2 * s, .3, 0, Math.PI * 2); ctx.fill();
               // Tail
-              ctx.strokeStyle='#6a3010'; ctx.lineWidth=6*s; ctx.lineCap='round';
-              ctx.beginPath(); ctx.moveTo(-20*s,-22*s); ctx.quadraticCurveTo(-36*s,-10*s,-30*s,12*s); ctx.stroke();
+              ctx.strokeStyle = '#6a3010'; ctx.lineWidth = 6 * s; ctx.lineCap = 'round';
+              ctx.beginPath(); ctx.moveTo(-20 * s, -22 * s); ctx.quadraticCurveTo(-36 * s, -10 * s, -30 * s, 12 * s); ctx.stroke();
               // WAVING front leg
-              ctx.save(); ctx.translate(16*s,-26*s); ctx.rotate(waveArm * 0.6);
-              ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(10*s,20*s); ctx.lineTo(4*s,20*s); outlineFill('#9B5c30');
+              ctx.save(); ctx.translate(16 * s, -26 * s); ctx.rotate(waveArm * 0.6);
+              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(10 * s, 20 * s); ctx.lineTo(4 * s, 20 * s); outlineFill('#9B5c30');
               ctx.restore();
               break;
             }
 
             case 'bird': case 'pigeon': {
-              const bCol = el.subtype==='pigeon' ? '#9090a0' : '#4466aa';
-              ctx.beginPath(); ctx.ellipse(0,-22*s,13*s,9*s,0,0,Math.PI*2); outlineFill(bCol);
-              ctx.beginPath(); ctx.ellipse(12*s,-26*s,9*s,8*s,0,0,Math.PI*2); outlineFill(bCol);
+              const bCol = el.subtype === 'pigeon' ? '#9090a0' : '#4466aa';
+              ctx.beginPath(); ctx.ellipse(0, -22 * s, 13 * s, 9 * s, 0, 0, Math.PI * 2); outlineFill(bCol);
+              ctx.beginPath(); ctx.ellipse(12 * s, -26 * s, 9 * s, 8 * s, 0, 0, Math.PI * 2); outlineFill(bCol);
               // Beak
-              ctx.fillStyle='#ffaa00'; ctx.beginPath(); ctx.moveTo(20*s,-26*s); ctx.lineTo(28*s,-24*s); ctx.lineTo(20*s,-22*s); ctx.fill();
+              ctx.fillStyle = '#ffaa00'; ctx.beginPath(); ctx.moveTo(20 * s, -26 * s); ctx.lineTo(28 * s, -24 * s); ctx.lineTo(20 * s, -22 * s); ctx.fill();
               // Eye
-              ctx.beginPath(); ctx.arc(15*s,-28*s,4*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(15*s,-28*s,2.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(16*s,-29*s,1*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(15 * s, -28 * s, 4 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(15 * s, -28 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(16 * s, -29 * s, 1 * s, 0, Math.PI * 2); ctx.fill();
               // Flapping wings
-              const wingFlap = Math.sin(now/180 + el.phase)*0.7;
-              ctx.save(); ctx.translate(-8*s,-22*s); ctx.rotate(-wingFlap);
-              ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(-22*s,-5*s); ctx.lineTo(-16*s,6*s); outlineFill(bCol);
+              const wingFlap = Math.sin(now / 180 + el.phase) * 0.7;
+              ctx.save(); ctx.translate(-8 * s, -22 * s); ctx.rotate(-wingFlap);
+              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(-22 * s, -5 * s); ctx.lineTo(-16 * s, 6 * s); outlineFill(bCol);
               ctx.restore();
-              ctx.save(); ctx.translate(6*s,-22*s); ctx.rotate(wingFlap);
-              ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(20*s,-5*s); ctx.lineTo(14*s,6*s); outlineFill(bCol);
+              ctx.save(); ctx.translate(6 * s, -22 * s); ctx.rotate(wingFlap);
+              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(20 * s, -5 * s); ctx.lineTo(14 * s, 6 * s); outlineFill(bCol);
               ctx.restore();
               break;
             }
 
             case 'crow': {
-              ctx.beginPath(); ctx.ellipse(0,-22*s,12*s,8*s,0,0,Math.PI*2); outlineFill('#1a1a2a');
-              ctx.beginPath(); ctx.ellipse(11*s,-26*s,8*s,7*s,0,0,Math.PI*2); outlineFill('#1a1a2a');
-              ctx.fillStyle='#223333'; ctx.beginPath(); ctx.moveTo(18*s,-26*s); ctx.lineTo(26*s,-25*s); ctx.lineTo(18*s,-23*s); ctx.fill();
-              ctx.beginPath(); ctx.arc(14*s,-28*s,3.5*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='#2255ff'; ctx.beginPath(); ctx.arc(14*s,-28*s,2*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(14*s,-28*s,1*s,0,Math.PI*2); ctx.fill();
-              const cFlap = Math.sin(now/200 + el.phase)*0.6;
-              ctx.save(); ctx.translate(-7*s,-22*s); ctx.rotate(-cFlap);
-              ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(-24*s,-6*s); ctx.lineTo(-18*s,6*s); outlineFill('#1a1a2a');
+              ctx.beginPath(); ctx.ellipse(0, -22 * s, 12 * s, 8 * s, 0, 0, Math.PI * 2); outlineFill('#1a1a2a');
+              ctx.beginPath(); ctx.ellipse(11 * s, -26 * s, 8 * s, 7 * s, 0, 0, Math.PI * 2); outlineFill('#1a1a2a');
+              ctx.fillStyle = '#223333'; ctx.beginPath(); ctx.moveTo(18 * s, -26 * s); ctx.lineTo(26 * s, -25 * s); ctx.lineTo(18 * s, -23 * s); ctx.fill();
+              ctx.beginPath(); ctx.arc(14 * s, -28 * s, 3.5 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = '#2255ff'; ctx.beginPath(); ctx.arc(14 * s, -28 * s, 2 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(14 * s, -28 * s, 1 * s, 0, Math.PI * 2); ctx.fill();
+              const cFlap = Math.sin(now / 200 + el.phase) * 0.6;
+              ctx.save(); ctx.translate(-7 * s, -22 * s); ctx.rotate(-cFlap);
+              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(-24 * s, -6 * s); ctx.lineTo(-18 * s, 6 * s); outlineFill('#1a1a2a');
               ctx.restore();
               break;
             }
 
             case 'seagull': {
-              ctx.beginPath(); ctx.ellipse(0,-22*s,12*s,8*s,0,0,Math.PI*2); outlineFill('#f8f8ff');
-              ctx.beginPath(); ctx.ellipse(11*s,-26*s,9*s,8*s,0,0,Math.PI*2); outlineFill('#f8f8ff');
-              ctx.fillStyle='#ffaa00'; ctx.beginPath(); ctx.moveTo(19*s,-25*s); ctx.lineTo(27*s,-23*s); ctx.lineTo(19*s,-21*s); ctx.fill();
-              ctx.beginPath(); ctx.arc(14*s,-28*s,4*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='#ff8800'; ctx.beginPath(); ctx.arc(14*s,-28*s,2*s,0,Math.PI*2); ctx.fill();
-              const sgFlap = Math.sin(now/210 + el.phase)*0.65;
-              ctx.save(); ctx.translate(-8*s,-22*s); ctx.rotate(-sgFlap);
-              ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(-25*s,-5*s); ctx.lineTo(-18*s,6*s); outlineFill('#e8e8ee');
+              ctx.beginPath(); ctx.ellipse(0, -22 * s, 12 * s, 8 * s, 0, 0, Math.PI * 2); outlineFill('#f8f8ff');
+              ctx.beginPath(); ctx.ellipse(11 * s, -26 * s, 9 * s, 8 * s, 0, 0, Math.PI * 2); outlineFill('#f8f8ff');
+              ctx.fillStyle = '#ffaa00'; ctx.beginPath(); ctx.moveTo(19 * s, -25 * s); ctx.lineTo(27 * s, -23 * s); ctx.lineTo(19 * s, -21 * s); ctx.fill();
+              ctx.beginPath(); ctx.arc(14 * s, -28 * s, 4 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = '#ff8800'; ctx.beginPath(); ctx.arc(14 * s, -28 * s, 2 * s, 0, Math.PI * 2); ctx.fill();
+              const sgFlap = Math.sin(now / 210 + el.phase) * 0.65;
+              ctx.save(); ctx.translate(-8 * s, -22 * s); ctx.rotate(-sgFlap);
+              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(-25 * s, -5 * s); ctx.lineTo(-18 * s, 6 * s); outlineFill('#e8e8ee');
               ctx.restore();
               break;
             }
 
             case 'owl': {
-              ctx.beginPath(); ctx.ellipse(0,-28*s,14*s,20*s,0,0,Math.PI*2); outlineFill('#9a7a30');
+              ctx.beginPath(); ctx.ellipse(0, -28 * s, 14 * s, 20 * s, 0, 0, Math.PI * 2); outlineFill('#9a7a30');
               // Ear tufts
-              ctx.beginPath(); ctx.moveTo(-10*s,-46*s); ctx.lineTo(-14*s,-58*s); ctx.lineTo(-5*s,-46*s); outlineFill('#7a5a20');
-              ctx.beginPath(); ctx.moveTo(10*s,-46*s); ctx.lineTo(14*s,-58*s); ctx.lineTo(5*s,-46*s); outlineFill('#7a5a20');
+              ctx.beginPath(); ctx.moveTo(-10 * s, -46 * s); ctx.lineTo(-14 * s, -58 * s); ctx.lineTo(-5 * s, -46 * s); outlineFill('#7a5a20');
+              ctx.beginPath(); ctx.moveTo(10 * s, -46 * s); ctx.lineTo(14 * s, -58 * s); ctx.lineTo(5 * s, -46 * s); outlineFill('#7a5a20');
               // Face disc
-              ctx.beginPath(); ctx.arc(0,-34*s,12*s,0,Math.PI*2); outlineFill('#f5e8a0');
+              ctx.beginPath(); ctx.arc(0, -34 * s, 12 * s, 0, Math.PI * 2); outlineFill('#f5e8a0');
               // Eyes — big
-              ctx.beginPath(); ctx.arc(-5*s,-35*s,6.5*s,0,Math.PI*2); outlineFill('white');
-              ctx.beginPath(); ctx.arc(5*s,-35*s,6.5*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='#ff8800'; ctx.beginPath(); ctx.arc(-5*s,-35*s,5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#ff8800'; ctx.beginPath(); ctx.arc(5*s,-35*s,5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(-5*s,-35*s,3*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(5*s,-35*s,3*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(-3.5*s,-37*s,1.2*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(6.5*s,-37*s,1.2*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(-5 * s, -35 * s, 6.5 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.beginPath(); ctx.arc(5 * s, -35 * s, 6.5 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = '#ff8800'; ctx.beginPath(); ctx.arc(-5 * s, -35 * s, 5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#ff8800'; ctx.beginPath(); ctx.arc(5 * s, -35 * s, 5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(-5 * s, -35 * s, 3 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(5 * s, -35 * s, 3 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(-3.5 * s, -37 * s, 1.2 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(6.5 * s, -37 * s, 1.2 * s, 0, Math.PI * 2); ctx.fill();
               // Beak
-              ctx.fillStyle='#cc8800'; ctx.beginPath(); ctx.moveTo(0,-29*s); ctx.lineTo(-3.5*s,-25*s); ctx.lineTo(3.5*s,-25*s); ctx.fill();
+              ctx.fillStyle = '#cc8800'; ctx.beginPath(); ctx.moveTo(0, -29 * s); ctx.lineTo(-3.5 * s, -25 * s); ctx.lineTo(3.5 * s, -25 * s); ctx.fill();
               // Wings open slightly
-              ctx.beginPath(); ctx.moveTo(-12*s,-28*s); ctx.lineTo(-28*s,-14*s); ctx.lineTo(-18*s,-6*s); outlineFill('#9a7a30');
-              ctx.beginPath(); ctx.moveTo(12*s,-28*s); ctx.lineTo(28*s,-14*s); ctx.lineTo(18*s,-6*s); outlineFill('#9a7a30');
+              ctx.beginPath(); ctx.moveTo(-12 * s, -28 * s); ctx.lineTo(-28 * s, -14 * s); ctx.lineTo(-18 * s, -6 * s); outlineFill('#9a7a30');
+              ctx.beginPath(); ctx.moveTo(12 * s, -28 * s); ctx.lineTo(28 * s, -14 * s); ctx.lineTo(18 * s, -6 * s); outlineFill('#9a7a30');
               break;
             }
 
             case 'eagle': {
-              ctx.beginPath(); ctx.ellipse(0,-26*s,16*s,20*s,0,0,Math.PI*2); outlineFill('#5a3010');
-              ctx.beginPath(); ctx.ellipse(12*s,-46*s,10*s,11*s,0,0,Math.PI*2); outlineFill('#5a3010');
+              ctx.beginPath(); ctx.ellipse(0, -26 * s, 16 * s, 20 * s, 0, 0, Math.PI * 2); outlineFill('#5a3010');
+              ctx.beginPath(); ctx.ellipse(12 * s, -46 * s, 10 * s, 11 * s, 0, 0, Math.PI * 2); outlineFill('#5a3010');
               // White head
-              ctx.beginPath(); ctx.arc(12*s,-48*s,7*s,0,Math.PI*2); outlineFill('#f8f8f8');
+              ctx.beginPath(); ctx.arc(12 * s, -48 * s, 7 * s, 0, Math.PI * 2); outlineFill('#f8f8f8');
               // Hooked beak
-              ctx.fillStyle='#ffcc00'; ctx.beginPath(); ctx.moveTo(18*s,-46*s); ctx.lineTo(26*s,-44*s); ctx.lineTo(22*s,-42*s); ctx.closePath(); ctx.fill();
+              ctx.fillStyle = '#ffcc00'; ctx.beginPath(); ctx.moveTo(18 * s, -46 * s); ctx.lineTo(26 * s, -44 * s); ctx.lineTo(22 * s, -42 * s); ctx.closePath(); ctx.fill();
               // Eye
-              ctx.fillStyle='#ffff00'; ctx.beginPath(); ctx.arc(14*s,-49*s,4*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(14*s,-49*s,2.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(15*s,-50*s,1*s,0,Math.PI*2); ctx.fill();
+              ctx.fillStyle = '#ffff00'; ctx.beginPath(); ctx.arc(14 * s, -49 * s, 4 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(14 * s, -49 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(15 * s, -50 * s, 1 * s, 0, Math.PI * 2); ctx.fill();
               // Wings soaring
-              const eagleWing = Math.sin(now/400 + el.phase)*0.25;
-              ctx.save(); ctx.translate(-14*s,-26*s); ctx.rotate(eagleWing-0.1);
-              ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(-38*s,-10*s); ctx.lineTo(-30*s,10*s); outlineFill('#4a2800');
+              const eagleWing = Math.sin(now / 400 + el.phase) * 0.25;
+              ctx.save(); ctx.translate(-14 * s, -26 * s); ctx.rotate(eagleWing - 0.1);
+              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(-38 * s, -10 * s); ctx.lineTo(-30 * s, 10 * s); outlineFill('#4a2800');
               ctx.restore();
-              ctx.save(); ctx.translate(14*s,-26*s); ctx.rotate(-eagleWing+0.1);
-              ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(38*s,-10*s); ctx.lineTo(30*s,10*s); outlineFill('#4a2800');
+              ctx.save(); ctx.translate(14 * s, -26 * s); ctx.rotate(-eagleWing + 0.1);
+              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(38 * s, -10 * s); ctx.lineTo(30 * s, 10 * s); outlineFill('#4a2800');
               ctx.restore();
               break;
             }
 
             case 'squirrel': {
-              ctx.beginPath(); ctx.ellipse(0,-26*s,10*s,15*s,0,0,Math.PI*2); outlineFill('#c87030');
-              ctx.beginPath(); ctx.ellipse(0,-44*s,9*s,10*s,0,0,Math.PI*2); outlineFill('#c87030');
+              ctx.beginPath(); ctx.ellipse(0, -26 * s, 10 * s, 15 * s, 0, 0, Math.PI * 2); outlineFill('#c87030');
+              ctx.beginPath(); ctx.ellipse(0, -44 * s, 9 * s, 10 * s, 0, 0, Math.PI * 2); outlineFill('#c87030');
               // Ears
-              ctx.beginPath(); ctx.arc(-6*s,-52*s,4.5*s,0,Math.PI*2); outlineFill('#c87030');
-              ctx.beginPath(); ctx.arc(6*s,-52*s,4.5*s,0,Math.PI*2); outlineFill('#c87030');
+              ctx.beginPath(); ctx.arc(-6 * s, -52 * s, 4.5 * s, 0, Math.PI * 2); outlineFill('#c87030');
+              ctx.beginPath(); ctx.arc(6 * s, -52 * s, 4.5 * s, 0, Math.PI * 2); outlineFill('#c87030');
               // Eyes
-              ctx.beginPath(); ctx.arc(-4*s,-45*s,3.5*s,0,Math.PI*2); outlineFill('white');
-              ctx.beginPath(); ctx.arc(4*s,-45*s,3.5*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(-4*s,-45*s,2*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(4*s,-45*s,2*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(-3*s,-46*s,0.8*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(-4 * s, -45 * s, 3.5 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.beginPath(); ctx.arc(4 * s, -45 * s, 3.5 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(-4 * s, -45 * s, 2 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(4 * s, -45 * s, 2 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(-3 * s, -46 * s, 0.8 * s, 0, Math.PI * 2); ctx.fill();
               // Nose
-              ctx.fillStyle='#cc5533'; ctx.beginPath(); ctx.arc(0,-42*s,2*s,0,Math.PI*2); ctx.fill();
+              ctx.fillStyle = '#cc5533'; ctx.beginPath(); ctx.arc(0, -42 * s, 2 * s, 0, Math.PI * 2); ctx.fill();
               // Bushy tail
-              ctx.fillStyle='#c87030'; ctx.strokeStyle='#a05820'; ctx.lineWidth=10*s; ctx.lineCap='round';
-              ctx.beginPath(); ctx.moveTo(8*s,-22*s); ctx.quadraticCurveTo(30*s,-16*s,22*s,8*s); ctx.stroke();
-              ctx.strokeStyle='#d99040'; ctx.lineWidth=5*s;
-              ctx.beginPath(); ctx.moveTo(8*s,-22*s); ctx.quadraticCurveTo(30*s,-16*s,22*s,8*s); ctx.stroke();
+              ctx.fillStyle = '#c87030'; ctx.strokeStyle = '#a05820'; ctx.lineWidth = 10 * s; ctx.lineCap = 'round';
+              ctx.beginPath(); ctx.moveTo(8 * s, -22 * s); ctx.quadraticCurveTo(30 * s, -16 * s, 22 * s, 8 * s); ctx.stroke();
+              ctx.strokeStyle = '#d99040'; ctx.lineWidth = 5 * s;
+              ctx.beginPath(); ctx.moveTo(8 * s, -22 * s); ctx.quadraticCurveTo(30 * s, -16 * s, 22 * s, 8 * s); ctx.stroke();
               // Arm holding nut
-              ctx.beginPath(); ctx.moveTo(-8*s,-32*s); ctx.lineTo(-14*s,-22*s); ctx.lineTo(-8*s,-18*s); outlineFill('#c87030');
-              ctx.fillStyle='#885500'; ctx.beginPath(); ctx.arc(-14*s,-20*s,5*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.moveTo(-8 * s, -32 * s); ctx.lineTo(-14 * s, -22 * s); ctx.lineTo(-8 * s, -18 * s); outlineFill('#c87030');
+              ctx.fillStyle = '#885500'; ctx.beginPath(); ctx.arc(-14 * s, -20 * s, 5 * s, 0, Math.PI * 2); ctx.fill();
               break;
             }
 
             case 'fox': {
-              ctx.beginPath(); ctx.ellipse(0,-24*s,14*s,18*s,0,0,Math.PI*2); outlineFill('#e06820');
-              ctx.fillStyle='#f8f0e0'; ctx.beginPath(); ctx.ellipse(0,-22*s,7*s,12*s,0,0,Math.PI*2); ctx.fill();
-              ctx.beginPath(); ctx.ellipse(0,-46*s,11*s,12*s,0,0,Math.PI*2); outlineFill('#e06820');
+              ctx.beginPath(); ctx.ellipse(0, -24 * s, 14 * s, 18 * s, 0, 0, Math.PI * 2); outlineFill('#e06820');
+              ctx.fillStyle = '#f8f0e0'; ctx.beginPath(); ctx.ellipse(0, -22 * s, 7 * s, 12 * s, 0, 0, Math.PI * 2); ctx.fill();
+              ctx.beginPath(); ctx.ellipse(0, -46 * s, 11 * s, 12 * s, 0, 0, Math.PI * 2); outlineFill('#e06820');
               // Triangle ears
-              ctx.beginPath(); ctx.moveTo(-10*s,-54*s); ctx.lineTo(-14*s,-68*s); ctx.lineTo(-3*s,-54*s); outlineFill('#e06820');
-              ctx.beginPath(); ctx.moveTo(10*s,-54*s); ctx.lineTo(14*s,-68*s); ctx.lineTo(3*s,-54*s); outlineFill('#e06820');
-              ctx.fillStyle='#cc4411'; ctx.beginPath(); ctx.moveTo(-9*s,-55*s); ctx.lineTo(-12*s,-65*s); ctx.lineTo(-4*s,-55*s); ctx.fill();
-              ctx.fillStyle='#cc4411'; ctx.beginPath(); ctx.moveTo(9*s,-55*s); ctx.lineTo(12*s,-65*s); ctx.lineTo(4*s,-55*s); ctx.fill();
+              ctx.beginPath(); ctx.moveTo(-10 * s, -54 * s); ctx.lineTo(-14 * s, -68 * s); ctx.lineTo(-3 * s, -54 * s); outlineFill('#e06820');
+              ctx.beginPath(); ctx.moveTo(10 * s, -54 * s); ctx.lineTo(14 * s, -68 * s); ctx.lineTo(3 * s, -54 * s); outlineFill('#e06820');
+              ctx.fillStyle = '#cc4411'; ctx.beginPath(); ctx.moveTo(-9 * s, -55 * s); ctx.lineTo(-12 * s, -65 * s); ctx.lineTo(-4 * s, -55 * s); ctx.fill();
+              ctx.fillStyle = '#cc4411'; ctx.beginPath(); ctx.moveTo(9 * s, -55 * s); ctx.lineTo(12 * s, -65 * s); ctx.lineTo(4 * s, -55 * s); ctx.fill();
               // Snout
-              ctx.beginPath(); ctx.ellipse(0,-42*s,6*s,5*s,0,0,Math.PI*2); outlineFill('#f8e8d0');
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(0,-45*s,2.5*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.ellipse(0, -42 * s, 6 * s, 5 * s, 0, 0, Math.PI * 2); outlineFill('#f8e8d0');
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(0, -45 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
               // Eyes
-              ctx.beginPath(); ctx.arc(-5*s,-49*s,4.5*s,0,Math.PI*2); outlineFill('white');
-              ctx.beginPath(); ctx.arc(5*s,-49*s,4.5*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='#cc8800'; ctx.beginPath(); ctx.arc(-5*s,-49*s,3*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#cc8800'; ctx.beginPath(); ctx.arc(5*s,-49*s,3*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(-5*s,-49*s,1.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(5*s,-49*s,1.5*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(-5 * s, -49 * s, 4.5 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.beginPath(); ctx.arc(5 * s, -49 * s, 4.5 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = '#cc8800'; ctx.beginPath(); ctx.arc(-5 * s, -49 * s, 3 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#cc8800'; ctx.beginPath(); ctx.arc(5 * s, -49 * s, 3 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(-5 * s, -49 * s, 1.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(5 * s, -49 * s, 1.5 * s, 0, Math.PI * 2); ctx.fill();
               // Fluffy tail
-              ctx.strokeStyle='#e06820'; ctx.lineWidth=10*s; ctx.lineCap='round';
-              ctx.beginPath(); ctx.moveTo(-12*s,-14*s); ctx.quadraticCurveTo(-34*s,-2*s,-28*s,18*s); ctx.stroke();
-              ctx.strokeStyle='white'; ctx.lineWidth=4*s;
-              ctx.beginPath(); ctx.moveTo(-26*s,8*s); ctx.quadraticCurveTo(-30*s,14*s,-28*s,18*s); ctx.stroke();
+              ctx.strokeStyle = '#e06820'; ctx.lineWidth = 10 * s; ctx.lineCap = 'round';
+              ctx.beginPath(); ctx.moveTo(-12 * s, -14 * s); ctx.quadraticCurveTo(-34 * s, -2 * s, -28 * s, 18 * s); ctx.stroke();
+              ctx.strokeStyle = 'white'; ctx.lineWidth = 4 * s;
+              ctx.beginPath(); ctx.moveTo(-26 * s, 8 * s); ctx.quadraticCurveTo(-30 * s, 14 * s, -28 * s, 18 * s); ctx.stroke();
               break;
             }
 
             case 'rat': {
-              ctx.beginPath(); ctx.ellipse(0,-18*s,12*s,10*s,0,0,Math.PI*2); outlineFill('#8a8070');
-              ctx.beginPath(); ctx.ellipse(9*s,-30*s,8*s,8*s,0,0,Math.PI*2); outlineFill('#8a8070');
+              ctx.beginPath(); ctx.ellipse(0, -18 * s, 12 * s, 10 * s, 0, 0, Math.PI * 2); outlineFill('#8a8070');
+              ctx.beginPath(); ctx.ellipse(9 * s, -30 * s, 8 * s, 8 * s, 0, 0, Math.PI * 2); outlineFill('#8a8070');
               // Big round ears
-              ctx.beginPath(); ctx.arc(-3*s,-36*s,6*s,0,Math.PI*2); outlineFill('#b89080');
-              ctx.beginPath(); ctx.arc(9*s,-36*s,6*s,0,Math.PI*2); outlineFill('#b89080');
-              ctx.fillStyle='#ffaabb'; ctx.beginPath(); ctx.arc(-3*s,-36*s,3.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#ffaabb'; ctx.beginPath(); ctx.arc(9*s,-36*s,3.5*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(-3 * s, -36 * s, 6 * s, 0, Math.PI * 2); outlineFill('#b89080');
+              ctx.beginPath(); ctx.arc(9 * s, -36 * s, 6 * s, 0, Math.PI * 2); outlineFill('#b89080');
+              ctx.fillStyle = '#ffaabb'; ctx.beginPath(); ctx.arc(-3 * s, -36 * s, 3.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#ffaabb'; ctx.beginPath(); ctx.arc(9 * s, -36 * s, 3.5 * s, 0, Math.PI * 2); ctx.fill();
               // Eyes
-              ctx.beginPath(); ctx.arc(6*s,-31*s,4*s,0,Math.PI*2); outlineFill('white');
-              ctx.beginPath(); ctx.arc(12*s,-32*s,4*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='#ff2244'; ctx.beginPath(); ctx.arc(6*s,-31*s,2.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#ff2244'; ctx.beginPath(); ctx.arc(12*s,-32*s,2.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(6*s,-31*s,1.2*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(12*s,-32*s,1.2*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(6 * s, -31 * s, 4 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.beginPath(); ctx.arc(12 * s, -32 * s, 4 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = '#ff2244'; ctx.beginPath(); ctx.arc(6 * s, -31 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#ff2244'; ctx.beginPath(); ctx.arc(12 * s, -32 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(6 * s, -31 * s, 1.2 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(12 * s, -32 * s, 1.2 * s, 0, Math.PI * 2); ctx.fill();
               // Long nose
-              ctx.fillStyle='#cc8877'; ctx.beginPath(); ctx.arc(16*s,-29*s,3*s,0,Math.PI*2); ctx.fill();
+              ctx.fillStyle = '#cc8877'; ctx.beginPath(); ctx.arc(16 * s, -29 * s, 3 * s, 0, Math.PI * 2); ctx.fill();
               // Whiskers
-              ctx.strokeStyle='rgba(0,0,0,0.3)'; ctx.lineWidth=1*s;
-              ctx.beginPath(); ctx.moveTo(14*s,-29*s); ctx.lineTo(26*s,-27*s); ctx.stroke();
-              ctx.beginPath(); ctx.moveTo(14*s,-29*s); ctx.lineTo(26*s,-31*s); ctx.stroke();
+              ctx.strokeStyle = 'rgba(0,0,0,0.3)'; ctx.lineWidth = 1 * s;
+              ctx.beginPath(); ctx.moveTo(14 * s, -29 * s); ctx.lineTo(26 * s, -27 * s); ctx.stroke();
+              ctx.beginPath(); ctx.moveTo(14 * s, -29 * s); ctx.lineTo(26 * s, -31 * s); ctx.stroke();
               // Tail
-              ctx.strokeStyle='#9a8070'; ctx.lineWidth=3*s; ctx.lineCap='round';
-              ctx.beginPath(); ctx.moveTo(-11*s,-14*s); ctx.quadraticCurveTo(-26*s,-2*s,-22*s,12*s); ctx.stroke();
+              ctx.strokeStyle = '#9a8070'; ctx.lineWidth = 3 * s; ctx.lineCap = 'round';
+              ctx.beginPath(); ctx.moveTo(-11 * s, -14 * s); ctx.quadraticCurveTo(-26 * s, -2 * s, -22 * s, 12 * s); ctx.stroke();
               break;
             }
 
             case 'bat': {
-              const batFlap = Math.sin(now/120 + el.phase);
-              ctx.beginPath(); ctx.ellipse(0,-36*s,10*s,12*s,0,0,Math.PI*2); outlineFill('#553366');
+              const batFlap = Math.sin(now / 120 + el.phase);
+              ctx.beginPath(); ctx.ellipse(0, -36 * s, 10 * s, 12 * s, 0, 0, Math.PI * 2); outlineFill('#553366');
               // Ears
-              ctx.beginPath(); ctx.moveTo(-7*s,-46*s); ctx.lineTo(-11*s,-58*s); ctx.lineTo(-2*s,-46*s); outlineFill('#442255');
-              ctx.beginPath(); ctx.moveTo(7*s,-46*s); ctx.lineTo(11*s,-58*s); ctx.lineTo(2*s,-46*s); outlineFill('#442255');
+              ctx.beginPath(); ctx.moveTo(-7 * s, -46 * s); ctx.lineTo(-11 * s, -58 * s); ctx.lineTo(-2 * s, -46 * s); outlineFill('#442255');
+              ctx.beginPath(); ctx.moveTo(7 * s, -46 * s); ctx.lineTo(11 * s, -58 * s); ctx.lineTo(2 * s, -46 * s); outlineFill('#442255');
               // Glowing eyes
-              ctx.fillStyle='#ff2222'; ctx.beginPath(); ctx.arc(-4*s,-38*s,4*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#ff2222'; ctx.beginPath(); ctx.arc(4*s,-38*s,4*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#ff8888'; ctx.beginPath(); ctx.arc(-4*s,-38*s,2*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#ff8888'; ctx.beginPath(); ctx.arc(4*s,-38*s,2*s,0,Math.PI*2); ctx.fill();
+              ctx.fillStyle = '#ff2222'; ctx.beginPath(); ctx.arc(-4 * s, -38 * s, 4 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#ff2222'; ctx.beginPath(); ctx.arc(4 * s, -38 * s, 4 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#ff8888'; ctx.beginPath(); ctx.arc(-4 * s, -38 * s, 2 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#ff8888'; ctx.beginPath(); ctx.arc(4 * s, -38 * s, 2 * s, 0, Math.PI * 2); ctx.fill();
               // Wings
-              ctx.save(); ctx.translate(-8*s,-36*s); ctx.rotate(-batFlap*0.8-0.3);
-              ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(-32*s,-10*s); ctx.quadraticCurveTo(-28*s,5*s,-20*s,6*s); ctx.closePath(); outlineFill('#442255');
+              ctx.save(); ctx.translate(-8 * s, -36 * s); ctx.rotate(-batFlap * 0.8 - 0.3);
+              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(-32 * s, -10 * s); ctx.quadraticCurveTo(-28 * s, 5 * s, -20 * s, 6 * s); ctx.closePath(); outlineFill('#442255');
               ctx.restore();
-              ctx.save(); ctx.translate(8*s,-36*s); ctx.rotate(batFlap*0.8+0.3);
-              ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(32*s,-10*s); ctx.quadraticCurveTo(28*s,5*s,20*s,6*s); ctx.closePath(); outlineFill('#442255');
+              ctx.save(); ctx.translate(8 * s, -36 * s); ctx.rotate(batFlap * 0.8 + 0.3);
+              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(32 * s, -10 * s); ctx.quadraticCurveTo(28 * s, 5 * s, 20 * s, 6 * s); ctx.closePath(); outlineFill('#442255');
               ctx.restore();
               // Little fangs
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.moveTo(-3*s,-28*s); ctx.lineTo(-1.5*s,-24*s); ctx.lineTo(0,-28*s); ctx.fill();
-              ctx.beginPath(); ctx.moveTo(3*s,-28*s); ctx.lineTo(1.5*s,-24*s); ctx.lineTo(0,-28*s); ctx.fill();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.moveTo(-3 * s, -28 * s); ctx.lineTo(-1.5 * s, -24 * s); ctx.lineTo(0, -28 * s); ctx.fill();
+              ctx.beginPath(); ctx.moveTo(3 * s, -28 * s); ctx.lineTo(1.5 * s, -24 * s); ctx.lineTo(0, -28 * s); ctx.fill();
               break;
             }
 
             case 'crab': {
-              ctx.beginPath(); ctx.ellipse(0,-14*s,18*s,12*s,0,0,Math.PI*2); outlineFill('#dd4422');
+              ctx.beginPath(); ctx.ellipse(0, -14 * s, 18 * s, 12 * s, 0, 0, Math.PI * 2); outlineFill('#dd4422');
               // Eyes on stalks
-              ctx.fillStyle='#cc3311'; ctx.fillRect(-10*s,-20*s,4*s,8*s); ctx.fillRect(6*s,-20*s,4*s,8*s);
-              ctx.beginPath(); ctx.arc(-8*s,-22*s,5*s,0,Math.PI*2); outlineFill('white');
-              ctx.beginPath(); ctx.arc(8*s,-22*s,5*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(-8*s,-22*s,3*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(8*s,-22*s,3*s,0,Math.PI*2); ctx.fill();
+              ctx.fillStyle = '#cc3311'; ctx.fillRect(-10 * s, -20 * s, 4 * s, 8 * s); ctx.fillRect(6 * s, -20 * s, 4 * s, 8 * s);
+              ctx.beginPath(); ctx.arc(-8 * s, -22 * s, 5 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.beginPath(); ctx.arc(8 * s, -22 * s, 5 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(-8 * s, -22 * s, 3 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(8 * s, -22 * s, 3 * s, 0, Math.PI * 2); ctx.fill();
               // Claws
-              const clawSnap = Math.sin(now/300 + el.phase)*0.4;
-              ctx.save(); ctx.translate(-22*s,-12*s); ctx.rotate(clawSnap-0.3);
-              ctx.beginPath(); ctx.ellipse(0,0,10*s,7*s,0,0,Math.PI*2); outlineFill('#ee5533');
+              const clawSnap = Math.sin(now / 300 + el.phase) * 0.4;
+              ctx.save(); ctx.translate(-22 * s, -12 * s); ctx.rotate(clawSnap - 0.3);
+              ctx.beginPath(); ctx.ellipse(0, 0, 10 * s, 7 * s, 0, 0, Math.PI * 2); outlineFill('#ee5533');
               ctx.restore();
-              ctx.save(); ctx.translate(22*s,-12*s); ctx.rotate(-clawSnap+0.3);
-              ctx.beginPath(); ctx.ellipse(0,0,10*s,7*s,0,0,Math.PI*2); outlineFill('#ee5533');
+              ctx.save(); ctx.translate(22 * s, -12 * s); ctx.rotate(-clawSnap + 0.3);
+              ctx.beginPath(); ctx.ellipse(0, 0, 10 * s, 7 * s, 0, 0, Math.PI * 2); outlineFill('#ee5533');
               ctx.restore();
               // Legs
-              ctx.strokeStyle='#cc3322'; ctx.lineWidth=3*s;
+              ctx.strokeStyle = '#cc3322'; ctx.lineWidth = 3 * s;
               for (let leg = -2; leg <= 2; leg++) {
-                if (leg===0) continue;
-                ctx.beginPath(); ctx.moveTo(leg*7*s,-10*s); ctx.lineTo(leg*11*s,2*s); ctx.stroke();
+                if (leg === 0) continue;
+                ctx.beginPath(); ctx.moveTo(leg * 7 * s, -10 * s); ctx.lineTo(leg * 11 * s, 2 * s); ctx.stroke();
               }
               break;
             }
 
             case 'seal': {
-              ctx.beginPath(); ctx.ellipse(0,-18*s,22*s,14*s,.15,0,Math.PI*2); outlineFill('#7090a0');
-              ctx.beginPath(); ctx.ellipse(18*s,-14*s,10*s,7*s,-.2,0,Math.PI*2); outlineFill('#7090a0');
+              ctx.beginPath(); ctx.ellipse(0, -18 * s, 22 * s, 14 * s, .15, 0, Math.PI * 2); outlineFill('#7090a0');
+              ctx.beginPath(); ctx.ellipse(18 * s, -14 * s, 10 * s, 7 * s, -.2, 0, Math.PI * 2); outlineFill('#7090a0');
               // Head
-              ctx.beginPath(); ctx.ellipse(-14*s,-28*s,13*s,12*s,0,0,Math.PI*2); outlineFill('#8898a8');
+              ctx.beginPath(); ctx.ellipse(-14 * s, -28 * s, 13 * s, 12 * s, 0, 0, Math.PI * 2); outlineFill('#8898a8');
               // Big round eyes
-              ctx.beginPath(); ctx.arc(-18*s,-30*s,6*s,0,Math.PI*2); outlineFill('white');
-              ctx.beginPath(); ctx.arc(-10*s,-30*s,6*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(-18*s,-30*s,4*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(-10*s,-30*s,4*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(-17*s,-32*s,1.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(-9*s,-32*s,1.5*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(-18 * s, -30 * s, 6 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.beginPath(); ctx.arc(-10 * s, -30 * s, 6 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(-18 * s, -30 * s, 4 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(-10 * s, -30 * s, 4 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(-17 * s, -32 * s, 1.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(-9 * s, -32 * s, 1.5 * s, 0, Math.PI * 2); ctx.fill();
               // Nose
-              ctx.fillStyle='#cc8899'; ctx.beginPath(); ctx.arc(-6*s,-26*s,4*s,0,Math.PI*2); ctx.fill();
+              ctx.fillStyle = '#cc8899'; ctx.beginPath(); ctx.arc(-6 * s, -26 * s, 4 * s, 0, Math.PI * 2); ctx.fill();
               // Whiskers
-              ctx.strokeStyle='rgba(0,0,0,0.3)'; ctx.lineWidth=1.2*s;
-              ctx.beginPath(); ctx.moveTo(-6*s,-26*s); ctx.lineTo(6*s,-24*s); ctx.stroke();
-              ctx.beginPath(); ctx.moveTo(-6*s,-26*s); ctx.lineTo(6*s,-28*s); ctx.stroke();
+              ctx.strokeStyle = 'rgba(0,0,0,0.3)'; ctx.lineWidth = 1.2 * s;
+              ctx.beginPath(); ctx.moveTo(-6 * s, -26 * s); ctx.lineTo(6 * s, -24 * s); ctx.stroke();
+              ctx.beginPath(); ctx.moveTo(-6 * s, -26 * s); ctx.lineTo(6 * s, -28 * s); ctx.stroke();
               // Flipper WAVING
-              ctx.save(); ctx.translate(-14*s,-20*s); ctx.rotate(waveArm*0.7);
-              ctx.beginPath(); ctx.ellipse(-12*s,0,12*s,5*s,-.4,0,Math.PI*2); outlineFill('#7090a0');
+              ctx.save(); ctx.translate(-14 * s, -20 * s); ctx.rotate(waveArm * 0.7);
+              ctx.beginPath(); ctx.ellipse(-12 * s, 0, 12 * s, 5 * s, -.4, 0, Math.PI * 2); outlineFill('#7090a0');
               ctx.restore();
               break;
             }
 
             case 'pelican': {
-              ctx.beginPath(); ctx.ellipse(0,-22*s,16*s,12*s,0,0,Math.PI*2); outlineFill('#f8f4ee');
-              ctx.beginPath(); ctx.ellipse(14*s,-32*s,9*s,10*s,0,0,Math.PI*2); outlineFill('#f8f4ee');
+              ctx.beginPath(); ctx.ellipse(0, -22 * s, 16 * s, 12 * s, 0, 0, Math.PI * 2); outlineFill('#f8f4ee');
+              ctx.beginPath(); ctx.ellipse(14 * s, -32 * s, 9 * s, 10 * s, 0, 0, Math.PI * 2); outlineFill('#f8f4ee');
               // Long beak
-              ctx.fillStyle='#ddaa20'; ctx.beginPath(); ctx.moveTo(20*s,-30*s); ctx.lineTo(40*s,-28*s); ctx.lineTo(38*s,-24*s); ctx.lineTo(20*s,-26*s); ctx.closePath(); ctx.fill();
-              ctx.fillStyle='#ffcc44'; ctx.beginPath(); ctx.ellipse(30*s,-26*s,8*s,4*s,0,0,Math.PI*2); ctx.fill();
+              ctx.fillStyle = '#ddaa20'; ctx.beginPath(); ctx.moveTo(20 * s, -30 * s); ctx.lineTo(40 * s, -28 * s); ctx.lineTo(38 * s, -24 * s); ctx.lineTo(20 * s, -26 * s); ctx.closePath(); ctx.fill();
+              ctx.fillStyle = '#ffcc44'; ctx.beginPath(); ctx.ellipse(30 * s, -26 * s, 8 * s, 4 * s, 0, 0, Math.PI * 2); ctx.fill();
               // Eye
-              ctx.beginPath(); ctx.arc(16*s,-34*s,5*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='#223300'; ctx.beginPath(); ctx.arc(16*s,-34*s,3*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(17*s,-35*s,1.2*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(16 * s, -34 * s, 5 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = '#223300'; ctx.beginPath(); ctx.arc(16 * s, -34 * s, 3 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(17 * s, -35 * s, 1.2 * s, 0, Math.PI * 2); ctx.fill();
               // Wing
-              ctx.beginPath(); ctx.moveTo(-14*s,-22*s); ctx.lineTo(-30*s,-10*s); ctx.lineTo(-22*s,0); outlineFill('#e0dcd8');
+              ctx.beginPath(); ctx.moveTo(-14 * s, -22 * s); ctx.lineTo(-30 * s, -10 * s); ctx.lineTo(-22 * s, 0); outlineFill('#e0dcd8');
               break;
             }
 
             case 'alien_creature': {
               // Green glowing body
-              ctx.shadowColor='#00ff88'; ctx.shadowBlur=12*s;
-              ctx.beginPath(); ctx.ellipse(0,-30*s,15*s,22*s,0,0,Math.PI*2); outlineFill('#22dd66');
-              ctx.shadowBlur=0;
+              ctx.shadowColor = '#00ff88'; ctx.shadowBlur = 12 * s;
+              ctx.beginPath(); ctx.ellipse(0, -30 * s, 15 * s, 22 * s, 0, 0, Math.PI * 2); outlineFill('#22dd66');
+              ctx.shadowBlur = 0;
               // Big head
-              ctx.beginPath(); ctx.ellipse(0,-58*s,16*s,16*s,0,0,Math.PI*2); outlineFill('#22dd66');
+              ctx.beginPath(); ctx.ellipse(0, -58 * s, 16 * s, 16 * s, 0, 0, Math.PI * 2); outlineFill('#22dd66');
               // Huge alien eyes
-              ctx.beginPath(); ctx.arc(-7*s,-60*s,7*s,0,Math.PI*2); outlineFill('#001100');
-              ctx.beginPath(); ctx.arc(7*s,-60*s,7*s,0,Math.PI*2); outlineFill('#001100');
-              ctx.fillStyle='#ffff00'; ctx.beginPath(); ctx.arc(-7*s,-60*s,5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#ffff00'; ctx.beginPath(); ctx.arc(7*s,-60*s,5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(-7*s,-60*s,3*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(7*s,-60*s,3*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(-5.5*s,-62*s,1.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(8.5*s,-62*s,1.5*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(-7 * s, -60 * s, 7 * s, 0, Math.PI * 2); outlineFill('#001100');
+              ctx.beginPath(); ctx.arc(7 * s, -60 * s, 7 * s, 0, Math.PI * 2); outlineFill('#001100');
+              ctx.fillStyle = '#ffff00'; ctx.beginPath(); ctx.arc(-7 * s, -60 * s, 5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#ffff00'; ctx.beginPath(); ctx.arc(7 * s, -60 * s, 5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(-7 * s, -60 * s, 3 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(7 * s, -60 * s, 3 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(-5.5 * s, -62 * s, 1.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(8.5 * s, -62 * s, 1.5 * s, 0, Math.PI * 2); ctx.fill();
               // Antennae
-              ctx.strokeStyle='#22dd66'; ctx.lineWidth=2.5*s;
-              ctx.beginPath(); ctx.moveTo(-6*s,-73*s); ctx.lineTo(-10*s,-84*s); ctx.stroke();
-              ctx.fillStyle='#ff44ff'; ctx.beginPath(); ctx.arc(-10*s,-84*s,4*s,0,Math.PI*2); ctx.fill();
-              ctx.beginPath(); ctx.moveTo(6*s,-73*s); ctx.lineTo(10*s,-84*s); ctx.stroke();
-              ctx.fillStyle='#ff44ff'; ctx.beginPath(); ctx.arc(10*s,-84*s,4*s,0,Math.PI*2); ctx.fill();
+              ctx.strokeStyle = '#22dd66'; ctx.lineWidth = 2.5 * s;
+              ctx.beginPath(); ctx.moveTo(-6 * s, -73 * s); ctx.lineTo(-10 * s, -84 * s); ctx.stroke();
+              ctx.fillStyle = '#ff44ff'; ctx.beginPath(); ctx.arc(-10 * s, -84 * s, 4 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.beginPath(); ctx.moveTo(6 * s, -73 * s); ctx.lineTo(10 * s, -84 * s); ctx.stroke();
+              ctx.fillStyle = '#ff44ff'; ctx.beginPath(); ctx.arc(10 * s, -84 * s, 4 * s, 0, Math.PI * 2); ctx.fill();
               // Slit mouth
-              ctx.strokeStyle='#001100'; ctx.lineWidth=2*s;
-              ctx.beginPath(); ctx.arc(0,-52*s,5*s,0.2,Math.PI-0.2); ctx.stroke();
+              ctx.strokeStyle = '#001100'; ctx.lineWidth = 2 * s;
+              ctx.beginPath(); ctx.arc(0, -52 * s, 5 * s, 0.2, Math.PI - 0.2); ctx.stroke();
               // WAVING 3-fingered hand
-              ctx.save(); ctx.translate(14*s,-42*s); ctx.rotate(waveArm);
-              ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(20*s,-14*s); ctx.lineTo(14*s,-8*s); outlineFill('#22dd66');
+              ctx.save(); ctx.translate(14 * s, -42 * s); ctx.rotate(waveArm);
+              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(20 * s, -14 * s); ctx.lineTo(14 * s, -8 * s); outlineFill('#22dd66');
               ctx.restore();
               break;
             }
 
             case 'goat': {
-              ctx.beginPath(); ctx.ellipse(0,-22*s,16*s,14*s,0,0,Math.PI*2); outlineFill('#d8d0b8');
-              ctx.beginPath(); ctx.ellipse(10*s,-38*s,10*s,12*s,0,0,Math.PI*2); outlineFill('#d8d0b8');
+              ctx.beginPath(); ctx.ellipse(0, -22 * s, 16 * s, 14 * s, 0, 0, Math.PI * 2); outlineFill('#d8d0b8');
+              ctx.beginPath(); ctx.ellipse(10 * s, -38 * s, 10 * s, 12 * s, 0, 0, Math.PI * 2); outlineFill('#d8d0b8');
               // Curved horns
-              ctx.strokeStyle='#8a7a60'; ctx.lineWidth=3.5*s; ctx.lineCap='round';
-              ctx.beginPath(); ctx.moveTo(6*s,-48*s); ctx.quadraticCurveTo(2*s,-60*s,10*s,-58*s); ctx.stroke();
-              ctx.beginPath(); ctx.moveTo(14*s,-48*s); ctx.quadraticCurveTo(18*s,-60*s,10*s,-58*s); ctx.stroke();
+              ctx.strokeStyle = '#8a7a60'; ctx.lineWidth = 3.5 * s; ctx.lineCap = 'round';
+              ctx.beginPath(); ctx.moveTo(6 * s, -48 * s); ctx.quadraticCurveTo(2 * s, -60 * s, 10 * s, -58 * s); ctx.stroke();
+              ctx.beginPath(); ctx.moveTo(14 * s, -48 * s); ctx.quadraticCurveTo(18 * s, -60 * s, 10 * s, -58 * s); ctx.stroke();
               // Eyes
-              ctx.beginPath(); ctx.arc(7*s,-40*s,4*s,0,Math.PI*2); outlineFill('white');
-              ctx.beginPath(); ctx.arc(14*s,-40*s,4*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='#886600'; ctx.beginPath(); ctx.arc(7*s,-40*s,2.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='#886600'; ctx.beginPath(); ctx.arc(14*s,-40*s,2.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(7*s,-40*s,1.2*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(14*s,-40*s,1.2*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(7 * s, -40 * s, 4 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.beginPath(); ctx.arc(14 * s, -40 * s, 4 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = '#886600'; ctx.beginPath(); ctx.arc(7 * s, -40 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = '#886600'; ctx.beginPath(); ctx.arc(14 * s, -40 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(7 * s, -40 * s, 1.2 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(14 * s, -40 * s, 1.2 * s, 0, Math.PI * 2); ctx.fill();
               // Beard
-              ctx.fillStyle='#e8e0c8'; ctx.beginPath(); ctx.ellipse(10*s,-30*s,4*s,6*s,0,0,Math.PI*2); ctx.fill();
+              ctx.fillStyle = '#e8e0c8'; ctx.beginPath(); ctx.ellipse(10 * s, -30 * s, 4 * s, 6 * s, 0, 0, Math.PI * 2); ctx.fill();
               break;
             }
 
             case 'snake': {
-              const snakeWiggle = Math.sin(now/300 + el.phase);
-              ctx.strokeStyle='#2a7a2a'; ctx.lineWidth=14*s; ctx.lineCap='round';
+              const snakeWiggle = Math.sin(now / 300 + el.phase);
+              ctx.strokeStyle = '#2a7a2a'; ctx.lineWidth = 14 * s; ctx.lineCap = 'round';
               ctx.beginPath();
-              ctx.moveTo(-30*s,-10*s);
-              ctx.quadraticCurveTo(-10*s,-10*s+18*s*snakeWiggle,10*s,-10*s);
-              ctx.quadraticCurveTo(22*s,-10*s-14*s*snakeWiggle,30*s,-10*s);
+              ctx.moveTo(-30 * s, -10 * s);
+              ctx.quadraticCurveTo(-10 * s, -10 * s + 18 * s * snakeWiggle, 10 * s, -10 * s);
+              ctx.quadraticCurveTo(22 * s, -10 * s - 14 * s * snakeWiggle, 30 * s, -10 * s);
               ctx.stroke();
-              ctx.strokeStyle='#3a9a3a'; ctx.lineWidth=8*s;
+              ctx.strokeStyle = '#3a9a3a'; ctx.lineWidth = 8 * s;
               ctx.beginPath();
-              ctx.moveTo(-30*s,-10*s);
-              ctx.quadraticCurveTo(-10*s,-10*s+18*s*snakeWiggle,10*s,-10*s);
-              ctx.quadraticCurveTo(22*s,-10*s-14*s*snakeWiggle,30*s,-10*s);
+              ctx.moveTo(-30 * s, -10 * s);
+              ctx.quadraticCurveTo(-10 * s, -10 * s + 18 * s * snakeWiggle, 10 * s, -10 * s);
+              ctx.quadraticCurveTo(22 * s, -10 * s - 14 * s * snakeWiggle, 30 * s, -10 * s);
               ctx.stroke();
               // Head
-              ctx.beginPath(); ctx.arc(32*s,-10*s,9*s,0,Math.PI*2); outlineFill('#2a7a2a');
-              ctx.fillStyle='#ffff00'; ctx.beginPath(); ctx.arc(35*s,-13*s,3.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(35*s,-13*s,2*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(32 * s, -10 * s, 9 * s, 0, Math.PI * 2); outlineFill('#2a7a2a');
+              ctx.fillStyle = '#ffff00'; ctx.beginPath(); ctx.arc(35 * s, -13 * s, 3.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(35 * s, -13 * s, 2 * s, 0, Math.PI * 2); ctx.fill();
               // Forked tongue
-              ctx.strokeStyle='#ff2222'; ctx.lineWidth=2*s;
-              ctx.beginPath(); ctx.moveTo(40*s,-9*s); ctx.lineTo(48*s,-7*s); ctx.moveTo(40*s,-9*s); ctx.lineTo(48*s,-11*s); ctx.stroke();
+              ctx.strokeStyle = '#ff2222'; ctx.lineWidth = 2 * s;
+              ctx.beginPath(); ctx.moveTo(40 * s, -9 * s); ctx.lineTo(48 * s, -7 * s); ctx.moveTo(40 * s, -9 * s); ctx.lineTo(48 * s, -11 * s); ctx.stroke();
               // Pattern
-              ctx.fillStyle='#1a5a1a';
-              for (let p2=-2; p2<=2; p2++) {
-                ctx.beginPath(); ctx.ellipse(p2*14*s,-10*s+Math.sin((p2+el.phase)*2)*snakeWiggle*16*s,4*s,5*s,0,0,Math.PI*2); ctx.fill();
+              ctx.fillStyle = '#1a5a1a';
+              for (let p2 = -2; p2 <= 2; p2++) {
+                ctx.beginPath(); ctx.ellipse(p2 * 14 * s, -10 * s + Math.sin((p2 + el.phase) * 2) * snakeWiggle * 16 * s, 4 * s, 5 * s, 0, 0, Math.PI * 2); ctx.fill();
               }
               break;
             }
 
             case 'lizard': {
-              ctx.beginPath(); ctx.ellipse(0,-16*s,16*s,8*s,0,0,Math.PI*2); outlineFill('#7a9a20');
+              ctx.beginPath(); ctx.ellipse(0, -16 * s, 16 * s, 8 * s, 0, 0, Math.PI * 2); outlineFill('#7a9a20');
               // Spiny back
-              ctx.fillStyle='#5a7a10';
-              for (let sp=-3; sp<=3; sp++) {
-                ctx.beginPath(); ctx.moveTo(sp*5*s,-22*s); ctx.lineTo(sp*5*s-3*s,-30*s); ctx.lineTo(sp*5*s+3*s,-30*s); ctx.fill();
+              ctx.fillStyle = '#5a7a10';
+              for (let sp = -3; sp <= 3; sp++) {
+                ctx.beginPath(); ctx.moveTo(sp * 5 * s, -22 * s); ctx.lineTo(sp * 5 * s - 3 * s, -30 * s); ctx.lineTo(sp * 5 * s + 3 * s, -30 * s); ctx.fill();
               }
               // Head
-              ctx.beginPath(); ctx.ellipse(16*s,-18*s,10*s,7*s,0,0,Math.PI*2); outlineFill('#7a9a20');
-              ctx.beginPath(); ctx.arc(22*s,-20*s,4*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='#ff8800'; ctx.beginPath(); ctx.arc(22*s,-20*s,2.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(22*s,-20*s,1.2*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.ellipse(16 * s, -18 * s, 10 * s, 7 * s, 0, 0, Math.PI * 2); outlineFill('#7a9a20');
+              ctx.beginPath(); ctx.arc(22 * s, -20 * s, 4 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = '#ff8800'; ctx.beginPath(); ctx.arc(22 * s, -20 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(22 * s, -20 * s, 1.2 * s, 0, Math.PI * 2); ctx.fill();
               // Tongue
-              ctx.strokeStyle='#ff2222'; ctx.lineWidth=2*s;
-              ctx.beginPath(); ctx.moveTo(25*s,-17*s); ctx.lineTo(32*s,-15*s); ctx.moveTo(25*s,-17*s); ctx.lineTo(32*s,-19*s); ctx.stroke();
+              ctx.strokeStyle = '#ff2222'; ctx.lineWidth = 2 * s;
+              ctx.beginPath(); ctx.moveTo(25 * s, -17 * s); ctx.lineTo(32 * s, -15 * s); ctx.moveTo(25 * s, -17 * s); ctx.lineTo(32 * s, -19 * s); ctx.stroke();
               // Tail
-              ctx.strokeStyle='#7a9a20'; ctx.lineWidth=7*s; ctx.lineCap='round';
-              ctx.beginPath(); ctx.moveTo(-14*s,-14*s); ctx.quadraticCurveTo(-28*s,-8*s,-24*s,8*s); ctx.stroke();
+              ctx.strokeStyle = '#7a9a20'; ctx.lineWidth = 7 * s; ctx.lineCap = 'round';
+              ctx.beginPath(); ctx.moveTo(-14 * s, -14 * s); ctx.quadraticCurveTo(-28 * s, -8 * s, -24 * s, 8 * s); ctx.stroke();
               break;
             }
 
             case 'rooster': {
-              ctx.beginPath(); ctx.ellipse(0,-28*s,14*s,20*s,0,0,Math.PI*2); outlineFill('#b84820');
+              ctx.beginPath(); ctx.ellipse(0, -28 * s, 14 * s, 20 * s, 0, 0, Math.PI * 2); outlineFill('#b84820');
               // Tail feathers
-              ctx.fillStyle='#ff6600';
-              ctx.beginPath(); ctx.moveTo(-12*s,-34*s); ctx.quadraticCurveTo(-28*s,-40*s,-26*s,-24*s); ctx.fill();
-              ctx.fillStyle='#ffcc00';
-              ctx.beginPath(); ctx.moveTo(-10*s,-36*s); ctx.quadraticCurveTo(-30*s,-38*s,-26*s,-22*s); ctx.fill();
-              ctx.fillStyle='#ff3300';
-              ctx.beginPath(); ctx.moveTo(-14*s,-32*s); ctx.quadraticCurveTo(-26*s,-44*s,-22*s,-26*s); ctx.fill();
+              ctx.fillStyle = '#ff6600';
+              ctx.beginPath(); ctx.moveTo(-12 * s, -34 * s); ctx.quadraticCurveTo(-28 * s, -40 * s, -26 * s, -24 * s); ctx.fill();
+              ctx.fillStyle = '#ffcc00';
+              ctx.beginPath(); ctx.moveTo(-10 * s, -36 * s); ctx.quadraticCurveTo(-30 * s, -38 * s, -26 * s, -22 * s); ctx.fill();
+              ctx.fillStyle = '#ff3300';
+              ctx.beginPath(); ctx.moveTo(-14 * s, -32 * s); ctx.quadraticCurveTo(-26 * s, -44 * s, -22 * s, -26 * s); ctx.fill();
               // Head
-              ctx.beginPath(); ctx.ellipse(8*s,-48*s,11*s,11*s,0,0,Math.PI*2); outlineFill('#b84820');
+              ctx.beginPath(); ctx.ellipse(8 * s, -48 * s, 11 * s, 11 * s, 0, 0, Math.PI * 2); outlineFill('#b84820');
               // Red comb
-              ctx.fillStyle='#ff2200';
-              ctx.beginPath(); ctx.moveTo(4*s,-58*s); ctx.lineTo(0,-68*s); ctx.lineTo(6*s,-62*s); ctx.lineTo(10*s,-70*s); ctx.lineTo(14*s,-60*s); ctx.lineTo(16*s,-58*s); ctx.fill();
+              ctx.fillStyle = '#ff2200';
+              ctx.beginPath(); ctx.moveTo(4 * s, -58 * s); ctx.lineTo(0, -68 * s); ctx.lineTo(6 * s, -62 * s); ctx.lineTo(10 * s, -70 * s); ctx.lineTo(14 * s, -60 * s); ctx.lineTo(16 * s, -58 * s); ctx.fill();
               // Wattle
-              ctx.fillStyle='#ff3322'; ctx.beginPath(); ctx.ellipse(6*s,-42*s,4*s,6*s,0,0,Math.PI*2); ctx.fill();
+              ctx.fillStyle = '#ff3322'; ctx.beginPath(); ctx.ellipse(6 * s, -42 * s, 4 * s, 6 * s, 0, 0, Math.PI * 2); ctx.fill();
               // Beak
-              ctx.fillStyle='#ffcc00'; ctx.beginPath(); ctx.moveTo(16*s,-47*s); ctx.lineTo(24*s,-46*s); ctx.lineTo(16*s,-44*s); ctx.fill();
+              ctx.fillStyle = '#ffcc00'; ctx.beginPath(); ctx.moveTo(16 * s, -47 * s); ctx.lineTo(24 * s, -46 * s); ctx.lineTo(16 * s, -44 * s); ctx.fill();
               // Eye
-              ctx.beginPath(); ctx.arc(12*s,-50*s,4*s,0,Math.PI*2); outlineFill('white');
-              ctx.fillStyle='#ff8800'; ctx.beginPath(); ctx.arc(12*s,-50*s,2.5*s,0,Math.PI*2); ctx.fill();
-              ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(12*s,-50*s,1.2*s,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.arc(12 * s, -50 * s, 4 * s, 0, Math.PI * 2); outlineFill('white');
+              ctx.fillStyle = '#ff8800'; ctx.beginPath(); ctx.arc(12 * s, -50 * s, 2.5 * s, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = 'black'; ctx.beginPath(); ctx.arc(12 * s, -50 * s, 1.2 * s, 0, Math.PI * 2); ctx.fill();
               break;
             }
 
             case 'robot_bird': {
-              ctx.shadowColor='#00ccff'; ctx.shadowBlur=10*s;
-              ctx.beginPath(); ctx.ellipse(0,-22*s,13*s,9*s,0,0,Math.PI*2); outlineFill('#8898b0');
-              ctx.beginPath(); ctx.ellipse(12*s,-28*s,11*s,10*s,0,0,Math.PI*2); outlineFill('#8898b0');
-              ctx.shadowBlur=0;
+              ctx.shadowColor = '#00ccff'; ctx.shadowBlur = 10 * s;
+              ctx.beginPath(); ctx.ellipse(0, -22 * s, 13 * s, 9 * s, 0, 0, Math.PI * 2); outlineFill('#8898b0');
+              ctx.beginPath(); ctx.ellipse(12 * s, -28 * s, 11 * s, 10 * s, 0, 0, Math.PI * 2); outlineFill('#8898b0');
+              ctx.shadowBlur = 0;
               // Visor
-              ctx.fillStyle='#00ccff'; ctx.beginPath(); ctx.rect(8*s,-34*s,8*s,5*s); ctx.fill();
+              ctx.fillStyle = '#00ccff'; ctx.beginPath(); ctx.rect(8 * s, -34 * s, 8 * s, 5 * s); ctx.fill();
               // Beak
-              ctx.fillStyle='#aabbcc'; ctx.beginPath(); ctx.moveTo(21*s,-28*s); ctx.lineTo(30*s,-26*s); ctx.lineTo(21*s,-24*s); ctx.fill();
+              ctx.fillStyle = '#aabbcc'; ctx.beginPath(); ctx.moveTo(21 * s, -28 * s); ctx.lineTo(30 * s, -26 * s); ctx.lineTo(21 * s, -24 * s); ctx.fill();
               // Panel lines
-              ctx.strokeStyle='#6688aa'; ctx.lineWidth=1.5*s;
-              ctx.beginPath(); ctx.moveTo(-5*s,-18*s); ctx.lineTo(-5*s,-26*s); ctx.stroke();
-              ctx.beginPath(); ctx.moveTo(0,-18*s); ctx.lineTo(0,-26*s); ctx.stroke();
+              ctx.strokeStyle = '#6688aa'; ctx.lineWidth = 1.5 * s;
+              ctx.beginPath(); ctx.moveTo(-5 * s, -18 * s); ctx.lineTo(-5 * s, -26 * s); ctx.stroke();
+              ctx.beginPath(); ctx.moveTo(0, -18 * s); ctx.lineTo(0, -26 * s); ctx.stroke();
               // Mechanical wings
-              const mWing = Math.sin(now/200 + el.phase)*0.5;
-              ctx.save(); ctx.translate(-10*s,-22*s); ctx.rotate(-mWing);
-              ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(-26*s,-6*s); ctx.lineTo(-22*s,6*s); outlineFill('#7090a8');
-              ctx.fillStyle='#003355'; ctx.fillRect(-18*s,-4*s,6*s,3*s); ctx.fillRect(-12*s,-4*s,6*s,3*s);
+              const mWing = Math.sin(now / 200 + el.phase) * 0.5;
+              ctx.save(); ctx.translate(-10 * s, -22 * s); ctx.rotate(-mWing);
+              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(-26 * s, -6 * s); ctx.lineTo(-22 * s, 6 * s); outlineFill('#7090a8');
+              ctx.fillStyle = '#003355'; ctx.fillRect(-18 * s, -4 * s, 6 * s, 3 * s); ctx.fillRect(-12 * s, -4 * s, 6 * s, 3 * s);
               ctx.restore();
               break;
             }
@@ -2517,89 +2518,89 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
             const legWalk = Math.sin(now / 280 + el.phase);
             const legColor = el.subtype === 'cat' || el.subtype === 'stray_cat' || el.subtype === 'space_cat' ? '#778899'
               : el.subtype === 'dog' ? '#c8943a'
-              : el.subtype === 'rabbit' ? '#e8ddd0'
-              : el.subtype === 'bear' ? '#5a3010'
-              : el.subtype === 'deer' ? '#c87840'
-              : el.subtype === 'cow' ? '#f5f5f0'
-              : el.subtype === 'horse' ? '#9B5c30'
-              : el.subtype === 'fox' ? '#e06820'
-              : el.subtype === 'squirrel' ? '#c87030'
-              : el.subtype === 'goat' ? '#d8d0b8'
-              : el.subtype === 'rooster' ? '#b84820'
-              : el.subtype === 'alien_creature' ? '#22dd66'
-              : el.subtype === 'rat' ? '#8a8070'
-              : el.subtype === 'owl' ? '#9a7a30'
-              : '#888877';
+                : el.subtype === 'rabbit' ? '#e8ddd0'
+                  : el.subtype === 'bear' ? '#5a3010'
+                    : el.subtype === 'deer' ? '#c87840'
+                      : el.subtype === 'cow' ? '#f5f5f0'
+                        : el.subtype === 'horse' ? '#9B5c30'
+                          : el.subtype === 'fox' ? '#e06820'
+                            : el.subtype === 'squirrel' ? '#c87030'
+                              : el.subtype === 'goat' ? '#d8d0b8'
+                                : el.subtype === 'rooster' ? '#b84820'
+                                  : el.subtype === 'alien_creature' ? '#22dd66'
+                                    : el.subtype === 'rat' ? '#8a8070'
+                                      : el.subtype === 'owl' ? '#9a7a30'
+                                        : '#888877';
 
             const legW = 5 * s;
             const footW = 8 * s;
             const footH = 4 * s;
 
-            if (['cat','stray_cat','space_cat','rabbit','squirrel','rat','alien_creature'].includes(el.subtype)) {
+            if (['cat', 'stray_cat', 'space_cat', 'rabbit', 'squirrel', 'rat', 'alien_creature'].includes(el.subtype)) {
               // Bipedal — 2 legs
-              const leftLeg  = legWalk * 8 * s;
+              const leftLeg = legWalk * 8 * s;
               const rightLeg = -legWalk * 8 * s;
               // Left leg
               ctx.fillStyle = legColor;
-              ctx.strokeStyle = 'rgba(0,0,0,0.4)'; ctx.lineWidth = 1.5*s;
-              ctx.beginPath(); ctx.roundRect(-8*s, -14*s + leftLeg, legW, 14*s, 2*s); ctx.fill(); ctx.stroke();
+              ctx.strokeStyle = 'rgba(0,0,0,0.4)'; ctx.lineWidth = 1.5 * s;
+              ctx.beginPath(); ctx.roundRect(-8 * s, -14 * s + leftLeg, legW, 14 * s, 2 * s); ctx.fill(); ctx.stroke();
               // Left foot
-              ctx.beginPath(); ctx.ellipse(-6*s, leftLeg, footW, footH, 0, 0, Math.PI*2); ctx.fill(); ctx.stroke();
+              ctx.beginPath(); ctx.ellipse(-6 * s, leftLeg, footW, footH, 0, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
               // Right leg
-              ctx.beginPath(); ctx.roundRect(3*s, -14*s + rightLeg, legW, 14*s, 2*s); ctx.fill(); ctx.stroke();
+              ctx.beginPath(); ctx.roundRect(3 * s, -14 * s + rightLeg, legW, 14 * s, 2 * s); ctx.fill(); ctx.stroke();
               // Right foot
-              ctx.beginPath(); ctx.ellipse(5*s, rightLeg, footW, footH, 0, 0, Math.PI*2); ctx.fill(); ctx.stroke();
+              ctx.beginPath(); ctx.ellipse(5 * s, rightLeg, footW, footH, 0, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
 
-            } else if (['bear','cow','goat','deer'].includes(el.subtype)) {
+            } else if (['bear', 'cow', 'goat', 'deer'].includes(el.subtype)) {
               // Quadruped — 4 thick legs with hooves
               const fl = legWalk * 6 * s;
               const rl = -legWalk * 6 * s;
               const legH = 18 * s;
               const hoof = el.subtype === 'cow' || el.subtype === 'goat' || el.subtype === 'deer' ? '#333' : '#4a2800';
               // Front-left
-              ctx.fillStyle = legColor; ctx.strokeStyle='rgba(0,0,0,0.4)'; ctx.lineWidth=1.5*s;
-              ctx.beginPath(); ctx.roundRect(-16*s, -legH + fl, legW+2*s, legH, 2*s); ctx.fill(); ctx.stroke();
-              ctx.fillStyle = hoof; ctx.beginPath(); ctx.ellipse(-14*s, fl, 7*s, 4*s, 0,0,Math.PI*2); ctx.fill();
+              ctx.fillStyle = legColor; ctx.strokeStyle = 'rgba(0,0,0,0.4)'; ctx.lineWidth = 1.5 * s;
+              ctx.beginPath(); ctx.roundRect(-16 * s, -legH + fl, legW + 2 * s, legH, 2 * s); ctx.fill(); ctx.stroke();
+              ctx.fillStyle = hoof; ctx.beginPath(); ctx.ellipse(-14 * s, fl, 7 * s, 4 * s, 0, 0, Math.PI * 2); ctx.fill();
               // Front-right
               ctx.fillStyle = legColor;
-              ctx.beginPath(); ctx.roundRect(-6*s, -legH + rl, legW+2*s, legH, 2*s); ctx.fill(); ctx.stroke();
-              ctx.fillStyle = hoof; ctx.beginPath(); ctx.ellipse(-4*s, rl, 7*s, 4*s, 0,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.roundRect(-6 * s, -legH + rl, legW + 2 * s, legH, 2 * s); ctx.fill(); ctx.stroke();
+              ctx.fillStyle = hoof; ctx.beginPath(); ctx.ellipse(-4 * s, rl, 7 * s, 4 * s, 0, 0, Math.PI * 2); ctx.fill();
               // Back-left
               ctx.fillStyle = legColor;
-              ctx.beginPath(); ctx.roundRect(4*s, -legH + rl, legW+2*s, legH, 2*s); ctx.fill(); ctx.stroke();
-              ctx.fillStyle = hoof; ctx.beginPath(); ctx.ellipse(6*s, rl, 7*s, 4*s, 0,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.roundRect(4 * s, -legH + rl, legW + 2 * s, legH, 2 * s); ctx.fill(); ctx.stroke();
+              ctx.fillStyle = hoof; ctx.beginPath(); ctx.ellipse(6 * s, rl, 7 * s, 4 * s, 0, 0, Math.PI * 2); ctx.fill();
               // Back-right
               ctx.fillStyle = legColor;
-              ctx.beginPath(); ctx.roundRect(14*s, -legH + fl, legW+2*s, legH, 2*s); ctx.fill(); ctx.stroke();
-              ctx.fillStyle = hoof; ctx.beginPath(); ctx.ellipse(16*s, fl, 7*s, 4*s, 0,0,Math.PI*2); ctx.fill();
+              ctx.beginPath(); ctx.roundRect(14 * s, -legH + fl, legW + 2 * s, legH, 2 * s); ctx.fill(); ctx.stroke();
+              ctx.fillStyle = hoof; ctx.beginPath(); ctx.ellipse(16 * s, fl, 7 * s, 4 * s, 0, 0, Math.PI * 2); ctx.fill();
 
             } else if (['horse'].includes(el.subtype)) {
               // Horse — 4 long legs
               const fl = legWalk * 8 * s;
               const rl = -legWalk * 8 * s;
               const legH = 26 * s;
-              ctx.fillStyle = '#9B5c30'; ctx.strokeStyle='rgba(0,0,0,0.4)'; ctx.lineWidth=1.5*s;
-              for (const [ox, phase] of [[-18*s,fl],[-8*s,rl],[6*s,rl],[16*s,fl]] as [number,number][]) {
-                ctx.beginPath(); ctx.roundRect(ox, -legH + phase, 6*s, legH, 2*s); ctx.fill(); ctx.stroke();
-                ctx.fillStyle='#333'; ctx.beginPath(); ctx.ellipse(ox+3*s, phase, 7*s, 4*s, 0,0,Math.PI*2); ctx.fill();
-                ctx.fillStyle='#9B5c30';
+              ctx.fillStyle = '#9B5c30'; ctx.strokeStyle = 'rgba(0,0,0,0.4)'; ctx.lineWidth = 1.5 * s;
+              for (const [ox, phase] of [[-18 * s, fl], [-8 * s, rl], [6 * s, rl], [16 * s, fl]] as [number, number][]) {
+                ctx.beginPath(); ctx.roundRect(ox, -legH + phase, 6 * s, legH, 2 * s); ctx.fill(); ctx.stroke();
+                ctx.fillStyle = '#333'; ctx.beginPath(); ctx.ellipse(ox + 3 * s, phase, 7 * s, 4 * s, 0, 0, Math.PI * 2); ctx.fill();
+                ctx.fillStyle = '#9B5c30';
               }
 
-            } else if (['dog','fox'].includes(el.subtype)) {
+            } else if (['dog', 'fox'].includes(el.subtype)) {
               // Dog/fox — 4 legs
               const fl = legWalk * 6 * s;
               const rl = -legWalk * 6 * s;
               const legH = 16 * s;
               const fc = el.subtype === 'fox' ? '#e06820' : '#c8943a';
-              ctx.fillStyle = fc; ctx.strokeStyle='rgba(0,0,0,0.35)'; ctx.lineWidth=1.5*s;
-              for (const [ox, phase] of [[-12*s,fl],[-4*s,rl],[4*s,rl],[12*s,fl]] as [number,number][]) {
-                ctx.beginPath(); ctx.roundRect(ox, -legH + phase, 5*s, legH, 2*s); ctx.fill(); ctx.stroke();
+              ctx.fillStyle = fc; ctx.strokeStyle = 'rgba(0,0,0,0.35)'; ctx.lineWidth = 1.5 * s;
+              for (const [ox, phase] of [[-12 * s, fl], [-4 * s, rl], [4 * s, rl], [12 * s, fl]] as [number, number][]) {
+                ctx.beginPath(); ctx.roundRect(ox, -legH + phase, 5 * s, legH, 2 * s); ctx.fill(); ctx.stroke();
                 // Paw
-                ctx.beginPath(); ctx.ellipse(ox+2.5*s, phase, 6*s, 3.5*s, 0,0,Math.PI*2); ctx.fill(); ctx.stroke();
+                ctx.beginPath(); ctx.ellipse(ox + 2.5 * s, phase, 6 * s, 3.5 * s, 0, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
                 // Toes
-                ctx.fillStyle='rgba(0,0,0,0.2)';
-                for (let t=-2; t<=2; t+=2) {
-                  ctx.beginPath(); ctx.arc(ox+2.5*s+t*2*s, phase-1*s, 1.5*s, 0,Math.PI*2); ctx.fill();
+                ctx.fillStyle = 'rgba(0,0,0,0.2)';
+                for (let t = -2; t <= 2; t += 2) {
+                  ctx.beginPath(); ctx.arc(ox + 2.5 * s + t * 2 * s, phase - 1 * s, 1.5 * s, 0, Math.PI * 2); ctx.fill();
                 }
                 ctx.fillStyle = fc;
               }
@@ -2608,45 +2609,45 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
               // Rooster — 2 scaly legs + claws
               const fl = legWalk * 7 * s;
               const rl = -legWalk * 7 * s;
-              ctx.fillStyle='#ddaa20'; ctx.strokeStyle='rgba(0,0,0,0.4)'; ctx.lineWidth=1.5*s;
+              ctx.fillStyle = '#ddaa20'; ctx.strokeStyle = 'rgba(0,0,0,0.4)'; ctx.lineWidth = 1.5 * s;
               // Left leg (thigh + shin)
-              ctx.beginPath(); ctx.roundRect(-8*s, -16*s+fl, 5*s, 10*s, 1*s); ctx.fill(); ctx.stroke();
-              ctx.beginPath(); ctx.roundRect(-9*s, -6*s+fl, 4*s, 8*s, 1*s); ctx.fill(); ctx.stroke();
+              ctx.beginPath(); ctx.roundRect(-8 * s, -16 * s + fl, 5 * s, 10 * s, 1 * s); ctx.fill(); ctx.stroke();
+              ctx.beginPath(); ctx.roundRect(-9 * s, -6 * s + fl, 4 * s, 8 * s, 1 * s); ctx.fill(); ctx.stroke();
               // Left claws
-              ctx.strokeStyle='#997700'; ctx.lineWidth=1.5*s; ctx.lineCap='round';
-              ctx.beginPath(); ctx.moveTo(-8*s,fl); ctx.lineTo(-16*s,fl+4*s); ctx.stroke();
-              ctx.beginPath(); ctx.moveTo(-8*s,fl); ctx.lineTo(-8*s,fl+6*s); ctx.stroke();
-              ctx.beginPath(); ctx.moveTo(-8*s,fl); ctx.lineTo(-2*s,fl+4*s); ctx.stroke();
+              ctx.strokeStyle = '#997700'; ctx.lineWidth = 1.5 * s; ctx.lineCap = 'round';
+              ctx.beginPath(); ctx.moveTo(-8 * s, fl); ctx.lineTo(-16 * s, fl + 4 * s); ctx.stroke();
+              ctx.beginPath(); ctx.moveTo(-8 * s, fl); ctx.lineTo(-8 * s, fl + 6 * s); ctx.stroke();
+              ctx.beginPath(); ctx.moveTo(-8 * s, fl); ctx.lineTo(-2 * s, fl + 4 * s); ctx.stroke();
               // Right leg
-              ctx.fillStyle='#ddaa20'; ctx.strokeStyle='rgba(0,0,0,0.4)'; ctx.lineWidth=1.5*s;
-              ctx.beginPath(); ctx.roundRect(3*s, -16*s+rl, 5*s, 10*s, 1*s); ctx.fill(); ctx.stroke();
-              ctx.beginPath(); ctx.roundRect(2*s, -6*s+rl, 4*s, 8*s, 1*s); ctx.fill(); ctx.stroke();
-              ctx.strokeStyle='#997700'; ctx.lineWidth=1.5*s; ctx.lineCap='round';
-              ctx.beginPath(); ctx.moveTo(3*s,rl); ctx.lineTo(-5*s,rl+4*s); ctx.stroke();
-              ctx.beginPath(); ctx.moveTo(3*s,rl); ctx.lineTo(3*s,rl+6*s); ctx.stroke();
-              ctx.beginPath(); ctx.moveTo(3*s,rl); ctx.lineTo(10*s,rl+4*s); ctx.stroke();
+              ctx.fillStyle = '#ddaa20'; ctx.strokeStyle = 'rgba(0,0,0,0.4)'; ctx.lineWidth = 1.5 * s;
+              ctx.beginPath(); ctx.roundRect(3 * s, -16 * s + rl, 5 * s, 10 * s, 1 * s); ctx.fill(); ctx.stroke();
+              ctx.beginPath(); ctx.roundRect(2 * s, -6 * s + rl, 4 * s, 8 * s, 1 * s); ctx.fill(); ctx.stroke();
+              ctx.strokeStyle = '#997700'; ctx.lineWidth = 1.5 * s; ctx.lineCap = 'round';
+              ctx.beginPath(); ctx.moveTo(3 * s, rl); ctx.lineTo(-5 * s, rl + 4 * s); ctx.stroke();
+              ctx.beginPath(); ctx.moveTo(3 * s, rl); ctx.lineTo(3 * s, rl + 6 * s); ctx.stroke();
+              ctx.beginPath(); ctx.moveTo(3 * s, rl); ctx.lineTo(10 * s, rl + 4 * s); ctx.stroke();
 
             } else if (['owl'].includes(el.subtype)) {
               // Owl — perch talons
-              ctx.fillStyle='#cc8800'; ctx.strokeStyle='rgba(0,0,0,0.4)'; ctx.lineWidth=1.5*s;
-              ctx.beginPath(); ctx.roundRect(-5*s,-8*s,4*s,8*s,1*s); ctx.fill(); ctx.stroke();
-              ctx.beginPath(); ctx.roundRect(1*s,-8*s,4*s,8*s,1*s); ctx.fill(); ctx.stroke();
-              ctx.strokeStyle='#996600'; ctx.lineWidth=2*s; ctx.lineCap='round';
-              for (const [bx,by] of [[-8*s,2*s],[-5*s,4*s],[-2*s,2*s],[1*s,2*s],[4*s,4*s],[7*s,2*s]] as [number,number][]) {
-                ctx.beginPath(); ctx.moveTo(bx > 0 ? 3*s : -3*s, by-2*s); ctx.lineTo(bx, by); ctx.stroke();
+              ctx.fillStyle = '#cc8800'; ctx.strokeStyle = 'rgba(0,0,0,0.4)'; ctx.lineWidth = 1.5 * s;
+              ctx.beginPath(); ctx.roundRect(-5 * s, -8 * s, 4 * s, 8 * s, 1 * s); ctx.fill(); ctx.stroke();
+              ctx.beginPath(); ctx.roundRect(1 * s, -8 * s, 4 * s, 8 * s, 1 * s); ctx.fill(); ctx.stroke();
+              ctx.strokeStyle = '#996600'; ctx.lineWidth = 2 * s; ctx.lineCap = 'round';
+              for (const [bx, by] of [[-8 * s, 2 * s], [-5 * s, 4 * s], [-2 * s, 2 * s], [1 * s, 2 * s], [4 * s, 4 * s], [7 * s, 2 * s]] as [number, number][]) {
+                ctx.beginPath(); ctx.moveTo(bx > 0 ? 3 * s : -3 * s, by - 2 * s); ctx.lineTo(bx, by); ctx.stroke();
               }
 
-            } else if (['snake','lizard','crab','seal'].includes(el.subtype)) {
+            } else if (['snake', 'lizard', 'crab', 'seal'].includes(el.subtype)) {
               // No legs needed — they crawl/slither/flipper
             } else {
               // Generic 2 legs fallback
               const fl = legWalk * 6 * s;
               const rl = -legWalk * 6 * s;
-              ctx.fillStyle = legColor; ctx.strokeStyle='rgba(0,0,0,0.35)'; ctx.lineWidth=1.5*s;
-              ctx.beginPath(); ctx.roundRect(-7*s,-14*s+fl, 5*s,14*s,2*s); ctx.fill(); ctx.stroke();
-              ctx.beginPath(); ctx.ellipse(-5*s,fl, 7*s,4*s,0,0,Math.PI*2); ctx.fill(); ctx.stroke();
-              ctx.beginPath(); ctx.roundRect(2*s,-14*s+rl, 5*s,14*s,2*s); ctx.fill(); ctx.stroke();
-              ctx.beginPath(); ctx.ellipse(4*s,rl, 7*s,4*s,0,0,Math.PI*2); ctx.fill(); ctx.stroke();
+              ctx.fillStyle = legColor; ctx.strokeStyle = 'rgba(0,0,0,0.35)'; ctx.lineWidth = 1.5 * s;
+              ctx.beginPath(); ctx.roundRect(-7 * s, -14 * s + fl, 5 * s, 14 * s, 2 * s); ctx.fill(); ctx.stroke();
+              ctx.beginPath(); ctx.ellipse(-5 * s, fl, 7 * s, 4 * s, 0, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+              ctx.beginPath(); ctx.roundRect(2 * s, -14 * s + rl, 5 * s, 14 * s, 2 * s); ctx.fill(); ctx.stroke();
+              ctx.beginPath(); ctx.ellipse(4 * s, rl, 7 * s, 4 * s, 0, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
             }
           }
         }
@@ -2660,13 +2661,13 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
         if (p.x - game.scrollX + p.width > 0 && p.x - game.scrollX < canvas.width) {
           ctx.fillStyle = '#8B4513';
           ctx.fillRect(p.x - game.scrollX, p.y, p.width, p.height);
-          
+
           // Add texture
           ctx.fillStyle = '#A0522D';
           for (let i = 0; i < p.width; i += 20) {
             ctx.fillRect(p.x - game.scrollX + i, p.y, 10, p.height);
           }
-          
+
           // Draw grass on top of ground platforms
           if (p.isGround) {
             ctx.fillStyle = '#228B22';
@@ -2674,13 +2675,13 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
           }
         }
       });
-      
+
       // Draw holes (black gaps)
       game.holes.forEach(hole => {
         if (hole.x - game.scrollX + hole.width > 0 && hole.x - game.scrollX < canvas.width) {
           ctx.fillStyle = '#000000';
           ctx.fillRect(hole.x - game.scrollX, hole.y, hole.width, 100);
-          
+
           // Add depth effect
           ctx.fillStyle = '#333333';
           ctx.fillRect(hole.x - game.scrollX, hole.y + 20, hole.width, 80);
@@ -2695,7 +2696,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
         // Outer red glow
         ctx.fillStyle = '#FF0000';
         ctx.beginPath(); ctx.arc(bx, b.y, b.radius * 2, 0, Math.PI * 2); ctx.fill();
-        
+
         // Inner bright red
         ctx.fillStyle = '#FF4444';
         ctx.beginPath(); ctx.arc(bx, b.y, b.radius * 1.3, 0, Math.PI * 2); ctx.fill();
@@ -2708,108 +2709,108 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
       // Enemies - Detailed enemies (Tom & Jerry style)
       game.enemies.forEach(e => {
         if (e.x < -500) return;
-        
+
         const ex = e.x - game.scrollX;
         const ey = e.y;
         const ew = e.width;
         const eh = e.height;
-        
+
         if (e.type === 0) { // Dog enemy
           // Draw dog body
           ctx.fillStyle = '#8B0000';
           ctx.beginPath();
-          ctx.ellipse(ex + ew/2, ey + eh/2, ew/2, eh/2, 0, 0, Math.PI * 2);
+          ctx.ellipse(ex + ew / 2, ey + eh / 2, ew / 2, eh / 2, 0, 0, Math.PI * 2);
           ctx.fill();
-          
+
           // Draw head
           ctx.beginPath();
-          ctx.arc(ex + ew/2, ey + eh/4, ew/3, 0, Math.PI * 2);
+          ctx.arc(ex + ew / 2, ey + eh / 4, ew / 3, 0, Math.PI * 2);
           ctx.fill();
-          
+
           // Draw ears
           ctx.fillStyle = '#333';
           ctx.beginPath();
-          ctx.ellipse(ex + ew/2 - 10, ey + eh/4 - 10, 8, 12, 0, 0, Math.PI * 2);
+          ctx.ellipse(ex + ew / 2 - 10, ey + eh / 4 - 10, 8, 12, 0, 0, Math.PI * 2);
           ctx.fill();
           ctx.beginPath();
-          ctx.ellipse(ex + ew/2 + 10, ey + eh/4 - 10, 8, 12, 0, 0, Math.PI * 2);
+          ctx.ellipse(ex + ew / 2 + 10, ey + eh / 4 - 10, 8, 12, 0, 0, Math.PI * 2);
           ctx.fill();
-          
+
           // Draw eyes
           ctx.fillStyle = 'white';
           ctx.beginPath();
-          ctx.arc(ex + ew/2 - 8, ey + eh/4, 5, 0, Math.PI * 2);
+          ctx.arc(ex + ew / 2 - 8, ey + eh / 4, 5, 0, Math.PI * 2);
           ctx.fill();
           ctx.beginPath();
-          ctx.arc(ex + ew/2 + 8, ey + eh/4, 5, 0, Math.PI * 2);
+          ctx.arc(ex + ew / 2 + 8, ey + eh / 4, 5, 0, Math.PI * 2);
           ctx.fill();
-          
+
           // Draw pupils
           ctx.fillStyle = 'black';
           ctx.beginPath();
-          ctx.arc(ex + ew/2 - 8, ey + eh/4, 2, 0, Math.PI * 2);
+          ctx.arc(ex + ew / 2 - 8, ey + eh / 4, 2, 0, Math.PI * 2);
           ctx.fill();
           ctx.beginPath();
-          ctx.arc(ex + ew/2 + 8, ey + eh/4, 2, 0, Math.PI * 2);
+          ctx.arc(ex + ew / 2 + 8, ey + eh / 4, 2, 0, Math.PI * 2);
           ctx.fill();
-          
+
           // Draw nose
           ctx.fillStyle = 'black';
           ctx.beginPath();
-          ctx.arc(ex + ew/2, ey + eh/4 + 10, 4, 0, Math.PI * 2);
+          ctx.arc(ex + ew / 2, ey + eh / 4 + 10, 4, 0, Math.PI * 2);
           ctx.fill();
-          
+
           // Draw mouth
           ctx.strokeStyle = 'black';
           ctx.lineWidth = 2;
           ctx.beginPath();
-          ctx.arc(ex + ew/2, ey + eh/4 + 12, 3, 0, Math.PI);
+          ctx.arc(ex + ew / 2, ey + eh / 4 + 12, 3, 0, Math.PI);
           ctx.stroke();
         } else if (e.type === 1) { // Mouse enemy
           // Draw gray mouse enemy
           ctx.fillStyle = '#A9A9A9';
           ctx.beginPath();
-          ctx.ellipse(ex + ew/2, ey + eh/2, ew/2, eh/2, 0, 0, Math.PI * 2);
+          ctx.ellipse(ex + ew / 2, ey + eh / 2, ew / 2, eh / 2, 0, 0, Math.PI * 2);
           ctx.fill();
-          
+
           // Draw ears
           ctx.fillStyle = '#666';
           ctx.beginPath();
-          ctx.arc(ex + ew/2 - 8, ey + eh/4, 6, 0, Math.PI * 2);
+          ctx.arc(ex + ew / 2 - 8, ey + eh / 4, 6, 0, Math.PI * 2);
           ctx.fill();
           ctx.beginPath();
-          ctx.arc(ex + ew/2 + 8, ey + eh/4, 6, 0, Math.PI * 2);
+          ctx.arc(ex + ew / 2 + 8, ey + eh / 4, 6, 0, Math.PI * 2);
           ctx.fill();
-          
+
           // Draw eyes (angry)
           ctx.fillStyle = 'red';
           ctx.beginPath();
-          ctx.arc(ex + ew/2 - 6, ey + eh/3, 3, 0, Math.PI * 2);
+          ctx.arc(ex + ew / 2 - 6, ey + eh / 3, 3, 0, Math.PI * 2);
           ctx.fill();
           ctx.beginPath();
-          ctx.arc(ex + ew/2 + 6, ey + eh/3, 3, 0, Math.PI * 2);
+          ctx.arc(ex + ew / 2 + 6, ey + eh / 3, 3, 0, Math.PI * 2);
           ctx.fill();
-          
+
           // Draw teeth
           ctx.fillStyle = 'white';
-          ctx.fillRect(ex + ew/2 - 4, ey + eh/2, 3, 6);
-          ctx.fillRect(ex + ew/2 + 1, ey + eh/2, 3, 6);
+          ctx.fillRect(ex + ew / 2 - 4, ey + eh / 2, 3, 6);
+          ctx.fillRect(ex + ew / 2 + 1, ey + eh / 2, 3, 6);
         } else { // Spike ball
           const radius = ew / 2;
-          
+
           // Draw spike ball
           ctx.fillStyle = '#444';
           ctx.beginPath();
           ctx.arc(ex + radius, ey + radius, radius, 0, Math.PI * 2);
           ctx.fill();
-          
+
           // Draw spikes
           ctx.fillStyle = '#FF0000';
           const spikeCount = 8;
           for (let i = 0; i < spikeCount; i++) {
             const angle = (i * 2 * Math.PI) / spikeCount;
             const spikeLength = radius * 0.8;
-            
+
             ctx.beginPath();
             ctx.moveTo(
               ex + radius + Math.cos(angle) * radius,
@@ -2832,50 +2833,50 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
       // Draw Fishes (Yellow/Gold Fish) - Now drawn after background and platforms
       game.fishes.forEach((f: any) => {
         if (f.collected) return;
-        
+
         const fxs = f.x - game.scrollX;
-        
+
         // Skip if off screen
         if (fxs < -50 || fxs > canvas.width + 50) return;
-        
+
         const fx = fxs;
         const fy = f.y;
         const fw = f.width;
         const fh = f.height;
-        
+
         // Draw fish body (orange/gold like Jerry)
         ctx.fillStyle = '#FF8C00';
-        
+
         // Fish body - ellipse shape
         ctx.beginPath();
-        ctx.ellipse(fx + fw/2, fy + fh/2, fw/2, fh/2, 0, 0, Math.PI * 2);
+        ctx.ellipse(fx + fw / 2, fy + fh / 2, fw / 2, fh / 2, 0, 0, Math.PI * 2);
         ctx.fill();
-        
+
         // Fish tail
         ctx.beginPath();
-        ctx.moveTo(fx, fy + fh/2);
-        ctx.lineTo(fx - fh/2, fy);
-        ctx.lineTo(fx - fh/2, fy + fh);
+        ctx.moveTo(fx, fy + fh / 2);
+        ctx.lineTo(fx - fh / 2, fy);
+        ctx.lineTo(fx - fh / 2, fy + fh);
         ctx.closePath();
         ctx.fill();
-        
+
         // Fish eye
         ctx.fillStyle = 'white';
         ctx.beginPath();
-        ctx.arc(fx + fw*0.7, fy + fh*0.4, 3, 0, Math.PI * 2);
+        ctx.arc(fx + fw * 0.7, fy + fh * 0.4, 3, 0, Math.PI * 2);
         ctx.fill();
-        
+
         ctx.fillStyle = 'black';
         ctx.beginPath();
-        ctx.arc(fx + fw*0.7, fy + fh*0.4, 1.5, 0, Math.PI * 2);
+        ctx.arc(fx + fw * 0.7, fy + fh * 0.4, 1.5, 0, Math.PI * 2);
         ctx.fill();
-        
+
         // Fish fin on top
         ctx.fillStyle = '#FFA500';
         ctx.beginPath();
-        ctx.moveTo(fx + fw/2, fy);
-        ctx.lineTo(fx + fw/2 + 5, fy - 5);
-        ctx.lineTo(fx + fw/2 - 5, fy);
+        ctx.moveTo(fx + fw / 2, fy);
+        ctx.lineTo(fx + fw / 2 + 5, fy - 5);
+        ctx.lineTo(fx + fw / 2 - 5, fy);
         ctx.closePath();
         ctx.fill();
       });
@@ -2885,7 +2886,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
       game.fishes.forEach((f: any) => {
         if (f.collected) collectedCountInFrame++;
       });
-      
+
       // Goal Logic - check if player can complete level
       const allFishesCollected = collectedCountInFrame === game.fishes.length;
       const overlapsGoal = game.player.x < game.jerry.x + game.jerry.width && game.player.x + game.player.width > game.jerry.x && game.player.y < game.jerry.y + game.jerry.height && game.player.y + game.player.height > game.jerry.y;
@@ -2896,56 +2897,56 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
 
       // Goal - Detailed Jerry the mouse (Tom & Jerry style)
       const jx = game.jerry.x - game.scrollX; const jy = game.jerry.y; const jw = game.jerry.width; const jh = game.jerry.height;
-      
+
       // Draw Jerry as a proper mouse
       ctx.fillStyle = '#FF8C00';
-      
+
       // Draw body
       ctx.beginPath();
-      ctx.ellipse(jx + jw/2, jy + jh/2, jw/2, jh/2, 0, 0, Math.PI * 2);
+      ctx.ellipse(jx + jw / 2, jy + jh / 2, jw / 2, jh / 2, 0, 0, Math.PI * 2);
       ctx.fill();
-      
+
       // Draw head
       ctx.beginPath();
-      ctx.arc(jx + jw/2, jy + jh/4, jw/3, 0, Math.PI * 2);
+      ctx.arc(jx + jw / 2, jy + jh / 4, jw / 3, 0, Math.PI * 2);
       ctx.fill();
-      
+
       // Draw ears
       ctx.fillStyle = '#FF4500';
       ctx.beginPath();
-      ctx.arc(jx + jw/2 - 8, jy + jh/4 - 5, 5, 0, Math.PI * 2);
+      ctx.arc(jx + jw / 2 - 8, jy + jh / 4 - 5, 5, 0, Math.PI * 2);
       ctx.fill();
-      
+
       ctx.beginPath();
-      ctx.arc(jx + jw/2 + 8, jy + jh/4 - 5, 5, 0, Math.PI * 2);
+      ctx.arc(jx + jw / 2 + 8, jy + jh / 4 - 5, 5, 0, Math.PI * 2);
       ctx.fill();
-      
+
       // Draw eyes
       ctx.fillStyle = 'white';
       ctx.beginPath();
-      ctx.arc(jx + jw/2 - 5, jy + jh/4, 3, 0, Math.PI * 2);
+      ctx.arc(jx + jw / 2 - 5, jy + jh / 4, 3, 0, Math.PI * 2);
       ctx.fill();
-      
+
       ctx.beginPath();
-      ctx.arc(jx + jw/2 + 5, jy + jh/4, 3, 0, Math.PI * 2);
+      ctx.arc(jx + jw / 2 + 5, jy + jh / 4, 3, 0, Math.PI * 2);
       ctx.fill();
-      
+
       // Draw pupils
       ctx.fillStyle = 'black';
       ctx.beginPath();
-      ctx.arc(jx + jw/2 - 5, jy + jh/4, 1.5, 0, Math.PI * 2);
+      ctx.arc(jx + jw / 2 - 5, jy + jh / 4, 1.5, 0, Math.PI * 2);
       ctx.fill();
-      
+
       ctx.beginPath();
-      ctx.arc(jx + jw/2 + 5, jy + jh/4, 1.5, 0, Math.PI * 2);
+      ctx.arc(jx + jw / 2 + 5, jy + jh / 4, 1.5, 0, Math.PI * 2);
       ctx.fill();
-      
+
       // Draw nose
       ctx.fillStyle = 'black';
       ctx.beginPath();
-      ctx.arc(jx + jw/2, jy + jh/4 + 8, 2, 0, Math.PI * 2);
+      ctx.arc(jx + jw / 2, jy + jh / 4 + 8, 2, 0, Math.PI * 2);
       ctx.fill();
-      
+
       // Draw tail
       ctx.strokeStyle = '#FF8C00';
       ctx.lineWidth = 4;
@@ -2957,7 +2958,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
         jx + jw + 5, jy + jh
       );
       ctx.stroke();
-      
+
       // Glow effect
       ctx.shadowBlur = 15; ctx.shadowColor = '#FF8C00'; ctx.strokeStyle = 'white'; ctx.lineWidth = 2; ctx.strokeRect(jx - 5, jy - 5, jw + 10, jh + 10); ctx.shadowBlur = 0;
       if (game.showFishWarning) {
@@ -3308,7 +3309,7 @@ export const ShopView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
               <h3 className="text-white font-bold uppercase">Max Ammo</h3>
               <p className="text-white/50 text-xs">Fler skott innan omladdning</p>
               <p className="text-white/80 text-sm mt-1">Nuvarande: {progress.upgrades.maxAmmo.toFixed(0)}</p>
-              <button 
+              <button
                 onClick={() => handleBuy('maxAmmo', 500)}
                 disabled={progress.coins < 500}
                 className="mt-2 px-4 py-2 bg-yellow-500/20 hover:bg-yellow-500/40 disabled:opacity-30 disabled:cursor-not-allowed rounded-lg text-yellow-400 font-bold text-sm"
@@ -3329,7 +3330,7 @@ export const ShopView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
               <h3 className="text-white font-bold uppercase">Jump Power</h3>
               <p className="text-white/50 text-xs">Högre hopp</p>
               <p className="text-white/80 text-sm mt-1">Nuvarande: {progress.upgrades.jumpPower.toFixed(1)}</p>
-              <button 
+              <button
                 onClick={() => handleBuy('jumpPower', 750)}
                 disabled={progress.coins < 750}
                 className="mt-2 px-4 py-2 bg-yellow-500/20 hover:bg-yellow-500/40 disabled:opacity-30 disabled:cursor-not-allowed rounded-lg text-yellow-400 font-bold text-sm"
@@ -3350,7 +3351,7 @@ export const ShopView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
               <h3 className="text-white font-bold uppercase">Speed</h3>
               <p className="text-white/50 text-xs">Snabbare rörelse</p>
               <p className="text-white/80 text-sm mt-1">Nuvarande: {progress.upgrades.speed.toFixed(1)}</p>
-              <button 
+              <button
                 onClick={() => handleBuy('speed', 1000)}
                 disabled={progress.coins < 1000}
                 className="mt-2 px-4 py-2 bg-yellow-500/20 hover:bg-yellow-500/40 disabled:opacity-30 disabled:cursor-not-allowed rounded-lg text-yellow-400 font-bold text-sm"
