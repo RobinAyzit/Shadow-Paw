@@ -1,9 +1,3 @@
-<div align="center">
-<img width="1200" height="475" alt="Shadow Paw Game Banner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
-
-<div align="center">
-
 # 🐱 Shadow Paw: Neon Mission
 
 A fast-paced neon platformer adventure where you play as a cat on a mission to save the day!
@@ -64,13 +58,14 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 👨‍💻 Author
 
-**Created 2026 by © nRn World**
+Created 2026 by **© nRn World**
 
 📧 [bynrnworld@gmail.com](mailto:bynrnworld@gmail.com)
 
----
-
 ## 🙏 Support
 
-If you like this project, please give it a ⭐ on GitHub and share it with your friends!
+If you like this project, consider to:
 
+*   ⭐ Star the project on GitHub
+*   ☕ [Buy me a coffee](https://buymeacoffee.com/nrnworld)
+*   📢 Share with your friends
