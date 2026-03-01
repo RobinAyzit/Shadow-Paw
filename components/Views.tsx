@@ -1323,15 +1323,12 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Responsive canvas sizing - smaller size for zoomed out view
+    // Fixed canvas size - stays the same in normal and fullscreen mode
     const resizeCanvas = () => {
       const container = canvas.parentElement;
       if (container) {
-        const containerWidth = container.clientWidth;
-        const containerHeight = container.clientHeight;
-
-        canvas.width = Math.min(containerWidth, 800);
-        canvas.height = Math.min(containerHeight, 450);
+        canvas.width = 800;
+        canvas.height = 450;
         canvas.style.width = '100%';
         canvas.style.height = 'auto';
       }
