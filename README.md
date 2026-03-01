@@ -58,13 +58,10 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 👨‍💻 Author
 
-**Created 2026 by © nRn World**
+Created 2026 by **© nRn World**
 
 📧 [bynrnworld@gmail.com](mailto:bynrnworld@gmail.com)
 
----
-
 ## 🙏 Support
 
-If you like this project, please give it a ⭐ on GitHub and share it with your friends!
-
+If you like this project, consider to:
