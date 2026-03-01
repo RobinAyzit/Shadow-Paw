@@ -1,14 +1,47 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Header from './components/Header';
 import { StartMenuView, SettingsView, HowToPlayView, LeaderboardView, GameOverView, ShopView, QuestsView, PlayingView } from './components/Views';
 import { AppView } from './types';
 import { ProgressProvider } from './context/ProgressContext';
 
+const MENU_VIEWS = [AppView.START, AppView.SETTINGS, AppView.HOW_TO_PLAY, AppView.LEADERBOARD, AppView.SHOP, AppView.QUESTS, AppView.GAME_OVER];
+
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<AppView>(AppView.START);
   const [lastScore, setLastScore] = useState(0);
   const [lastFishesCollected, setLastFishesCollected] = useState(0);
+  const menuMusicRef = useRef<HTMLAudioElement | null>(null);
+  const [isMuted, setIsMuted] = useState(false);
+
+  useEffect(() => {
+    const shouldPlayMusic = MENU_VIEWS.includes(currentView);
+    
+    if (shouldPlayMusic && !menuMusicRef.current) {
+      const audio = new Audio('/Sounds/Effects/meny.mp3');
+      audio.loop = true;
+      audio.volume = 0;
+      audio.play().catch(() => {});
+      let vol = 0;
+      const fadeIn = setInterval(() => {
+        vol = Math.min(0.4, vol + 0.02);
+        audio.volume = isMuted ? 0 : vol;
+        if (vol >= 0.4) clearInterval(fadeIn);
+      }, 80);
+      menuMusicRef.current = audio;
+    } else if (!shouldPlayMusic && menuMusicRef.current) {
+      const a = menuMusicRef.current;
+      let v = a.volume;
+      const fadeOut = setInterval(() => {
+        v = Math.max(0, v - 0.05);
+        a.volume = v;
+        if (v <= 0) { a.pause(); a.src = ''; clearInterval(fadeOut); }
+      }, 50);
+      menuMusicRef.current = null;
+    } else if (menuMusicRef.current) {
+      menuMusicRef.current.volume = isMuted ? 0 : 0.4;
+    }
+  }, [currentView, isMuted]);
 
   const handleNavigate = (view: AppView) => {
     setCurrentView(view);

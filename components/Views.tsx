@@ -157,36 +157,9 @@ const InjuredCatVisual: React.FC = () => {
 export const StartMenuView: React.FC<{ onNavigate: (v: AppView) => void }> = ({ onNavigate }) => {
   const [tip, setTip] = useState<string>("Hämtar dagens tips...");
   const { progress } = useProgress();
-  const menuMusicRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     getGameTip().then(setTip);
-
-    // Play menu music
-    const audio = new Audio('/Sounds/Effects/meny.mp3');
-    audio.loop = true;
-    audio.volume = 0;
-    audio.play().catch(() => {});
-    // Fade in
-    let vol = 0;
-    const fadeIn = setInterval(() => {
-      vol = Math.min(0.4, vol + 0.02);
-      audio.volume = vol;
-      if (vol >= 0.4) clearInterval(fadeIn);
-    }, 80);
-    menuMusicRef.current = audio;
-
-    return () => {
-      // Fade out on unmount
-      const a = menuMusicRef.current;
-      if (!a) return;
-      let v = a.volume;
-      const fadeOut = setInterval(() => {
-        v = Math.max(0, v - 0.05);
-        a.volume = v;
-        if (v <= 0) { a.pause(); a.src = ''; clearInterval(fadeOut); }
-      }, 50);
-    };
   }, []);
 
   return (
@@ -960,12 +933,18 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(!!document.fullscreenElement);
   const [isMobile, setIsMobile] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
   const { progress, addCoins } = useProgress();
 
   const gameRef = useRef<any>(null);
 
   // Use background music for levels 1-10
   useBackgroundMusic(currentLevel);
+
+  // Handle mute/unmute
+  useEffect(() => {
+    AudioEngine.setVolume(isMuted ? 0 : 0.5);
+  }, [isMuted]);
 
   useEffect(() => {
     setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
@@ -3129,6 +3108,14 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
             <span className="text-sm md:text-2xl font-black text-white leading-none">{stats.progress}%</span>
           </div>
         </div>
+        <button
+          onClick={() => setIsMuted(!isMuted)}
+          className="flex items-center gap-1.5 md:gap-2 pl-2 md:pl-4 hover:scale-110 transition-transform"
+        >
+          <span className={`material-symbols-outlined text-lg md:text-3xl ${isMuted ? 'text-primary-red' : 'text-white/70'}`}>
+            {isMuted ? 'volume_off' : 'volume_up'}
+          </span>
+        </button>
       </div>
 
       {/* Mobile Touch Controls Overlay */}
