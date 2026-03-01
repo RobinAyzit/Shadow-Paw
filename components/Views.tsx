@@ -1323,12 +1323,12 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Fixed canvas size - stays the same in normal and fullscreen mode
+    // Fixed smaller canvas size for better fullscreen experience
     const resizeCanvas = () => {
       const container = canvas.parentElement;
       if (container) {
-        canvas.width = 800;
-        canvas.height = 450;
+        canvas.width = 640;
+        canvas.height = 360;
         canvas.style.width = '100%';
         canvas.style.height = 'auto';
       }
@@ -3166,7 +3166,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
       )}
 
       {/* GAME AREA */}
-      <div ref={gameContainerRef} className="relative w-full max-w-6xl glass-card rounded-2xl md:rounded-[2.5rem] border-2 border-primary/20 overflow-hidden shadow-[0_0_100px_rgba(43,238,121,0.15)] transition-all duration-500">
+      <div ref={gameContainerRef} className="relative w-full max-w-3xl glass-card rounded-2xl md:rounded-[2.5rem] border-2 border-primary/20 overflow-hidden shadow-[0_0_100px_rgba(43,238,121,0.15)] transition-all duration-500">
         <canvas
           ref={canvasRef}
           className="w-full h-auto cursor-crosshair bg-[#102217]"
