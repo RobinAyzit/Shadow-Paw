@@ -41,25 +41,25 @@ const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
               active={isActive(AppView.START)} 
               onClick={() => onNavigate(AppView.START)}
               icon="home"
-              label="Hem"
+              label="Home"
             />
             <NavButton 
               active={isActive(AppView.SHOP)} 
               onClick={() => onNavigate(AppView.SHOP)}
               icon="store"
-              label="Butik"
+              label="Shop"
             />
             <NavButton 
               active={isActive(AppView.QUESTS)} 
               onClick={() => onNavigate(AppView.QUESTS)}
               icon="task_alt"
-              label="Uppdrag"
+              label="Quests"
             />
             <NavButton 
               active={isActive(AppView.LEADERBOARD)} 
               onClick={() => onNavigate(AppView.LEADERBOARD)}
               icon="emoji_events"
-              label="Topplista"
+              label="Leaderboard"
             />
           </nav>
 
@@ -83,7 +83,7 @@ const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
                 className="flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-primary text-[#112218] font-black text-sm uppercase tracking-wider hover:bg-primary/90 transition-all shrink-0 shadow-[0_0_15px_rgba(43,238,121,0.5)] border-2 border-primary/50"
               >
                 <span className="material-symbols-outlined text-base">play_arrow</span>
-                <span className="hidden sm:inline">Spela</span>
+                <span className="hidden sm:inline">Play</span>
               </button>
             )}
           </div>

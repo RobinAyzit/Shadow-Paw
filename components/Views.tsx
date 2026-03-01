@@ -159,21 +159,21 @@ export const StartMenuView: React.FC<{ onNavigate: (v: AppView) => void }> = ({ 
   const { progress } = useProgress();
 
   const gameTips = [
-    "Använd dubbelhopp för att nå högre plattformar!",
-    "Samla fiskar för att få mer ammunition!",
-    "Hoppa på fiender för att besegra dom!",
-    "Håll utkik efter dolda plattformar!",
-    "Använd ammunition klokt - samla fiskar för mer!",
-    "Katten är snabbare än du tror!",
-    "Öva dig på timing för perfekta hopp!",
-    "Navigera genom neon-staden utan att fastna!",
-    "Byt inte bana för ofta - behåll momentum!",
-    "Fiender kommer i olika mönster - lär dom!",
-    "Samla mynt i butiken för bättre uppgraderingar!",
-    "Hoppa över hål med perfekt timing!",
-    "Använd din ammunition strategiskt!",
-    "Ju högre nivå, desto svårare blir det!",
-    "Glöm inte att pausa om du behöver en break!"
+    "Use double jump to reach higher platforms!",
+    "Collect fish to get more ammo!",
+    "Jump on enemies to defeat them!",
+    "Watch out for hidden platforms!",
+    "Use ammo wisely - collect fish for more!",
+    "The cat is faster than you think!",
+    "Practice your timing for perfect jumps!",
+    "Navigate through the neon city without getting stuck!",
+    "Don't switch lanes too often - keep your momentum!",
+    "Enemies come in different patterns - learn them!",
+    "Collect coins in the shop for better upgrades!",
+    "Jump over holes with perfect timing!",
+    "Use your ammo strategically!",
+    "The higher the level, the harder it gets!",
+    "Don't forget to pause if you need a break!"
   ];
 
   useEffect(() => {
@@ -192,7 +192,7 @@ export const StartMenuView: React.FC<{ onNavigate: (v: AppView) => void }> = ({ 
           Shadow <span className="text-primary">Paw</span>
         </h1>
         <p className="mt-3 text-white/90 text-sm md:text-base leading-relaxed">
-          Ett snabbt neon-plattformsäventyr. Enkelt att lära, svårt att bemästra.
+          A fast neon-plattformsäventyr. Enkelt att lära, svårt att bemästra.
         </p>
 
         {/* Quick Stats */}
@@ -203,7 +203,7 @@ export const StartMenuView: React.FC<{ onNavigate: (v: AppView) => void }> = ({ 
           </div>
           <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary/10 border border-primary/20">
             <span className="material-symbols-outlined text-primary text-sm">military_tech</span>
-            <span className="text-primary font-black">Nivå {progress.level}</span>
+            <span className="text-primary font-black">Level {progress.level}</span>
           </div>
         </div>
 
@@ -220,7 +220,7 @@ export const StartMenuView: React.FC<{ onNavigate: (v: AppView) => void }> = ({ 
             }}
           >
             <span className="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform">play_arrow</span>
-            <span>Spela</span>
+            <span>Play</span>
           </button>
         </div>
 
@@ -231,14 +231,14 @@ export const StartMenuView: React.FC<{ onNavigate: (v: AppView) => void }> = ({ 
             className="w-full inline-flex items-center justify-center gap-3 rounded-2xl px-4 py-4 glass-card text-white font-bold uppercase tracking-wider border border-white/10 hover:border-white/20 transition-colors"
           >
             <span className="material-symbols-outlined text-[22px]">store</span>
-            Butik
+            Shop
           </button>
           <button
             onClick={() => onNavigate(AppView.QUESTS)}
             className="w-full inline-flex items-center justify-center gap-3 rounded-2xl px-4 py-4 glass-card text-white font-bold uppercase tracking-wider border border-white/10 hover:border-white/20 transition-colors"
           >
             <span className="material-symbols-outlined text-[22px]">task_alt</span>
-            Uppdrag
+            Quests
           </button>
         </div>
 
@@ -248,14 +248,14 @@ export const StartMenuView: React.FC<{ onNavigate: (v: AppView) => void }> = ({ 
             className="w-full inline-flex items-center justify-center gap-3 rounded-2xl px-4 py-3 glass-card text-white/80 font-medium uppercase tracking-wider border border-white/5 hover:border-white/10 transition-colors text-sm"
           >
             <span className="material-symbols-outlined text-[20px]">help</span>
-            Guide
+            How to Play
           </button>
           <button
             onClick={() => onNavigate(AppView.LEADERBOARD)}
             className="w-full inline-flex items-center justify-center gap-3 rounded-2xl px-4 py-3 glass-card text-white/80 font-medium uppercase tracking-wider border border-white/5 hover:border-white/10 transition-colors text-sm"
           >
             <span className="material-symbols-outlined text-[20px]">emoji_events</span>
-            Topplista
+            Leaderboard
           </button>
         </div>
 
@@ -268,7 +268,7 @@ export const StartMenuView: React.FC<{ onNavigate: (v: AppView) => void }> = ({ 
           onClick={() => onNavigate(AppView.SETTINGS)}
           className="mt-4 text-white/70 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest"
         >
-          Inställningar
+          Settings
         </button>
       </div>
     </div>
@@ -300,7 +300,7 @@ export const SettingsView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
           <span className="material-symbols-outlined text-primary text-sm">settings</span>
           <span className="text-white/70 text-[10px] font-bold uppercase tracking-widest">System</span>
         </div>
-        <h1 className="text-white text-3xl md:text-4xl font-black uppercase tracking-tight">Inställningar</h1>
+        <h1 className="text-white text-3xl md:text-4xl font-black uppercase tracking-tight">Settings</h1>
       </div>
 
       <div className="glass-card rounded-2xl border border-white/10 divide-y divide-white/5">
@@ -308,13 +308,13 @@ export const SettingsView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         <div className="p-5">
           <div className="flex items-center gap-2 mb-5">
             <span className="material-symbols-outlined text-primary">equalizer</span>
-            <span className="text-white font-bold text-sm uppercase tracking-wider">Ljud</span>
+            <span className="text-white font-bold text-sm uppercase tracking-wider">Audio</span>
           </div>
 
           <div className="space-y-5">
             <div>
               <div className="flex justify-between items-center mb-2">
-                <span className="text-white/80 text-sm font-medium">Musikvolym</span>
+                <span className="text-white/80 text-sm font-medium">Musicvolym</span>
                 <span className="text-primary font-mono text-sm">{music}%</span>
               </div>
               <input
@@ -326,7 +326,7 @@ export const SettingsView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
 
             <div>
               <div className="flex justify-between items-center mb-2">
-                <span className="text-white/80 text-sm font-medium">Ljudeffekter</span>
+                <span className="text-white/80 text-sm font-medium">Audioeffekter</span>
                 <span className="text-primary font-mono text-sm">{sfx}%</span>
               </div>
               <input
@@ -368,7 +368,7 @@ export const SettingsView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         className="w-full mt-6 flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-colors"
       >
         <span className="material-symbols-outlined">arrow_back</span>
-        Tillbaka till menyn
+        Back till menyn
       </button>
     </div>
   );
@@ -381,7 +381,7 @@ export const HowToPlayView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
       <div className="text-center mb-8">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 mb-3">
           <span className="material-symbols-outlined text-primary text-sm">school</span>
-          <span className="text-white/70 text-[10px] font-bold uppercase tracking-widest">Guide</span>
+          <span className="text-white/70 text-[10px] font-bold uppercase tracking-widest">How to Play</span>
         </div>
         <h1 className="text-white text-3xl md:text-4xl font-black uppercase tracking-tight">Hur man spelar</h1>
         <p className="mt-2 text-white/70 text-sm">Lär dig grunderna för att dominera neonstaden</p>
@@ -393,7 +393,7 @@ export const HowToPlayView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             <span className="material-symbols-outlined text-primary text-2xl">flag</span>
           </div>
           <h3 className="text-white font-bold text-lg uppercase mb-2">Målet</h3>
-          <p className="text-white/60 text-sm leading-relaxed">Navigera genom staden, samla alla fiskar och nå målet. Undvik fiender och fallgropar.</p>
+          <p className="text-white/60 text-sm leading-relaxed">Navigate through the city, collect all fish and reach the goal. Avoid enemies and pitfalls.</p>
         </div>
 
         <div className="glass-card rounded-2xl p-5 border border-white/10">
@@ -404,15 +404,15 @@ export const HowToPlayView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
           <div className="space-y-2 text-sm">
             <div className="flex items-center gap-2">
               <span className="px-2 py-1 rounded bg-white/10 text-white/80 text-xs font-mono">A / D</span>
-              <span className="text-white/60">Gå</span>
+              <span className="text-white/60">Move</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="px-2 py-1 rounded bg-white/10 text-white/80 text-xs font-mono">W / ↑</span>
-              <span className="text-white/60">Hoppa</span>
+              <span className="text-white/60">Jump</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="px-2 py-1 rounded bg-white/10 text-white/80 text-xs font-mono">Click</span>
-              <span className="text-white/60">Skjut</span>
+              <span className="text-white/60">Shoot</span>
             </div>
           </div>
         </div>
@@ -429,11 +429,11 @@ export const HowToPlayView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-primary">•</span>
-              <span>Skjut fiender från distans</span>
+              <span>Shoot enemies from distance</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-primary">•</span>
-              <span>Samla alla fiskar före mål</span>
+              <span>Collect all fish before goal</span>
             </li>
           </ul>
         </div>
@@ -487,7 +487,7 @@ export const LeaderboardView: React.FC<{ onBack: () => void, onPlay: () => void 
           <span className="material-symbols-outlined text-primary text-sm">emoji_events</span>
           <span className="text-white/70 text-[10px] font-bold uppercase tracking-widest">Rangordning</span>
         </div>
-        <h1 className="text-white text-3xl md:text-4xl font-black uppercase tracking-tight">Topplista</h1>
+        <h1 className="text-white text-3xl md:text-4xl font-black uppercase tracking-tight">Leaderboard</h1>
         <p className="mt-2 text-white/70 text-sm">Se vem som är mästaren av neonstaden</p>
       </div>
 
@@ -558,13 +558,13 @@ export const LeaderboardView: React.FC<{ onBack: () => void, onPlay: () => void 
           onClick={onBack}
           className="flex-1 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-colors"
         >
-          Tillbaka
+          Back
         </button>
         <button
           onClick={onPlay}
           className="flex-1 py-3 rounded-xl bg-primary text-[#112218] font-black uppercase tracking-wider hover:bg-primary/90 transition-colors"
         >
-          Spela Nu
+          Play Nu
         </button>
       </div>
     </div>
@@ -641,7 +641,7 @@ export const GameOverView: React.FC<{ score: number, fishesCollected?: number, o
         <div className="glass-card rounded-2xl p-5 text-center border border-white/10">
           <div className="flex items-center justify-center gap-1 text-white/40 text-xs font-bold uppercase tracking-widest mb-2">
             <span className="material-symbols-outlined text-sm">flag</span>
-            Poäng
+            Score
           </div>
           <p className="text-white text-2xl md:text-3xl font-black">{score.toLocaleString()}</p>
         </div>
@@ -655,7 +655,7 @@ export const GameOverView: React.FC<{ score: number, fishesCollected?: number, o
         <div className="glass-card rounded-2xl p-5 text-center border border-white/10">
           <div className="flex items-center justify-center gap-1 text-white/40 text-xs font-bold uppercase tracking-widest mb-2">
             <span className="material-symbols-outlined text-sm">set_meal</span>
-            Fiskar
+            Fish
           </div>
           <p className="text-blue-400 text-2xl md:text-3xl font-black">{fishesCollected}</p>
         </div>
@@ -665,7 +665,7 @@ export const GameOverView: React.FC<{ score: number, fishesCollected?: number, o
             +Mynt
           </div>
           <p className="text-primary text-2xl md:text-3xl font-black">+{coinsEarned}</p>
-          <p className="text-white/50 text-xs">({fishesCollected} fiskar ÷ 2)</p>
+          <p className="text-white/50 text-xs">({fishesCollected} fish ÷ 2)</p>
         </div>
         <div className="glass-card rounded-2xl p-5 text-center border border-white/10">
           <div className="flex items-center justify-center gap-1 text-white/40 text-xs font-bold uppercase tracking-widest mb-2">
@@ -725,7 +725,7 @@ export const GameOverView: React.FC<{ score: number, fishesCollected?: number, o
           className="flex-1 bg-primary-red py-4 rounded-xl font-black text-lg flex items-center justify-center gap-2 hover:scale-[1.01] transition-transform shadow-[0_0_30px_rgba(238,43,43,0.25)] uppercase text-white"
         >
           <span className="material-symbols-outlined">replay</span>
-          Spela Igen
+          Play Igen
         </button>
         <button
           onClick={onMenu}
@@ -1308,7 +1308,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
       dx = targetX - (playerCenterX - game.scrollX);
       dy = targetY - playerCenterY;
     } else {
-      // Skjut framåt i den riktning katten tittar om ingen koordinat ges
+      // Shoot framåt i den riktning katten tittar om ingen koordinat ges
       dx = game.player.facing * 500;
       dy = 0;
     }
@@ -3145,7 +3145,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
         </div>
         <div className="flex items-center gap-1.5 md:gap-2">
           <div className="flex flex-col md:flex-row md:items-center text-left">
-            <span className="text-[8px] md:text-xs font-bold text-primary/50 uppercase md:mr-2 leading-none">Nivå {currentLevel}</span>
+            <span className="text-[8px] md:text-xs font-bold text-primary/50 uppercase md:mr-2 leading-none">Level {currentLevel}</span>
             <span className="text-sm md:text-2xl font-black text-white leading-none">{stats.progress}%</span>
           </div>
         </div>
@@ -3172,8 +3172,8 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
         <div className="absolute inset-0 pointer-events-none z-10">
           <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center pointer-events-auto">
             <div className="bg-black/50 backdrop-blur-sm rounded-2xl px-4 py-2 border border-white/20">
-              <p className="text-white/80 text-xs font-medium">Vänster: Hoppa</p>
-              <p className="text-white/80 text-xs font-medium">Höger: Skjuta</p>
+              <p className="text-white/80 text-xs font-medium">Vänster: Jump</p>
+              <p className="text-white/80 text-xs font-medium">Höger: Shoota</p>
               <p className="text-white/80 text-xs font-medium">Svep: Rörelse</p>
             </div>
           </div>
@@ -3190,7 +3190,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
         {showLevelComplete && (
           <div className="absolute inset-0 bg-black/80 backdrop-blur-md flex flex-col items-center justify-center p-6 animate-fade-in-up z-50">
             <span className="material-symbols-outlined text-5xl md:text-8xl text-primary mb-2 md:mb-4">stars</span>
-            <h2 className="text-white text-3xl md:text-5xl font-black mb-1 md:mb-2 uppercase tracking-tighter text-center leading-tight">Nivå {currentLevel} Klar!</h2>
+            <h2 className="text-white text-3xl md:text-5xl font-black mb-1 md:mb-2 uppercase tracking-tighter text-center leading-tight">Level {currentLevel} Klar!</h2>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full max-w-xs md:max-w-md">
               <button onClick={startNextLevel} className="bg-primary text-white px-8 md:px-12 py-4 rounded-full font-black text-lg md:text-xl hover:scale-105 transition-transform shadow-[0_0_30px_rgba(43,238,121,0.3)] border-2 border-primary/80 w-full">NÄSTA NIVÅ ({currentLevel + 1})</button>
               <button onClick={() => onEnd(totalScore, gameRef.current?.totalCollectedInLevel ?? 0)} className="bg-white/20 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold hover:bg-white/30 transition-all text-sm md:text-base w-full border border-white/30">Avsluta</button>
@@ -3202,7 +3202,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
       {/* TOUCH CONTROLS - UNDER spelrutan */}
       {isTouchDevice && !showLevelComplete && (
         <div className="flex w-full max-w-4xl justify-between items-center px-4 py-2 mt-auto select-none pointer-events-auto">
-          {/* Vänster sida: Styrning (Gå vänster/höger) */}
+          {/* Vänster sida: Styrning (Move vänster/höger) */}
           <div className="flex items-center gap-3">
             <button
               className="size-14 md:size-16 bg-[#16291e]/90 backdrop-blur-md rounded-2xl flex items-center justify-center border-b-4 border-black/60 shadow-xl active:translate-y-1 active:border-b-0 active:bg-primary/40 transition-all group"
@@ -3220,7 +3220,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
             </button>
           </div>
 
-          {/* Höger sida: Handlingar (Hoppa/Skjut) */}
+          {/* Höger sida: Handlingar (Jump/Shoot) */}
           <div className="flex items-center gap-3">
             {/* Hopp-knapp */}
             <button
@@ -3231,7 +3231,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
               <span className="text-[10px] font-black uppercase tracking-widest opacity-90">HOPPA</span>
             </button>
 
-            {/* Skjut-knapp */}
+            {/* Shoot-knapp */}
             <button
               className="size-16 md:size-20 bg-primary-red/30 backdrop-blur-md rounded-full flex flex-col items-center justify-center border-4 border-primary-red/50 border-b-8 border-b-black/40 text-white shadow-2xl active:translate-y-2 active:border-b-0 active:bg-primary-red/60 transition-all group"
               onTouchStart={(e) => { e.preventDefault(); fireBullet(); }}
@@ -3255,7 +3255,7 @@ export const ShopView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
     if (buyUpgrade(type, cost)) {
       setMessage('Uppgradering köpt!');
     } else {
-      setMessage('Inte tillräckligt med mynt!');
+      setMessage('Not enough coins!');
     }
     setTimeout(() => setMessage(''), 2000);
   };
@@ -3265,7 +3265,7 @@ export const ShopView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
       <div className="text-center mb-8">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-3">
           <span className="material-symbols-outlined text-primary text-sm">store</span>
-          <span className="text-primary text-[10px] font-bold uppercase tracking-widest">Butik</span>
+          <span className="text-primary text-[10px] font-bold uppercase tracking-widest">Shop</span>
         </div>
         <h1 className="text-white text-3xl md:text-4xl font-black uppercase tracking-tight">Uppgraderingar</h1>
         <p className="mt-2 text-white/70 text-sm">Förbättra din katt med neon-teknologi</p>
@@ -3284,7 +3284,7 @@ export const ShopView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             </div>
           </div>
           <div className="text-right">
-            <p className="text-white/60 text-xs uppercase tracking-widest">Nivå</p>
+            <p className="text-white/60 text-xs uppercase tracking-widest">Level</p>
             <p className="text-white text-xl font-black">{progress.level}</p>
           </div>
         </div>
@@ -3313,7 +3313,7 @@ export const ShopView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                 disabled={progress.coins < 500}
                 className="mt-2 px-4 py-2 bg-yellow-500/20 hover:bg-yellow-500/40 disabled:opacity-30 disabled:cursor-not-allowed rounded-lg text-yellow-400 font-bold text-sm"
               >
-                Köp (500 coins)
+                Buy (500 coins)
               </button>
             </div>
           </div>
@@ -3334,7 +3334,7 @@ export const ShopView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                 disabled={progress.coins < 750}
                 className="mt-2 px-4 py-2 bg-yellow-500/20 hover:bg-yellow-500/40 disabled:opacity-30 disabled:cursor-not-allowed rounded-lg text-yellow-400 font-bold text-sm"
               >
-                Köp (750 coins)
+                Buy (750 coins)
               </button>
             </div>
           </div>
@@ -3355,7 +3355,7 @@ export const ShopView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                 disabled={progress.coins < 1000}
                 className="mt-2 px-4 py-2 bg-yellow-500/20 hover:bg-yellow-500/40 disabled:opacity-30 disabled:cursor-not-allowed rounded-lg text-yellow-400 font-bold text-sm"
               >
-                Köp (1000 coins)
+                Buy (1000 coins)
               </button>
             </div>
           </div>
@@ -3367,7 +3367,7 @@ export const ShopView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         className="w-full mt-6 flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-colors"
       >
         <span className="material-symbols-outlined">arrow_back</span>
-        Tillbaka
+        Back
       </button>
     </div>
   );
@@ -3382,10 +3382,10 @@ export const QuestsView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
       <div className="text-center mb-8">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-3">
           <span className="material-symbols-outlined text-primary text-sm">task_alt</span>
-          <span className="text-primary text-[10px] font-bold uppercase tracking-widest">Uppdrag</span>
+          <span className="text-primary text-[10px] font-bold uppercase tracking-widest">Quests</span>
         </div>
-        <h1 className="text-white text-3xl md:text-4xl font-black uppercase tracking-tight">Dagliga Uppdrag</h1>
-        <p className="mt-2 text-white/70 text-sm">Slutför uppdrag för att tjäna mynt</p>
+        <h1 className="text-white text-3xl md:text-4xl font-black uppercase tracking-tight">Daily Quests</h1>
+        <p className="mt-2 text-white/70 text-sm">Complete quests to earn coins</p>
       </div>
 
       {/* XP Progress */}
@@ -3393,7 +3393,7 @@ export const QuestsView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-3">
             <span className="material-symbols-outlined text-primary">military_tech</span>
-            <span className="text-white font-bold">Nivå {progress.level}</span>
+            <span className="text-white font-bold">Level {progress.level}</span>
           </div>
           <span className="text-white/60 text-sm">{progress.xp} XP</span>
         </div>
@@ -3455,7 +3455,7 @@ export const QuestsView: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         className="w-full mt-6 flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-colors"
       >
         <span className="material-symbols-outlined">arrow_back</span>
-        Tillbaka
+        Back
       </button>
     </div>
   );
