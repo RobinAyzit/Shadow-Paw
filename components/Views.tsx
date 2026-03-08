@@ -3739,88 +3739,86 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
       className={`w-full h-full flex flex-col items-center justify-start gap-3 md:gap-6 py-2 md:py-4 animate-fade-in-up px-2 overflow-hidden max-h-screen ${isFullscreen ? 'fixed inset-0 z-[100] bg-background-dark' : ''}`}
       style={{ fontSize: `${progress.settings.textScale}em`, transform: `scale(${progress.settings.uiScale})`, transformOrigin: 'top center' }}
     >
-      {/* HUD - Mobiloptimerad */}
-      <div className="flex flex-wrap justify-center gap-2 md:gap-8 lg:gap-12 glass-card px-3 md:px-8 py-2 md:py-4 rounded-2xl md:rounded-full border border-primary/30 w-full max-w-4xl flex-shrink-0">
-        <div className="flex items-center gap-1.5 md:gap-2">
-          <span className="material-symbols-outlined text-primary-red text-lg md:text-3xl">favorite</span>
-          <span className="text-sm md:text-2xl font-black text-white">{lives}</span>
-        </div>
-        <div className="flex items-center gap-1.5 md:gap-2 border-x border-white/10 px-3 md:px-8">
-          <span className="material-symbols-outlined text-primary text-lg md:text-3xl">set_meal</span>
-          <span className={`text-sm md:text-2xl font-black transition-colors ${stats.collectedCount === stats.totalFish ? 'text-primary' : 'text-white'}`}>
-            {stats.collectedCount}/{stats.totalFish}
-          </span>
-        </div>
-        <div className="flex items-center gap-1.5 md:gap-2 border-r border-white/10 pr-3 md:pr-8">
-          <span className="material-symbols-outlined text-[#ff8888] text-lg md:text-3xl">bolt</span>
-          <span className={`text-sm md:text-2xl font-black ${stats.ammo <= 0 ? 'text-primary-red animate-pulse' : 'text-white'}`}>
-            {stats.ammo}
-          </span>
-        </div>
-        <div className="flex items-center gap-1.5 md:gap-2 border-r border-white/10 pr-3 md:pr-8">
-          <span className="material-symbols-outlined text-yellow-500 text-lg md:text-3xl">monetization_on</span>
-          <span className="text-sm md:text-2xl font-black text-yellow-400">{progress.coins}</span>
-        </div>
-        <div className="flex items-center gap-1.5 md:gap-2 pr-3 md:pr-8 border-r border-white/10">
-          <span className={`material-symbols-outlined text-lg md:text-3xl ${stats.weather === 'SOLIGT' ? (stats.timeOfDay === 'DAY' ? 'text-orange-400' : 'text-yellow-400') : (stats.weather === 'REGNIGT' ? 'text-blue-400' : (stats.weather === 'SNÖIGT' ? 'text-white' : (stats.weather === 'DIMMIGT' ? 'text-gray-400' : 'text-purple-400')))}`}>
-            {stats.weather === 'SOLIGT' ? (stats.timeOfDay === 'DAY' ? 'sunny' : 'nightlight') : (stats.weather === 'REGNIGT' ? 'rainy' : (stats.weather === 'SNÖIGT' ? 'ac_unit' : (stats.weather === 'DIMMIGT' ? 'foggy' : 'thunderstorm')))}
-          </span>
-        </div>
-        <div className="flex items-center gap-1.5 md:gap-2">
-          <div className="flex flex-col md:flex-row md:items-center text-left">
-            <span className="text-[8px] md:text-xs font-bold text-primary/50 uppercase md:mr-2 leading-none">Level {currentLevel}</span>
-            <span className="text-sm md:text-2xl font-black text-white leading-none">{stats.progress}%</span>
-          </div>
-        </div>
-        <div className="flex items-center gap-1.5 md:gap-2 border-l border-white/10 pl-3 md:pl-6">
-          <span className="text-[10px] md:text-xs text-white/50 uppercase">{stats.levelType}</span>
-          <span className="text-sm md:text-xl font-black text-primary">x{combo}</span>
-        </div>
-        {stats.levelType === 'Speed Run' && (
-          <div className="flex items-center gap-1.5 md:gap-2">
-            <span className="material-symbols-outlined text-orange-300 text-lg md:text-2xl">timer</span>
-            <span className="text-sm md:text-xl font-black text-orange-300">{Math.ceil(stats.timer)}s</span>
-          </div>
-        )}
-        <button
-          onClick={() => setIsMuted(!isMuted)}
-          className="flex items-center gap-1.5 md:gap-2 pl-2 md:pl-4 hover:scale-110 transition-transform"
-        >
-          <span className={`material-symbols-outlined text-lg md:text-3xl ${isMuted ? 'text-primary-red' : 'text-white/70'}`}>
-            {isMuted ? 'volume_off' : 'volume_up'}
-          </span>
-        </button>
-        <button
-          onClick={toggleFullscreen}
-          className="flex items-center gap-1.5 md:gap-2 pl-2 md:pr-4 hover:scale-110 transition-transform"
-        >
-          <span className="material-symbols-outlined text-lg md:text-3xl text-white/70">
-            {isFullscreen ? 'fullscreen_exit' : 'fullscreen'}
-          </span>
-        </button>
-      </div>
-
-      {progress.settings.debugOverlay && (
-        <div className="w-full max-w-4xl text-[11px] text-white/70 bg-black/40 rounded-lg px-3 py-2 border border-white/10">
-          MODE {stats.levelType} | EVENT {stats.miniEvent} | COMBO x{combo} | WEATHER {stats.weather} | THEME {seasonTheme}
-        </div>
-      )}
-
-      {/* Mobile Touch Controls Overlay */}
-      {isTouchDevice && (
-        <div className="absolute inset-0 pointer-events-none z-10">
-          <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center pointer-events-auto">
-            <div className="bg-black/50 backdrop-blur-sm rounded-2xl px-4 py-2 border border-white/20">
-              <p className="text-white/80 text-xs font-medium">Vänster: Jump</p>
-              <p className="text-white/80 text-xs font-medium">Höger: Shoota</p>
-              <p className="text-white/80 text-xs font-medium">Svep: Rörelse</p>
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* GAME AREA */}
       <div ref={gameContainerRef} className="relative w-full max-w-6xl aspect-video flex items-center justify-center glass-card rounded-2xl md:rounded-[2.5rem] border-2 border-primary/20 overflow-hidden shadow-[0_0_100px_rgba(43,238,121,0.15)] transition-all duration-500 bg-black">
+
+        {/* HUD - alltid synlig, overlay ovanpå canvas */}
+        <div className="absolute top-0 left-0 right-0 z-20 flex flex-wrap justify-center items-center gap-1 px-2 py-1 bg-black/60 backdrop-blur-sm border-b border-primary/20 pointer-events-auto">
+          <div className="flex items-center gap-1">
+            <span className="material-symbols-outlined text-primary-red text-base">favorite</span>
+            <span className="text-xs font-black text-white">{lives}</span>
+          </div>
+          <div className="flex items-center gap-1 border-x border-white/10 px-2">
+            <span className="material-symbols-outlined text-primary text-base">set_meal</span>
+            <span className={`text-xs font-black transition-colors ${stats.collectedCount === stats.totalFish ? 'text-primary' : 'text-white'}`}>
+              {stats.collectedCount}/{stats.totalFish}
+            </span>
+          </div>
+          <div className="flex items-center gap-1 border-r border-white/10 pr-2">
+            <span className="material-symbols-outlined text-[#ff8888] text-base">bolt</span>
+            <span className={`text-xs font-black ${stats.ammo <= 0 ? 'text-primary-red animate-pulse' : 'text-white'}`}>
+              {stats.ammo}
+            </span>
+          </div>
+          <div className="flex items-center gap-1 border-r border-white/10 pr-2">
+            <span className="material-symbols-outlined text-yellow-500 text-base">monetization_on</span>
+            <span className="text-xs font-black text-yellow-400">{progress.coins}</span>
+          </div>
+          <div className="flex items-center gap-1 border-r border-white/10 pr-2">
+            <span className={`material-symbols-outlined text-base ${stats.weather === 'SOLIGT' ? (stats.timeOfDay === 'DAY' ? 'text-orange-400' : 'text-yellow-400') : (stats.weather === 'REGNIGT' ? 'text-blue-400' : (stats.weather === 'SNÖIGT' ? 'text-white' : (stats.weather === 'DIMMIGT' ? 'text-gray-400' : 'text-purple-400')))}`}>
+              {stats.weather === 'SOLIGT' ? (stats.timeOfDay === 'DAY' ? 'sunny' : 'nightlight') : (stats.weather === 'REGNIGT' ? 'rainy' : (stats.weather === 'SNÖIGT' ? 'ac_unit' : (stats.weather === 'DIMMIGT' ? 'foggy' : 'thunderstorm')))}
+            </span>
+          </div>
+          <div className="flex items-center gap-1 border-r border-white/10 pr-2">
+            <span className="text-[9px] font-bold text-primary/70 uppercase">Lv{currentLevel}</span>
+            <span className="text-xs font-black text-white">{stats.progress}%</span>
+          </div>
+          <div className="flex items-center gap-1 border-r border-white/10 pr-2">
+            <span className="text-[9px] text-white/50 uppercase">{stats.levelType}</span>
+            <span className="text-xs font-black text-primary">x{combo}</span>
+          </div>
+          {stats.levelType === 'Speed Run' && (
+            <div className="flex items-center gap-1 border-r border-white/10 pr-2">
+              <span className="material-symbols-outlined text-orange-300 text-base">timer</span>
+              <span className="text-xs font-black text-orange-300">{Math.ceil(stats.timer)}s</span>
+            </div>
+          )}
+          <button
+            onClick={() => setIsMuted(!isMuted)}
+            className="flex items-center gap-1 hover:scale-110 transition-transform"
+          >
+            <span className={`material-symbols-outlined text-base ${isMuted ? 'text-primary-red' : 'text-white/70'}`}>
+              {isMuted ? 'volume_off' : 'volume_up'}
+            </span>
+          </button>
+          <button
+            onClick={toggleFullscreen}
+            className="flex items-center gap-1 hover:scale-110 transition-transform"
+          >
+            <span className="material-symbols-outlined text-base text-white/70">
+              {isFullscreen ? 'fullscreen_exit' : 'fullscreen'}
+            </span>
+          </button>
+        </div>
+
+        {progress.settings.debugOverlay && (
+          <div className="absolute top-8 left-0 right-0 z-20 text-[10px] text-white/70 bg-black/40 px-3 py-1 pointer-events-none">
+            MODE {stats.levelType} | EVENT {stats.miniEvent} | COMBO x{combo} | WEATHER {stats.weather} | THEME {seasonTheme}
+          </div>
+        )}
+
+        {/* Mobile Touch Controls Overlay */}
+        {isTouchDevice && (
+          <div className="absolute inset-0 pointer-events-none z-10">
+            <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center pointer-events-auto">
+              <div className="bg-black/50 backdrop-blur-sm rounded-2xl px-4 py-2 border border-white/20">
+                <p className="text-white/80 text-xs font-medium">Vänster: Jump</p>
+                <p className="text-white/80 text-xs font-medium">Höger: Shoota</p>
+                <p className="text-white/80 text-xs font-medium">Svep: Rörelse</p>
+              </div>
+            </div>
+          </div>
+        )}
         <canvas
           ref={canvasRef}
           className="w-full h-full max-w-full max-h-full object-contain cursor-crosshair bg-[#102217]"
