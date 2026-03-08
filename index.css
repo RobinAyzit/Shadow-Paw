@@ -15,7 +15,8 @@ html, body {
 
 body {
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 h1, h2, h3, h4, .outfit-font {
