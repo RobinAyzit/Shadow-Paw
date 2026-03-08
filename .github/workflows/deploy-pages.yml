@@ -1,6 +1,8 @@
 name: Deploy GitHub Pages
 
 on:
+  push:
+    branches: [main]
   workflow_run:
     workflows: ["pages build and deployment"]
     types: [completed]
@@ -17,9 +19,13 @@ concurrency:
 
 jobs:
   build:
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
+      - name: Delay to avoid deployment race
+        if: github.event_name == 'push'
+        run: sleep 90
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
