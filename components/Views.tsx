@@ -1058,14 +1058,14 @@ const getDifficultyProfile = (level: number, playerRank: number) => {
   const variantLengthBonus = [500, 1100, 1800, 700, 1400, 2200][variant];
 
   return {
-    levelLength: Math.floor(9000 + level * 1400 + combinedDifficulty * 2200 + variantLengthBonus),
-    holeChance: 0.01 + combinedDifficulty * 0.08,
-    holeSize: 0.12 + combinedDifficulty * 0.22,
-    platformCount: Math.floor(12 + level * 1.1 + combinedDifficulty * 6),
-    enemyCount: Math.floor(2 + level * 0.7 + combinedDifficulty * 5),
-    enemySpeed: 1.4 + level * 0.08 + combinedDifficulty * 0.8,
-    fishCount: Math.floor(12 + level * 0.9 + combinedDifficulty * 4),
-    hazardCount: Math.floor(Math.max(0, level - 1) * 0.55 + combinedDifficulty * 5),
+    levelLength: Math.floor(9800 + level * 1500 + combinedDifficulty * 2400 + variantLengthBonus),
+    holeChance: Math.min(0.1, 0.008 + combinedDifficulty * 0.07),
+    holeSize: Math.min(0.3, 0.11 + combinedDifficulty * 0.2),
+    platformCount: Math.floor(13 + level * 1.15 + combinedDifficulty * 6),
+    enemyCount: Math.floor(2 + level * 0.62 + combinedDifficulty * 4.2),
+    enemySpeed: 1.35 + level * 0.07 + combinedDifficulty * 0.65,
+    fishCount: Math.floor(13 + level * 1.0 + combinedDifficulty * 4.5),
+    hazardCount: Math.floor(Math.max(0, level - 1) * 0.48 + combinedDifficulty * 4.2),
     variant,
   };
 };
@@ -1241,7 +1241,8 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
     const timeOfDay = randomWeather.timeOfDay;
     const theme = baseLevelDesign.theme;
     const skin = SKINS[progress.equippedSkin] || SKINS.default;
-    const levelMode = level % 4 === 1 ? 'Classic' : (level % 4 === 2 ? 'Speed Run' : (level % 4 === 3 ? 'Collection' : 'Survival'));
+    const levelMode = level % 5 === 1 ? 'Classic' : (level % 5 === 2 ? 'Collection' : (level % 5 === 3 ? 'Classic' : (level % 5 === 4 ? 'Speed Run' : 'Survival')));
+    const speedRunTimer = Math.max(70, 110 - level * 0.8);
 
     const game = {
       running: true,
@@ -1257,7 +1258,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
       gravity: levelMode === 'Speed Run' ? 0.75 : 0.8,
       friction: 0.85,
       levelType: levelMode,
-      levelTimer: levelMode === 'Speed Run' ? 95 : 0,
+      levelTimer: levelMode === 'Speed Run' ? speedRunTimer : 0,
       combo: 0,
       comboTimer: 0,
       bestComboInRun: 0,
@@ -1267,12 +1268,12 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
       deathsInRun: 0,
       screenShake: 0,
       hitStop: 0,
-      miniEvent: {
-        type: level > 2 ? ['WIND', 'LOW_GRAVITY', 'BLACKOUT'][Math.floor(seededRandom(level * 13.5) * 3)] : 'NONE',
-        active: false,
-        timer: 420,
-        duration: 360,
-      },
+        miniEvent: {
+          type: level > 2 ? ['WIND', 'LOW_GRAVITY', 'BLACKOUT'][Math.floor(seededRandom(level * 13.5) * 3)] : 'NONE',
+          active: false,
+          timer: 540,
+          duration: 260,
+        },
       flashTimer: 0,
       bolts: [] as any[], // Current active lightning bolts
       weatherParticles: [] as any[],
@@ -1419,10 +1420,10 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
 
     // MUCH MORE enemies - spread throughout the entire level for excitement!
     // More enemies on EVERY level, not just higher levels
-    const enemyCount = levelMode === 'Survival' ? Math.floor(difficultyProfile.enemyCount * 1.45) : difficultyProfile.enemyCount;
+    const enemyCount = levelMode === 'Survival' ? Math.floor(difficultyProfile.enemyCount * 1.3) : difficultyProfile.enemyCount;
     let enemiesPlaced = 0;
     let spawnAttempts = 0;
-    const minEnemyDistance = 250; // Enemies closer together for more action
+    const minEnemyDistance = 280;
 
     while (enemiesPlaced < enemyCount && spawnAttempts < 300) {
       spawnAttempts++;
@@ -1460,8 +1461,8 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
           y: bossPlatform.y - 70,
           width: 90,
           height: 70,
-          hp: 10 + Math.floor(level / 2),
-          maxHp: 10 + Math.floor(level / 2),
+          hp: 8 + Math.floor(level * 0.35),
+          maxHp: 8 + Math.floor(level * 0.35),
           velocityX: 1.8 + level * 0.03,
           platformX: bossPlatform.x,
           platformW: bossPlatform.width,
@@ -1471,7 +1472,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
     }
 
     // MORE coins - more rewards throughout the level
-    const fishCount = levelMode === 'Collection' ? Math.floor(difficultyProfile.fishCount * 1.6) : difficultyProfile.fishCount;
+    const fishCount = levelMode === 'Collection' ? Math.floor(difficultyProfile.fishCount * 1.45) : difficultyProfile.fishCount;
     let placedFish = 0;
     let fishPlacementAttempts = 0;
 
@@ -1532,7 +1533,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
     }
 
     // Add fun hazards to keep levels unique and less repetitive.
-    const hazardCount = levelMode === 'Survival' ? Math.floor(difficultyProfile.hazardCount * 1.25) : difficultyProfile.hazardCount;
+    const hazardCount = levelMode === 'Survival' ? Math.floor(difficultyProfile.hazardCount * 1.15) : difficultyProfile.hazardCount;
     let hazardAttempts = 0;
     while (game.hazards.length < hazardCount && hazardAttempts < hazardCount * 20) {
       hazardAttempts++;
@@ -1603,9 +1604,9 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
 
   const registerCombo = (game: any, baseScore: number, x: number, y: number) => {
     game.combo = (game.combo || 0) + 1;
-    game.comboTimer = 180;
+    game.comboTimer = 150;
     game.bestComboInRun = Math.max(game.bestComboInRun || 0, game.combo);
-    const comboBonus = Math.max(0, (game.combo - 1) * 8);
+    const comboBonus = Math.min(100, Math.max(0, (game.combo - 1) * 6));
     if (comboBonus > 0) {
       game.score += comboBonus;
       game.floatingTexts.push({ x, y: y - 18, text: `COMBO x${game.combo} +${comboBonus}`, life: 35, color: '#7ef7c2' });
@@ -1855,7 +1856,7 @@ export const PlayingView: React.FC<{ onEnd: (score: number, fishesCollected: num
             game.screenShake = 10;
             game.floatingTexts.push({ x: boss.x + boss.width / 2, y: boss.y - 10, text: `BOSS HP ${boss.hp}`, life: 25, color: '#ff6b6b' });
             if (boss.hp <= 0) {
-              registerCombo(game, 1200, boss.x, boss.y);
+              registerCombo(game, 900, boss.x, boss.y);
               game.bossDefeatedInRun = true;
               AudioEngine.playExplosion();
             }
