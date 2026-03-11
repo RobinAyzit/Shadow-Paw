@@ -76,6 +76,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 👨‍💻 **Author**  
 Created 2026 by © nRn World
+
 📧 bynrnworld@gmail.com
 
 ## 🙏 Support
